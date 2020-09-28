@@ -9,15 +9,6 @@
         {{ hugo.Generator }}
         {{"<!-- Fonts -->" | safeHTML }}
         <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400i|Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-        {{ "<!-- Stylesheets -->" | safeHTML }}
-        <link rel="stylesheet" href="{{ `css/bootstrap.min.css` | absURL }}">
-        <link rel="stylesheet" href="{{ `css/themefisher-fonts.css` | absURL }}">
-        <link rel="stylesheet" href="{{ `css/font-awesome.min.css` | absURL }}">
-        <link rel="stylesheet" href="{{ `css/owl.carousel.css` | absURL }}">
-        <link rel="stylesheet" href="{{ `css/animate.css` | absURL }}">
-        <link rel="stylesheet" href="{{ `css/style.css` | absURL }}">
-        {{"<!-- Responsive Stylesheet -->" | safeHTML }}
-        <link rel="stylesheet" href="{{ `css/responsive.css` | absURL }}">
         
         {{ $.Site.Params.customHead | safeHTML }}
         {{ $style := resources.Get "scss/site.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
@@ -25,3 +16,68 @@
         <link rel="stylesheet" href="{{ $style.Permalink }}">
     </head>
     <body id="body">
+        <header class="header container-flex container-flex--wrap" id="header" role="presentation" data-header>
+            <div class="header__menuMobile visible-xs">
+                <a class="icon-menu" href="#" id="menuIconMobile">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    MENU
+                </a>
+            </div>
+        
+            <div class="header__tools">
+                <div class="body-content container container--none-xs">
+                    <ul class="header__tools-list container-flex">
+                        <li class="header__tools-item call-center hidden-xs">
+                            <a href="/central-de-atendimento" title="Central de Atendimento" class="container-flex">
+                                <span class="icon-chat"></span>
+                                <p>Central de Atendimento</p>
+                            </a>
+                        </li>
+                        <li class="header__tools-item my-orders hidden-xs">
+                            <a href="@Url.RouteUrl("CustomerOrders")" title="Meus pedidos" class="container-flex">
+                                <span class="icon-nf"></span>
+                                <p>Meus Pedidos</p>
+                            </a>
+                            <!-- <partial name="_OrderTrack" /> -->
+                        </li>
+                        <!-- @await Component.InvokeAsync("ShoppingCartLinks") -->
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="header__user">
+                <div class="header__user-container body-content container container--none-xs container-flex">
+                    <!-- @await Component.InvokeAsync("HeaderLinks") -->
+                </div>
+            </div>
+        
+            <div class="header__top">
+                <div class="body-content container container--none-xs container-flex">
+                    <div class="header__top-logo">
+                        <!-- @await Component.InvokeAsync("Logo") -->
+                    </div>
+        
+                    <div class="header__top-search">
+                        <!-- @await Component.InvokeAsync("SearchBox") -->
+                    </div>
+                </div>
+            </div>
+        
+            <ul class="header__searchButtons container-flex container-flex--sb visible-xs">
+                <li class="container-flex"><a href="/todas-as-categorias" title="@T("Store.Products")">@T("Store.Products")</a></li>
+                <li class="container-flex"><a href="/lancamentos" title="@T("Store.Releases")">@T("Store.Releases")</a></li>
+                <li class="container-flex"><a href="/quarto-dos-famosos" title="@T("Store.Famous")">@T("Store.Famous")</a></li>
+            </ul>
+        
+            <!-- @await Component.InvokeAsync("GraoDeGente_MenuMobile") -->
+        
+            <nav class="header__menu hidden-xs">
+                <div class="body-content container">
+                    <ul class="header__menu-navigation container-flex container-flex--sb">
+                        <!-- @await Component.InvokeAsync("TopMenu") -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
