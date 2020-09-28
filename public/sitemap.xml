@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://example.org/</loc>
+    <lastmod>2020-07-31T14:37:55-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/products/</loc>
+    <lastmod>2020-07-31T14:37:55-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/products/adesivo-de-parede-lacinhos-princesa-classica-3m-rosa/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/products/adesivo-de-parede-luas-e-estrelas-3m-rosa-1/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/products/adesivo-de-parede-luxo-listrado-3m-bege/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/products/quarto-de-bebe-rosa-classico-2/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/products/quarto-de-bebe-urso-teddy-realeza-azul-marinho-2/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/products/saida-maternidade-tricot-macacao-listrado-vermelho-e-branco-02-pecas/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/adesivos/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/quarto-de-beb%C3%AA/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/sa%C3%ADda-maternidade/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/</loc>
+  </url>
+  
+</urlset>

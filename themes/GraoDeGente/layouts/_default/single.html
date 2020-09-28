@@ -1,0 +1,8 @@
+{{ partial "header.html" . }}
+
+<main class="products">  
+    {{partial "product.html" .Params}}
+    {{.Content}}
+</main>
+
+{{ partial "footer.html" . }}

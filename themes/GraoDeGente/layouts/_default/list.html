@@ -1,0 +1,14 @@
+{{ partial "header.html" . }}
+
+<main class="products">
+    <div class="promotional-message">
+        <h2>{{.Title}}</h2>
+        <h3>{{.Description}}</h3>
+    </div>
+    {{.Content}}
+    {{ range .Pages }}
+        {{partial "product.html" .Params}}
+    {{ end }}
+</main>
+
+{{ partial "footer.html" . }}
