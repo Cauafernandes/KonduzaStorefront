@@ -1,0 +1,7 @@
+{{ partial "header.html" . }}
+
+{{ range where .Site.RegularPages "Section" "products"}}
+    {{ partial "product.html" .Params }}
+{{ end }}
+
+{{ partial "footer.html" . }}

@@ -21,7 +21,7 @@
         
         {{ $.Site.Params.customHead | safeHTML }}
         {{ $style := resources.Get "scss/site.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-
+        
         <link rel="stylesheet" href="{{ $style.Permalink }}">
     </head>
     <body id="body">
