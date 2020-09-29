@@ -1,0 +1,299 @@
+﻿@import '_variables.scss';
+
+/////////////////////////////////////////////////////
+// General Grid Container
+/////////////////////////////////////////////////////
+/*.container {
+    padding-left: 30px;
+    padding-right: 30px;
+}*/
+
+.body-content {
+    margin: auto;
+    display: block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+//até 768
+@media screen and (max-width: ($width-limite-mobile)) {
+    .hidden-xs {
+        display: none !important;
+    }
+
+    .body-content {
+        width: 100%;
+        max-width: $width-grid-mobile;
+    }
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &--none-xs {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+}
+// 1359 até 768
+@media screen and (min-width: ($width-limite-mobile)) {
+    .container {
+        &--none-md {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+}
+
+//768 até 1359
+@media screen and (min-width: ($width-grid-desktop)) {
+    .hidden-sm {
+        display: none !important;
+    }
+
+    .body-content {
+        max-width: $width-grid-small;
+        width: $width-grid-small;
+    }
+}
+
+/*//1360 até 1499
+@media screen and (min-width: $width-grid-medium) and (max-width: ($width-grid-big - 1px)) {
+    .hidden-md {
+        display: none !important;
+    }
+    .body-content {
+        max-width: $width-grid-small;
+        width: 100%;
+
+        &.container {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+        }
+    }
+}*/
+
+/*//acima de 1500px
+@media screen and (min-width: $width-grid-big) {
+    .hidden-lg {
+        display: none !important;
+    }
+    .body-content {
+        width: 100%;
+        max-width: $width-grid-small;
+    }
+
+    .container--none-lg {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}*/
+
+@media screen and (min-width: ($width-grid-desktop)){
+    .visible-xs{
+        display: none !important
+    }
+}
+
+
+/////////////////////////////////////////////////////
+// Floating Grid
+/////////////////
+.row {
+    width: 100%;
+
+    &:before, &:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+
+    .col {
+        float: left;
+        padding-left: 30px;
+        padding-right: 30px;
+
+        &.nospace {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .col-right {
+        float: right;
+    }
+
+    & > [class^="col-"],
+    .nospace {
+        &:first-child {
+            padding-left: 0;
+        }
+    }
+
+    & > [class^="col-"],
+    .nospace {
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+
+    [class*="col-"] {
+        box-sizing: border-box;
+    }
+
+    &--nospace {
+        .col {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+/////////////////////////////////////////////////////
+// Columns Grid
+/////////////////////////////////////////////////////
+@for $i from 1 through $grid-columns {
+    .col-xs-#{$i} {
+        width: (100% / ($grid-columns / 2)) * $i;
+    }
+}
+
+@media screen and (min-width: ($width-limite-mobile + 1px)) {
+    @for $i from 1 through $grid-columns {
+        .col-md-#{$i} {
+            width: (100% / ($grid-columns / 2)) * $i;
+        }
+    }
+}
+
+@media screen and (min-width: ($width-grid-medium - 1px)) {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i} {
+            width: 100% / $grid-columns * $i;
+        }
+    }
+}
+
+/////////////////////////////////////////////////////
+// Flexbox Grid
+/////////////////////////////////////////////////////
+%display-flex {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
+}
+
+%flex-wrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.container-flex {
+    @extend %display-flex;
+
+    &--wrap {
+        @extend %display-flex;
+        @extend %flex-wrap;
+    }
+
+    &--sb {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    &--sa {
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+
+    &--c {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    &--end {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    }
+
+    &--align-c {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    &--stretch {
+        -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+    }
+}
+
+
+/////////////////////////////////////////////////////
+// Product list Grid
+/////////////////////////////////////////////////////
+.grid-1, .grid-2, .grid-3, .grid-4 {
+    @extend %display-flex;
+    @extend %flex-wrap;
+    align-items: stretch;
+    -ms-align-items: stretch;
+    -webkit-align-items: stretch;
+    margin-bottom: 20px;
+
+    li {
+        float: left;
+        padding-bottom: 15px;
+        width: 100%;
+    }
+}
+
+.grid-1 {
+    li {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+.grid-2 {
+    li {
+        width: calc((100% - 4%) / 2);
+
+        &:nth-child(2n) {
+            margin-left: 2%;
+        }
+
+        &:nth-child(2n -1) {
+            margin-right: 2%;
+        }
+    }
+}
+
+.grid-3 {
+    li {
+        width: calc((100% - 4%) / 3);
+
+        &:nth-child(3n-1) {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+    }
+}
+
+.grid-4 {
+    li {
+        width: calc((100% - 6%) / 4);
+        margin-right: 2%;
+
+        &:nth-child(4n) {
+            margin-right: 0;
+        }
+    }
+}
