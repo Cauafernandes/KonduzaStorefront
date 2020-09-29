@@ -1,0 +1,93 @@
+﻿/////////////////////////////////////////////////////
+// GENERAL COLORS
+/////////////////////////////////////////////////////
+$beige: #F4F6E3;
+
+$green: #00bfb3;
+$green-light: #66d9d1;
+$green-bg: #e5f9f8;
+
+$gray: #ccc;
+$gray2: #d2d2d2;
+$bg-gray: #f1f1f1;
+$bg-gray2: #e5e5e5;
+
+$pink: #EB476C;
+$purple: #7C78A1;
+
+$danger: #D01B46;
+$warning: #FA6A35;
+$success: #00bfb3;
+
+$bgHighlight: #e5f7f7;
+
+$menuAll: #00B59B;
+$menuGirl: #E37690;
+$menuBoy: #5c8da9;
+
+/////////////////////////////////////////////////////
+// FONT COLORS
+/////////////////////////////////////////////////////
+$font-color: #666;
+$font-color2: #000;
+$font-color3: #999;
+$font-color-highlight: #00bfb3;
+
+/////////////////////////////////////////////////////
+// BUTTON COLORS
+/////////////////////////////////////////////////////
+$btn-default: #ffffff;
+$btn-default-border: #00bfb3;
+$btn-default-color: #00bfb3;
+$btn-default-hover: #00bfb3;
+$btn-default-hover-color: #00bfb3;
+
+$btn-primary: #00BFB3;
+$btn-primary-border: #00BFB3;
+$btn-primary-color: #fff;
+$btn-primary-hover: #038774;
+$btn-primary-hover-color: #fff;
+
+$btn-danger: #d34566;
+$btn-danger-border: transparent;
+$btn-danger-color: #fff;
+$btn-danger-hover: #ee476c;
+$btn-danger-hover-color: #fff;
+
+$btn-face: #4267b2;
+$btn-face-border: #4267b2;
+$btn-face-color: #fff;
+$btn-face-hover: #001D7F;
+$btn-face-hover-color: #fff;
+
+/////////////////////////////////////////////////////
+// GRID WIDTH'S
+/////////////////////////////////////////////////////
+$grid-columns: 24 !default;
+
+// DESKTOP
+$width-grid-big: 1500px;
+/*$width-grid-medium: 1360px;*/
+$width-grid-medium: 1000px;
+$width-grid-small: 1000px;
+
+// MOBILE
+/*$width-limite-mobile: 768px;*/
+$width-limite-mobile: 960px;
+$width-grid-mobile: 500px;
+$width-grid-desktop: ($width-limite-mobile + 1px);
+
+/////////////////////////////////////////////////////
+// FONT FAMILY
+/////////////////////////////////////////////////////
+$family-regular: "latoRegular, sans-serif";
+$family-light: "latoLight, sans-serif";
+$family-bold: "latoBold, sans-serif";
+$family-medium: "latoMedium, sans-serif";
+$family-icons: "graodegente";
+
+/////////////////////////////////////////////////////
+// GENERAL
+/////////////////////////////////////////////////////
+$font-path: "../fonts/";
+$img-path: "../images/";

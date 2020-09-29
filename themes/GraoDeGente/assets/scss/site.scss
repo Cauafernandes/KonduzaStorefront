@@ -1,3 +1,19 @@
-.site {
-    color: #FFF;
+﻿// DEFAULT SCSS
+@import "./_variables";
+@import "./_normalize";
+@import "./_grid";
+@import "./_fonts";
+@import "./_forms";
+@import "./_icons";
+@import "./_sprites";
+@import "./_buttons";
+
+// COMPONENT'S SCSS
+@import "./Partials/partials";
+
+// PAGES SCSS
+@import "./Pages/pages";
+
+img {
+    max-width: 100%;
 }

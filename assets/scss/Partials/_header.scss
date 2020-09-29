@@ -1,52 +1,130 @@
 .header {
+    margin-bottom: 20px;
+
+    &-alert {
+        background-color: #dc6c05;
+        align-items: center;
+        height: 30px;
+        width: 100%;
+
+        p {
+            font-family: $family-medium;
+            text-align: center;
+            font-size: 16px;
+            display: block;
+            color: #FFF;
+            width: 100%;
+        }
+    }
+
     &-tools {
         justify-content: flex-end;
+        margin-bottom: 14px;
         align-items: center;
         max-height: 40px;
         height: 40px;
 
         &--container {
-            background-color: $bg-gray;
+            background-color: $beige;
         }
 
         &--item {
-            border-right: 1px solid $gray;
             justify-content: flex-start;
             align-items: center;
-            padding: 10px 15px;
+            padding: 10px 12px;
             display: flex;
 
-            [class*="icon"] {
-                margin-right: 8px;
-                color: $green;
+            a {
+                text-transform: uppercase;
+                font-family: $family-bold;
+                align-items: center;
+                color: $font-color;
+                font-size: 13px;
+
+                [class*="icon"] {
+                    margin-right: 8px;
+                    color: $green;
+                }
             }
 
-            &.cart {
-                background-color: $pink;
-                padding: 15px 20px;
-                color: #FFF;
+            &.callCenter {
+                a {
+                    text-decoration: underline;
+                    font-size: 12px;
+
+                    [class*="icon"] {
+                        font-size: 17px;
+                    }
+                }
+            }
+
+            &.myOrders {
+                border-right: 1px solid $gray;
+                border-left: 1px solid $gray;
             }
 
             &.wishlist {
                 [class*="icon"] {
+                    font-size: 18px;
                     color: $pink;
+                }
+
+                &:hover {
+                    [class*="icon"]:before {
+                        content: '\4a';
+                    }   
                 }
             }
 
             &.cart {
                 border-radius: 0 0 5px 5px;
+                background-color: $pink;
+                position: relative;
+                margin-left: 10px;
+                padding: 15px 8px;
                 max-height: 40px;
-
-                [class*="icon"] {
+                
+                a {
                     color: #FFF;
+
+                    [class*="icon"] {
+                        margin-top: -3px;
+                        font-size: 24px;
+                        color: #FFF;
+                    }
+
+                    .counter {
+                        -webkit-box-align: center;
+                        background-color: $beige;
+                        -webkit-box-pack: center;
+                        justify-content: center;
+                        -ms-flex-align: center;
+                        -ms-flex-pack: center;
+                        align-items: center;
+                        border-radius: 50%;
+                        margin-left: 10px;
+                        position: inherit;
+                        color: $pink;
+                        height: 25px;
+                        width: 25px;
+                        text-align: center;
+                        display: flex;
+                    }
                 }
 
-                .counter {
-                    background-color: $beige;
-                    border-radius: 50%;
-                    padding: 5px 8px;
-                    margin-left: 8px;
-                    color: $pink;
+                &::after {
+                    border: solid 7px transparent;
+                    -webkit-transition: all 0.3s;
+                    border-top-color: $pink;
+                    -o-transition: all 0.3s;
+                    transition: all 0.3s;
+                    position: absolute;
+                    cursor: pointer;
+                    bottom: -13px;
+                    content: "";
+                    height: 0px;
+                    right: 10px;
+                    width: 0px;
                 }
             }
         }
@@ -55,7 +133,190 @@
     &-customer {
         &--container {
             justify-content: flex-end;
+            padding-right: 11px;
             align-items: center;
+            margin: 0 0 8px;
+        }
+
+        &--unlogged {
+            a {
+                align-items: center;
+                color: $font-color;
+
+                [class*="icon"] {
+                    background-color: $pink;
+                    display: inline-block;
+                    border-radius: 50%;
+                    position: relative;
+                    margin-left: 5px;
+                    margin-top: 2px;
+                    height: 12px;
+                    width: 12px;
+    
+                    &:before {
+                        border-color: #FFF;
+                        position: absolute;
+                        margin: auto;
+                        height: 5px;
+                        width: 5px;
+                        bottom: 0;
+                        right: 0;
+                        left: 0;
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &-content {
+        justify-content: flex-start;
+
+        &--logo {
+            justify-content: flex-start;
+            padding-left: 30px;
+            position: relative;
+            min-width: 295px;
+            max-width: 295px;
+            flex: 2 0 295px;
+            height: 61px;
+            width: 295px;
+
+            figure {
+                position: absolute;
+                bottom: 2px;
+                left: 30px;
+            }
+        }
+
+        &--search {
+            flex: 2 0 calc(100% - 295px);
+            padding-right: 13px;
+            max-height: 48px;
+            margin-top: 2px;
+
+            .input-container {
+                width: calc(100% - 120px);
+                padding-right: 6px;
+                position: relative;
+
+                input {
+                    border-radius: 5px!important;
+                    border: 1px solid #BDBDBD;
+                    padding: 9px 15px;
+                    margin-left: 6px;
+                    color: #868686;
+                    font-size: 16px;
+                    height: 48px;
+                }
+
+                .placeholder {
+                    font-family: $family-bold;
+                    text-transform: uppercase;
+                    height: fit-content;
+                    position: absolute;
+                    color: $font-color3;
+                    font-size: 16px;
+                    margin: auto;
+                    left: 15px;
+                    bottom: 0;
+                    top: 2px;
+
+                    span {
+                        color: $pink;
+                    }
+                }
+            }
+
+            .btn {
+                background-color: $btn-primary;
+                text-transform: uppercase;
+                font-family: $family-bold;
+                transition: 0.3s all;
+                border-radius: 4px;
+                font-size: 16.65px;
+                padding-top: 14px;
+                max-width: 120px;
+                min-width: 120px;
+                flex: 2 0 120px;
+                color: #FFF;
+                width: 120px;
+                margin: 0;
+
+                &:hover {
+                    background-color: $btn-primary-hover;
+                }
+            }
+        }
+    }
+
+    &-menu {
+        background-color: $beige;
+        margin-top: 6px;
+
+        &--list {
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &--item {
+            text-align: center;
+            flex-basis: 66px;
+            height: 50px;
+
+            a {
+                font-family: $family-bold;
+                text-transform: uppercase;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                position: relative;
+                font-size: 11px;
+                display: flex;
+                color: #000;
+                padding: 2px;
+                height: 50px;
+                width: 100%;
+
+                &:after {
+                    background-color: $green;
+                    transition: 0.3s all;
+                    position: absolute;
+                    content: "";
+                    height: 4px;
+                    width: 100%;
+                    opacity: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                }
+            }
+
+            &:hover {
+                a:after {
+                    opacity: 1;
+                }
+            }
+
+            &.completedRooms {
+                flex-basis: 90px;
+            }
+
+            &.maternityBag {
+                flex-basis: 90px;
+            }
+
+            &.customized {
+                flex-basis: 99px;
+            }
+
+            &.realeses {
+                flex-basis: 85px;
+            }
+
+            &.famousRoom {
+                flex-basis: 90px;
+            }
         }
     }
 }
