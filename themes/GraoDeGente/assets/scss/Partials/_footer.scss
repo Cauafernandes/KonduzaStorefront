@@ -1,4 +1,6 @@
 .footer {
+    padding: 100px 0 55px;
+
     & &-background-beige {
         background-color: $beige;
     }
@@ -215,24 +217,41 @@
         margin-bottom: 40px;
 
         &--titles {
+            display: flex;
+
             span {
                 display: inline-block;
                 color: $font-color;
                 margin: 0 0 15px;
                 font-size: 12px;
 
-                &.cards {
-                    min-width: 700px;
-                }
-
                 &.boleto {
-                    min-width: 200px;
+                    justify-self: flex-end;
+                    padding-right: 5px;
+                    margin-left: auto;
                 }
             }
         }
 
         &--item {
             padding-right: 50px;
+
+            &.boleto {
+                justify-self: flex-end;
+                position: relative;
+                margin-left: auto;
+                padding: 0;
+
+                &::before {
+                    background-color: #d4d4d4;
+                    position: absolute;
+                    height: 35px;
+                    content: "";
+                    left: -78px;
+                    width: 1px;
+                    top: 0;
+                }
+            }
         }
 
         &--copyright {
@@ -242,6 +261,26 @@
             font-size: 12px;
             display: block;
             width: 100%;
+        }
+    }
+
+    & &-base {
+        justify-content: flex-end;
+
+        .title {
+            text-transform: uppercase;
+            color: $font-color3;
+            margin-right: 20px;
+            font-size: 14px;
+        }
+
+        .ssl {
+            margin-right: 65px;
+        }
+
+        .ssl, .platform {
+            justify-content: flex-end;
+            align-items: center;
         }
     }
 }
