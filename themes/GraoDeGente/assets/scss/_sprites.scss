@@ -1,5 +1,5 @@
 [class*="sprite-"] {
-  background-image: url($img-path + '/sprites/spritesheet.png');
+  background-image: url($img-path + '/spritesheet.png');
   background-repeat: no-repeat;
   display: block;
 }
@@ -71,34 +71,20 @@
   width: 85px;
 }
 
-.sprite-frete-cinza {
-  background-image: url($img-path + '/cart_shipping_benefit.png');
-  background-repeat: no-repeat;
-  width: 22px;
-  height: 14px;
-  margin-right: 10px;
-  margin-top: 5px;
+.sprite-callcenter {
+  background-position: -104px -67px;
+  height: 94px;
+  width: 94px;
 }
 
-.sprite-calendar {
-  background-image: url($img-path + '/calendar.png');
-  background-repeat: no-repeat;
-  width: 22px;
-  height: 22px;
-  margin-right: 5px;
+.sprite-security {
+  background-position: -247px -1px;
+  height: 87px;
+  width: 117px;
 }
 
-.sprite-cartao-cinza-min {
-  background-image: url($img-path + '/card_benefit.png');
-  background-repeat: no-repeat;
-  width: 20px;
-  height: 13px;
-  margin-right: 10px;
-  margin-top: 5px;
-}
-
-@media screen and (max-device-width:320px) {
-  .sprite-frete-cinza {
-      margin-right: 4px;
-  }
+.sprite-pinkLock {
+  background-position: -210px -25px;
+  height: 27px;
+  width: 27px;
 }

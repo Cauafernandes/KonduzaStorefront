@@ -250,7 +250,10 @@
     }
 
     &--buy-desk {
+        @extend %btn;
         font-size: 20px;
+
+        @extend %icon;
 
         @media screen and (min-width: $width-grid-desktop) {
             padding: 14px 20px 14px 70px;
@@ -275,6 +278,20 @@
                 border-right: none;
                 color: $pink;
             }
+        }
+    }
+
+    &--pink {
+        background-color: $pink;
+        border-color: $pink;
+        color: #FFF;
+        @extend %btn;
+
+        @extend %icon;
+
+        &:hover {
+            background-color: $pink-hover;
+            border-color: $pink-hover;
         }
     }
 }

@@ -3,10 +3,10 @@
 /////////////////////////////////////////////////////
 // General Grid Container
 /////////////////////////////////////////////////////
-/*.container {
+.container {
     padding-left: 30px;
     padding-right: 30px;
-}*/
+}
 
 .body-content {
     margin: auto;
@@ -59,38 +59,6 @@
         width: $width-grid-small;
     }
 }
-
-/*//1360 até 1499
-@media screen and (min-width: $width-grid-medium) and (max-width: ($width-grid-big - 1px)) {
-    .hidden-md {
-        display: none !important;
-    }
-    .body-content {
-        max-width: $width-grid-small;
-        width: 100%;
-
-        &.container {
-            padding-left: 20px !important;
-            padding-right: 20px !important;
-        }
-    }
-}*/
-
-/*//acima de 1500px
-@media screen and (min-width: $width-grid-big) {
-    .hidden-lg {
-        display: none !important;
-    }
-    .body-content {
-        width: 100%;
-        max-width: $width-grid-small;
-    }
-
-    .container--none-lg {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-}*/
 
 @media screen and (min-width: ($width-grid-desktop)){
     .visible-xs{
@@ -236,10 +204,37 @@
     }
 }
 
-
 /////////////////////////////////////////////////////
 // Product list Grid
 /////////////////////////////////////////////////////
+[class*="box-grid-"] {
+    border: 1px solid #BDBDBD;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    align-items: center;
+    padding: 10px 8px;
+    background: 0 0;
+    cursor: pointer;
+    font-size: 10px;
+    display: flex;
+    color: #666;
+    height: 100%;
+    width: auto;
+
+    span {
+        background-color: #BDBDBD;
+        display: inline-block;
+        margin: 0 3px;
+        height: 12px;
+        width: 5px;
+    }
+}
+
 .grid-1, .grid-2, .grid-3, .grid-4 {
     @extend %display-flex;
     @extend %flex-wrap;

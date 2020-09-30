@@ -118,31 +118,3 @@
         transform: rotate(-135deg);
     }
 }
-
-[class*="box-grid-"] {
-    border: 1px solid #BDBDBD;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -ms-flex-align: center;
-    -ms-flex-pack: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    align-items: center;
-    padding: 10px 8px;
-    background: 0 0;
-    cursor: pointer;
-    font-size: 10px;
-    display: flex;
-    color: #666;
-    height: 100%;
-    width: auto;
-
-    span {
-        background-color: #BDBDBD;
-        display: inline-block;
-        margin: 0 3px;
-        height: 12px;
-        width: 5px;
-    }
-}

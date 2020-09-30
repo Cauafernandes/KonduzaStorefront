@@ -1,4 +1,6 @@
 .header {
+    margin-bottom: 20px;
+
     &-alert {
         background-color: #dc6c05;
         align-items: center;
@@ -23,7 +25,7 @@
         height: 40px;
 
         &--container {
-            background-color: $bg-gray;
+            background-color: $beige;
         }
 
         &--item {
@@ -133,7 +135,7 @@
             justify-content: flex-end;
             padding-right: 11px;
             align-items: center;
-            margin: 0 0 15px;
+            margin: 0 0 8px;
         }
 
         &--unlogged {
@@ -163,6 +165,157 @@
                         top: 0;
                     }
                 }
+            }
+        }
+    }
+
+    &-content {
+        justify-content: flex-start;
+
+        &--logo {
+            justify-content: flex-start;
+            padding-left: 30px;
+            position: relative;
+            min-width: 295px;
+            max-width: 295px;
+            flex: 2 0 295px;
+            height: 61px;
+            width: 295px;
+
+            figure {
+                position: absolute;
+                bottom: 2px;
+                left: 30px;
+            }
+        }
+
+        &--search {
+            flex: 2 0 calc(100% - 295px);
+            padding-right: 13px;
+            max-height: 48px;
+            margin-top: 2px;
+
+            .input-container {
+                width: calc(100% - 120px);
+                padding-right: 6px;
+                position: relative;
+
+                input {
+                    border-radius: 5px!important;
+                    border: 1px solid #BDBDBD;
+                    padding: 9px 15px;
+                    margin-left: 6px;
+                    color: #868686;
+                    font-size: 16px;
+                    height: 48px;
+                }
+
+                .placeholder {
+                    font-family: $family-bold;
+                    text-transform: uppercase;
+                    height: fit-content;
+                    position: absolute;
+                    color: $font-color3;
+                    font-size: 16px;
+                    margin: auto;
+                    left: 15px;
+                    bottom: 0;
+                    top: 2px;
+
+                    span {
+                        color: $pink;
+                    }
+                }
+            }
+
+            .btn {
+                background-color: $btn-primary;
+                text-transform: uppercase;
+                font-family: $family-bold;
+                transition: 0.3s all;
+                border-radius: 4px;
+                font-size: 16.65px;
+                padding-top: 14px;
+                max-width: 120px;
+                min-width: 120px;
+                flex: 2 0 120px;
+                color: #FFF;
+                width: 120px;
+                margin: 0;
+
+                &:hover {
+                    background-color: $btn-primary-hover;
+                }
+            }
+        }
+    }
+
+    &-menu {
+        background-color: $beige;
+        margin-top: 6px;
+
+        &--list {
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &--item {
+            text-align: center;
+            flex-basis: 66px;
+            height: 50px;
+
+            a {
+                font-family: $family-bold;
+                text-transform: uppercase;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                position: relative;
+                font-size: 11px;
+                display: flex;
+                color: #000;
+                padding: 2px;
+                height: 50px;
+                width: 100%;
+
+                &:after {
+                    background-color: $green;
+                    transition: 0.3s all;
+                    position: absolute;
+                    content: "";
+                    height: 4px;
+                    width: 100%;
+                    opacity: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                }
+            }
+
+            &:hover {
+                a:after {
+                    opacity: 1;
+                }
+            }
+
+            &.completedRooms {
+                flex-basis: 90px;
+            }
+
+            &.maternityBag {
+                flex-basis: 90px;
+            }
+
+            &.customized {
+                flex-basis: 99px;
+            }
+
+            &.realeses {
+                flex-basis: 85px;
+            }
+
+            &.famousRoom {
+                flex-basis: 90px;
             }
         }
     }

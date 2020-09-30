@@ -159,39 +159,7 @@ select {
         min-height: 45px;
         margin: 0;
     }
-    /*.action {
-        -webkit-transition: 300ms all;
-        text-transform: uppercase;
-        font-family: $family-bold;
-        background-color: $green;
-        -o-transition: 300ms all;
-        border: 1px solid $green;
-        transition: 300ms all;
-        position: relative;
-        padding: 10px 15px;
-        font-size: 16px;
-        cursor: pointer;
-        color: #FFF;
 
-        &.icon {
-            padding-left: 50px;
-
-            [class*="icon"] {
-                position: absolute;
-                font-size: 20px;
-                margin: auto;
-                height: 24px;
-                left: 15px;
-                bottom: 0;
-                top: 0;
-            }
-        }
-
-        &:hover {
-            background-color: $btn-primary-hover;
-            border-color: $btn-primary-hover;
-        }
-    }*/
     &[class*="birthdate"] {
         display: block;
 
