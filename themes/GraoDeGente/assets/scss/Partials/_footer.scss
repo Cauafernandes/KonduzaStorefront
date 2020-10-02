@@ -168,7 +168,7 @@
                         min-width: 220px;
                         margin-top: 37px;
                         cursor: pointer;
-                        font-size: 15px;
+                        font-size: 13px;
                         display: block;
                         color: #FFF;
                         height: 30px;
@@ -227,7 +227,7 @@
 
                 &.boleto {
                     justify-self: flex-end;
-                    padding-right: 5px;
+                    padding-right: 65px;
                     margin-left: auto;
                 }
             }
@@ -236,21 +236,25 @@
         &--item {
             padding-right: 50px;
 
-            &.boleto {
-                justify-self: flex-end;
-                position: relative;
-                margin-left: auto;
-                padding: 0;
+            &.separator {
+                border: none;
+                width: 1px;
+                margin: 0;
 
                 &::before {
                     background-color: #d4d4d4;
                     position: absolute;
                     height: 35px;
                     content: "";
-                    left: -78px;
                     width: 1px;
+                    left: 0;
                     top: 0;
                 }
+            }
+
+            &.boleto {
+                position: relative;
+                padding: 0;
             }
         }
 

@@ -1,0 +1,73 @@
+<main class="main" id="main">
+    <div class="product--container">
+        <div class="body-content">
+            <div class="row container-flex">
+                <ul class="breadcrumb container-flex">
+                    <li class="breadcrumb--item">
+                        <a href="/" title="#">
+                            <p>Home</p>
+                        </a>
+                    </li>
+                    <li class="breadcrumb--item current">
+                        {{ .name }}
+                    </li>
+                </ul>
+            </div>
+            <div class="row container-flex">
+                <div class="col-18">
+                    <div class="product--name">
+                        {{ .name }}
+                        <span>Ref: {{ .id }}</span>
+                    </div>
+                    <div class="product--image-container">
+                        <ul class="product--image-tags">
+                            <li class="product--image-tag exclusive">
+                                <p>Exclusivo <b>Grão de Gente</b></p>
+                            </li>
+                            <li class="product--image-tag parts">
+                                <p>17 peças</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="product--price-container">
+                        <div class="box-gray">
+                            <span class="discount">58%</span>
+                            <small>de R${{ .price }}</small>
+                            <p class="active-price inCash">R${{ .price }} <span>no Boleto</span></p>
+                            <p class="active-price">ou R${{ .price }}</p>
+                            <b class="installment">12x de R${{ div .price 12 }}</b>
+                            <a href="#" title="ver parcelamento">ver parcelamento</a>
+                        </div>
+                    </div>
+                    <div class="product--variants-container">
+                        <b class="product--vartiants-title">Selecione as opções</b>
+                        <ul class="product--variants">
+                            <li class="product--variants-item">
+                                <span class="title">Cor: Azul marinho</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="product--buy-container">
+                        <a class="product--buy-composition">Leia a descrição e composição <i class="icon-arrow-right"></i></a>
+                        <button class="btn btn--buy-desk">Comprar</button>
+                        <div class="product--normalDelivery-flag">
+                            <p>Enviando Normalmente</p>
+                        </div>
+                        <div class="product--security">
+                            <div class="flag-security">
+                                <p>
+                                    <i class="icon-lock"></i>
+                                    Site Seguro
+                                </p>
+                            </div>
+                            <p>Saiba Porque</p>
+                        </div>
+                        <p class="product--delivery-date">Postagem de 6 a 13 dias úteis, mais prazo de entrega</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

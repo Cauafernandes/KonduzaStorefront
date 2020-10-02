@@ -4,7 +4,7 @@ id = "104102"
 image = "https://dmhxz00kguanp.cloudfront.net/fotos/104102/media_quarto-de-bebe-rosa-classico-19-pecas-235827.jpg"
 name = "QUARTO DE BEBÊ ROSA CLÁSSICO 17 PEÇAS"
 price = 579.99
-product_url = "/products//quarto-de-bebe-rosa-classico-2"
+product_url = "/product/quarto-de-bebe-rosa-classico-2"
 categories = ["Quarto de Bebê"]
 
 +++

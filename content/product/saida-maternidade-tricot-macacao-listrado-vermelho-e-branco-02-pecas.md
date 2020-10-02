@@ -4,6 +4,6 @@ id = "136791"
 image = "https://dmhxz00kguanp.cloudfront.net/fotos/136791/media_saida-maternidade-tricot-macacao-listrado-vermelho-e-branco-02-pecas-300838.jpg"
 name = "SAÍDA MATERNIDADE TRICOT MACACÃO LISTRADO VERMELHO E BRANCO 02"
 price = 361.99
-product_url = "/products/saida-maternidade-tricot-macacao-listrado-vermelho-e-branco-02-pecas"
+product_url = "/product/saida-maternidade-tricot-macacao-listrado-vermelho-e-branco-02-pecas"
 categories = ["Saída Maternidade"]
 +++
