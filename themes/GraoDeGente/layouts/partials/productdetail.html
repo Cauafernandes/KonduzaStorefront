@@ -1,70 +1,134 @@
 <main class="main" id="main">
-    <div class="product--container">
+    <div class="product">
         <div class="body-content">
             <div class="row container-flex">
-                <ul class="breadcrumb container-flex">
-                    <li class="breadcrumb--item">
-                        <a href="/" title="#">
-                            <p>Home</p>
-                        </a>
-                    </li>
-                    <li class="breadcrumb--item current">
-                        {{ .name }}
-                    </li>
-                </ul>
+                <div class="col-24">
+                    <ul class="breadcrumb container-flex">
+                        <li class="breadcrumb--item">
+                            <a href="/" title="#">
+                                <p>Home</p>
+                            </a>
+                        </li>
+                        <li class="breadcrumb--item current">
+                            <p>{{ .name }}</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="row container-flex">
-                <div class="col-18">
+                <div class="column-left">
                     <div class="product--name">
                         {{ .name }}
                         <span>Ref: {{ .id }}</span>
                     </div>
-                    <div class="product--image-container">
-                        <ul class="product--image-tags">
-                            <li class="product--image-tag exclusive">
-                                <p>Exclusivo <b>Grão de Gente</b></p>
-                            </li>
-                            <li class="product--image-tag parts">
-                                <p>17 peças</p>
-                            </li>
-                        </ul>
+                    <div class="product--image-container container-flex">
+                        <div class="product--image-thumbnails">
+
+                        </div>
+                        <div class="product--image">
+                            <figure>
+                                <img src="{{ .image }}" alt="{{ .name }}">
+                            </figure>
+                            <ul class="product--image-tags container-flex">
+                                <li class="product--image-tag exclusive">
+                                    <p>Exclusivo <b>Grão de Gente</b></p>
+                                </li>
+                                <li class="product--image-tag parts">
+                                    <p>17 peças</p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="column-right">
                     <div class="product--price-container">
                         <div class="box-gray">
                             <span class="discount">58%</span>
-                            <small>de R${{ .price }}</small>
-                            <p class="active-price inCash">R${{ .price }} <span>no Boleto</span></p>
-                            <p class="active-price">ou R${{ .price }}</p>
-                            <b class="installment">12x de R${{ div .price 12 }}</b>
-                            <a href="#" title="ver parcelamento">ver parcelamento</a>
+                            <small>de R${{ .price }} por:</small>
+                            <p class="active-price--inCash">R${{ .price }} <span>no Boleto</span></p>
+                            <p class="active-price--installment">ou R${{ .price }}</p>
+                            <b class="price-installment">12x de R${{ lang.NumFmt 2 (div .price 12) }} <span>sem juros</span></b>
+                            <a href="#" title="ver parcelamento" class="installments">ver parcelamento</a>
                         </div>
                     </div>
-                    <div class="product--variants-container">
-                        <b class="product--vartiants-title">Selecione as opções</b>
-                        <ul class="product--variants">
+                    <div class="product--variants">
+                        <b class="product--variants-title">Selecione as opções</b>
+                        <ul class="product--variants-list">
                             <li class="product--variants-item">
                                 <span class="title">Cor: Azul marinho</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="product--buy-container">
+                    <div class="product--buy">
                         <a class="product--buy-composition">Leia a descrição e composição <i class="icon-arrow-right"></i></a>
                         <button class="btn btn--buy-desk">Comprar</button>
-                        <div class="product--normalDelivery-flag">
+                        <div class="product--buy-normalDelivery">
                             <p>Enviando Normalmente</p>
                         </div>
                         <div class="product--security">
-                            <div class="flag-security">
-                                <p>
+                            <a href="#" title="Site Seguro" class="container-flex">
+                                <p class="flag-security">
                                     <i class="icon-lock"></i>
                                     Site Seguro
                                 </p>
-                            </div>
-                            <p>Saiba Porque</p>
+                                <span>Saiba Porque</span>
+                            </a>
                         </div>
                         <p class="product--delivery-date">Postagem de 6 a 13 dias úteis, mais prazo de entrega</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row container-flex">
+                <div class="col-24">
+                    <div class="product--list">
+                        <h3 class="product--list-title">Conheça todos os produtos da coleção XXX</h3>
+                        <ul class="product--collection-list">
+                            <li class="product--collection-item">
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row container-flex">
+                <div class="col-24">
+                    <div class="product--list">
+                        <h3 class="product--list-title">Descrição</h3>
+                        <p class="product--description-content">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row container-flex">
+                <div class="col-24">
+                    <div class="product--list">
+                        <h3 class="product--list-title">Especificações</h3>
+                        <p class="product--specification-content">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row container-flex">
+                <div class="col-24">
+                    <div class="product--list">
+                        <h3 class="product--list-title">Composição</h3>
+                        <p class="product--composition-content">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row container-flex">
+                <div class="col-24">
+                    <div class="product--list">
+                        <h3 class="product--list-title">Produtos recomendados</h3>
+                        <ul class="product--recommendeds-list">
+                            <li class="product--recommendeds-item">
+
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

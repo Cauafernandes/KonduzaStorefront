@@ -1,0 +1,280 @@
+.product {
+    .breadcrumb {
+        border-bottom: 1px solid $gray;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        margin-top: 5px;
+        
+        &--item {
+            display: flex;
+
+            a, p {
+                color: $font-color;
+                font-size: 12px;
+            }
+
+            &:not(:last-child):after {
+                color: $font-color;
+                font-size: 12px;
+                margin: 0 5px;
+                content: "/";
+            }
+        }
+    }
+
+    // INICIANDO COLUNA DA ESQUERDA
+    .column-left {
+        padding-right: 40px;
+        max-width: 695px;
+        width: 100%;
+    }
+
+    & &--name {
+        font-family: $family-bold;
+        margin-bottom: 0;
+        font-size: 18px;
+        color: #000;
+        height: 41px;
+
+        span {
+            font-family: $family-regular;
+            display: inline-block;
+            color: $font-color;
+            margin-left: 6px;
+            font-size: 13px;
+        }
+    }
+
+    & &--image {
+        max-width: 550px;
+
+        &-thumbnails {
+            margin-right: 35px;
+            overflow: hidden;
+            width: 54px;
+        }
+
+        &-tags {
+            justify-content: flex-start;
+            margin-top: 10px;
+
+            .exclusive {
+                font-size: 12px;
+
+                span {
+                    font-family: $family-bold;
+                }
+            }
+
+            .parts {
+                background-color: #4A4A4A;
+                text-transform: uppercase;
+                font-family: $family-bold;
+                justify-self: flex-end;
+                text-align: center;
+                margin-left: auto;
+                line-height: 16px;
+                padding: 3px 5px;
+                font-size: 14px;
+                color: #FFF;
+            }
+        }
+    }
+
+    // INICIANDO COLUNA DA DIREITA
+    .column-right {
+        padding-top: 41px;
+        max-width: 317px;
+        width: 100%;
+    }
+
+    & &--price-container {
+        background-color: $bg-gray;
+        padding: 12px 15px 24px;
+        margin-bottom: 11px;
+        position: relative;
+        min-height: 175px;
+
+        .discount {
+            font-family: $family-bold;
+            background-color: $pink;
+            position: absolute;
+            font-size: 18px;
+            color: #fff;
+            padding: 4px;
+            right: 10px;
+            top: 10px;
+        }
+
+        small {
+            text-decoration: line-through;
+            margin-bottom: 4px;
+            font-size: 12px;
+            display: block;
+            color: #000;
+            width: 100%;
+        }
+
+        .active-price {
+            &--inCash {
+                font-family: $family-bold;
+                margin-bottom: 20px;
+                font-size: 24px;
+
+                span {
+                    margin-top: 4px;
+                    font-size: 12px;
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            &--installment {
+                font-family: $family-bold;
+                font-size: 12px;
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .price-installment {
+            font-family: $family-bold;
+            margin-top: 5px;
+            font-size: 24px;
+            display: block;
+            color: $pink;
+            width: 100%;
+
+            span {
+                font-size: 14px;
+            }
+        }
+
+        .installments {
+            text-decoration: underline;
+            margin-top: 15px;
+            font-size: 13px;
+            cursor: pointer;
+            display: block;
+            color: #000;
+        }
+    }
+
+    &--variants {
+        margin: 0 0 20px;
+        padding: 0 15px;
+
+        &-title {
+            font-family: $family-bold;
+            margin-bottom: 7px;
+            color: $font-color;
+            font-size: 18px;
+            display: block;
+        }
+
+        &-item {
+            .title {
+                text-transform: capitalize;
+                margin-bottom: 6px;
+                color: $font-color;
+                font-size: 13px;
+            }
+        }
+    }
+
+    &--buy {
+        padding: 0 15px;
+        
+        &-composition {
+            text-decoration: underline;
+            margin-bottom: 35px;
+            font-size: 13px;
+            cursor: pointer;
+            display: block;
+            color: #000;
+
+            [class*="icon"]:before {
+                border-color: $pink;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .btn {
+            background: url("//dmhxz00kguanp.cloudfront.net/home/desktop/ico/btn-cart.png") no-repeat #d34566;
+            padding: 13px 10px 10px 65px;
+            -webkit-border-radius: 9px;
+            color: #FFF !important;
+            border-radius: 9px;
+            font-size: 19px;
+            display: block;
+            height: 44px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        &-normalDelivery {
+            background-color: #DC6C05;
+            font-family: $family-bold;
+            margin: -10px 0 20px;
+            text-align: center;
+            margin: 10px 0 0;
+            font-size: 14px;
+            display: block;
+            padding: 5.2px;
+            color: #fff;
+            width: 100%;
+        }
+    }
+
+    &--security {
+        margin: 20px 0;
+
+        a {
+            text-transform: uppercase;
+            font-family: $family-bold;
+            justify-content: center;
+            align-items: center;
+            color: $font-color;
+
+            .flag-security {
+                background: url("https://d36jtpqfv6d5k6.cloudfront.net/graodegente/3.0/desktop/8309ba185ac1c511118c73ef127fec1faa7c4982/imgs/desktop/ico/cadeado-green-min.png") 4px no-repeat #00BFB3;
+                padding: 5px 8px 0 25px;
+                background-size: 16px;
+                border-radius: 3px;
+                font-size: 13px;
+                display: block;
+                color: #fff;
+                width: 114px;
+                height: 22px;
+            }
+
+            span {
+                text-decoration: underline;
+                margin-left: 10px;
+                font-size: 10px;
+            }
+        }
+    }
+
+    &--delivery-date {
+        font-size: 13px;
+        margin: 10px 0;
+        color: #555;
+    }
+
+    &--list {
+        margin: 50px 0;
+        display: block;
+
+        &-title {
+            font-family: $family-light;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: $font-color;
+            font-size: 24px;
+        }
+    }
+}
