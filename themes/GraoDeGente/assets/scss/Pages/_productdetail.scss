@@ -24,6 +24,7 @@
 
     // INICIANDO COLUNA DA ESQUERDA
     .column-left {
+        margin-bottom: 70px;
         padding-right: 40px;
         max-width: 695px;
         width: 100%;
@@ -83,6 +84,7 @@
 
     // INICIANDO COLUNA DA DIREITA
     .column-right {
+        margin-bottom: 70px;
         padding-top: 41px;
         max-width: 317px;
         width: 100%;
@@ -275,6 +277,11 @@
             margin-bottom: 20px;
             color: $font-color;
             font-size: 24px;
+        }
+
+        &-content {
+            line-height: 126%;
+            font-size: 12px;
         }
     }
 }
