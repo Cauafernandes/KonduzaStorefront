@@ -14,6 +14,9 @@
         {{ $style := resources.Get "scss/site.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
         
         <link rel="stylesheet" href="{{ $style.Permalink }}">
+        <link rel="stylesheet" href="{{ `js/slick/slick/slick-theme.css` | absURL }}">
+        <script src="{{`js/jquery.min.js` | absURL}}"></script>
+        <script src="{{`js/slick/slick/slick.min.js` | absURL}}"></script>
     </head>
     <body id="body">
         <div id="fb-root"></div>
@@ -61,11 +64,11 @@
                 <div class="row">
                     <div class="col-24">
                         <div class="header-customer--container container-flex">
-                            <div class="header-customer--logged hidden">
-                                <a href="#" title="Minha Conta" class="header-customer--name">Olá, Cauã</a>
-                                <a href="#" title="Sair" class="header-customer--logout">Sair <span class="icon-cross"></span></a>
+                            <div class="header-customer--logged container-flex">
+                                <a href="#" title="Minha Conta" class="header-customer--logged-name">Olá, Cauã</a>
+                                <a href="#" title="Sair" class="header-customer--logged-logout container-flex">Sair <span class="icon-cross container-flex">X</span></a>
                             </div>
-                            <div class="header-customer--unlogged">
+                            <div class="header-customer--unlogged hidden">
                                 <a href="#" title="Entre ou Cadastre-se" class="container-flex">Entre ou Cadastre-se <span class="icon-arrow-right"></span></a>
                             </div>
                         </div>
@@ -83,8 +86,8 @@
                     </div>
                     <div class="header-content--search container-flex">
                         <div class="input-container container-flex">
-                            <input type="search"/>
-                            <span class="placeholder">Procurar em mais de <span>50.000 itens</span></span>
+                            <input type="search" id="searchInput" />
+                            <span class="placeholder placeholderSearch">Procurar em mais de <span>50.000 itens</span></span>
                         </div>
                         <button class="btn btn-primary">BUSCAR</button>
                     </div>
@@ -177,8 +180,25 @@
                 </div>
             </div>
         </header>
-<!-- <script>
+<script>
     $(document).ready(function(){
+        var placeHolder = $(".placeholderSearch");
+        var searchId = $("#searchInput");
 
+        $(placeHolder).click(function(){
+            $(placeHolder).hide();
+            $(searchId).focus();
+            $("body").addClass('open-search open-focus');
+        });
+
+        $(searchId).on("blur", function(){
+            $(placeHolder).show();
+            $("body").removeClass('open-search open-focus');
+        });
+
+        $(searchId).on("focus", function(){
+            $(placeHolder).hide();
+            $("body").addClass('open-search open-focus');
+        });
     });
-</script> -->
+</script>

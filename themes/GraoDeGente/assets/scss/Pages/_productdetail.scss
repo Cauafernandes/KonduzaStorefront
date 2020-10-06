@@ -20,6 +20,82 @@
                 content: "/";
             }
         }
+
+        &--container {
+            position: relative;
+        }
+    }
+
+    .benefits {
+        &--list {
+            position: absolute;
+            width: 500px;
+            z-index: 10;
+            right: 0;
+            top: 0;
+
+            .slick-list {
+                overflow: hidden;
+            }
+
+            .slick-next, .slick-prev {
+                background-color: transparent;
+                position: absolute;
+                font-size: 0;
+                border: 0;
+                top: 5px;
+
+                &::before {
+                    border-right: 2px solid $font-color;
+                    border-top: 2px solid $font-color;
+                    display: block;
+                    content: "";
+                    height: 8px;
+                    width: 8px;
+                }
+            }
+
+            .slick-prev {
+                left: 0;
+
+                &::before {
+                    -webkit-transform: rotate(-135deg);
+                    -ms-transform: rotate(-135deg);
+                    transform: rotate(-135deg);
+                }
+            }
+
+            .slick-next {
+                right: 0;
+
+                &::before {
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        &--item {
+            text-align: center;
+            float: left;
+
+            p {
+                text-transform: uppercase;
+                color: $font-color;
+                font-size: 12px;
+
+                strong {
+                    font-family: $family-bold;
+                    font-size: 13px;
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    &--container {
+        margin-bottom: 50px;
     }
 
     // INICIANDO COLUNA DA ESQUERDA
@@ -53,6 +129,29 @@
             margin-right: 35px;
             overflow: hidden;
             width: 54px;
+
+            .thumbnail--video {
+                background-color: $bg-gray;
+                font-family: $family-bold;
+                padding-bottom: 10px;
+                margin-bottom: 11px;
+                position: relative;
+                text-align: center;
+                padding-top: 10px;
+                font-size: 10px;
+                cursor: pointer;
+                color: #000;
+                width: 100%;
+
+                [class*="icon"] {
+                    margin-bottom: 5px;
+                    text-align: center;
+                    font-size: 26px;
+                    display: block;
+                    color: $pink;
+                    width: 100%;
+                }
+            }
         }
 
         &-tags {
@@ -268,7 +367,7 @@
     }
 
     &--list {
-        margin: 50px 0;
+        margin: 0 0 50px;
         display: block;
 
         &-title {

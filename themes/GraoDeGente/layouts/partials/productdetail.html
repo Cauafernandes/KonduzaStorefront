@@ -3,19 +3,35 @@
         <div class="body-content">
             <div class="row container-flex">
                 <div class="col-24">
-                    <ul class="breadcrumb container-flex">
-                        <li class="breadcrumb--item">
-                            <a href="/" title="#">
-                                <p>Home</p>
-                            </a>
-                        </li>
-                        <li class="breadcrumb--item current">
-                            <p>{{ .name }}</p>
-                        </li>
-                    </ul>
+                    <div class="breadcrumb--container">
+                        <ul class="breadcrumb container-flex">
+                            <li class="breadcrumb--item">
+                                <a href="/" title="#">
+                                    <p>Home</p>
+                                </a>
+                            </li>
+                            <li class="breadcrumb--item current">
+                                <p>{{ .name }}</p>
+                            </li>
+                        </ul>
+                        <ul class="benefits--list">
+                            <li class="benefits--item">
+                                <p>
+                                    <strong>Frete grátis para TODO BRASIL</strong>
+                                    confira as regras
+                                </p>
+                            </li>
+                            <li class="benefits--item">
+                                <p>
+                                    <strong>30 dias para efetuar a troca ou</strong>
+                                    devolução de 100% do seu dinheiro
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="row container-flex">
+            <div class="row container-flex product--container">
                 <div class="column-left">
                     <div class="product--name">
                         {{ .name }}
@@ -23,7 +39,17 @@
                     </div>
                     <div class="product--image-container container-flex">
                         <div class="product--image-thumbnails">
-
+                            <div class="thumbnail--video">
+                                <i class="icon-video"></i>
+                                <span>Vídeo</span>
+                            </div>
+                            <ul class="thumbnails--list">
+                                <li class="thumbnail">
+                                    <figure>
+                                        <img src="#" alt=""/>
+                                    </figure>
+                                </li>
+                            </ul>
                         </div>
                         <div class="product--image">
                             <figure>
@@ -166,3 +192,16 @@
         </div>
     </div>
 </main>
+<script>
+    $(document).ready(function(){
+        $('.benefits--list').slick({
+            dots: false,
+            arrows: true,
+            autoPlay: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            adaptiveHeight: true,
+        });
+    });
+</script>
