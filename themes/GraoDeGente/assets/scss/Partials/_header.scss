@@ -18,9 +18,13 @@
     }
 
     &-tools {
+        -webkit-box-align: center;
         justify-content: flex-end;
+        -ms-flex-align: center;
+        -webkit-box-pack: end;
         margin-bottom: 14px;
         align-items: center;
+        -ms-flex-pack: end;
         max-height: 40px;
         height: 40px;
 
@@ -30,6 +34,12 @@
 
         &--item {
             justify-content: flex-start;
+            -webkit-box-align: center;
+            -webkit-box-pack: start;
+            -ms-flex-align: center;
+            -ms-flex-pack: start;
+            display: -webkit-box;
+            display: -ms-flexbox;
             align-items: center;
             padding: 10px 12px;
             display: flex;
@@ -100,15 +110,17 @@
                         justify-content: center;
                         -ms-flex-align: center;
                         -ms-flex-pack: center;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         align-items: center;
                         border-radius: 50%;
+                        text-align: center;
                         margin-left: 10px;
                         position: inherit;
+                        display: flex;
                         color: $pink;
                         height: 25px;
                         width: 25px;
-                        text-align: center;
-                        display: flex;
                     }
                 }
 
@@ -132,9 +144,13 @@
 
     &-customer {
         &--container {
+            -webkit-box-align: center;
             justify-content: flex-end;
+            -ms-flex-align: center;
+            -webkit-box-pack: end;
             padding-right: 11px;
             align-items: center;
+            -ms-flex-pack: end;
             margin: 0 0 8px;
         }
 
@@ -198,9 +214,13 @@
                 }
 
                 .icon-cross {
+                    -webkit-box-align: center;
                     text-transform: uppercase;
+                    -webkit-box-pack: center;
                     background-color: $pink;
                     justify-content: center;
+                    -ms-flex-align: center;
+                    -ms-flex-pack: center;
                     align-items: center;
                     border-radius: 50%;
                     text-align: center;
@@ -217,9 +237,15 @@
 
     &-content {
         justify-content: flex-start;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
 
         &--logo {
             justify-content: flex-start;
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            -webkit-box-flex: 2;
+            -ms-flex: 2 0 295px;
             padding-left: 30px;
             position: relative;
             min-width: 295px;
@@ -257,11 +283,13 @@
                 }
 
                 .placeholder {
+                    height: -webkit-fit-content;
                     font-family: $family-bold;
                     text-transform: uppercase;
+                    height: -moz-fit-content;
                     height: fit-content;
-                    position: absolute;
                     color: $font-color3;
+                    position: absolute;
                     font-size: 16px;
                     margin: auto;
                     left: 15px;
@@ -278,7 +306,11 @@
                 background-color: $btn-primary;
                 text-transform: uppercase;
                 font-family: $family-bold;
+                -webkit-transition: 0.3s all;
+                -o-transition: 0.3s all;
                 transition: 0.3s all;
+                -ms-flex: 2 0 120px;
+                -webkit-box-flex: 2;
                 border-radius: 4px;
                 font-size: 16.65px;
                 padding-top: 14px;
@@ -302,18 +334,29 @@
 
         &--list {
             justify-content: space-between;
+            -webkit-box-align: center;
+            -webkit-box-pack: justify;
+            -ms-flex-align: center;
+            -ms-flex-pack: justify;
             align-items: center;
         }
 
         &--item {
+            -ms-flex-preferred-size: 66px;
             text-align: center;
             flex-basis: 66px;
             height: 50px;
 
             a {
                 font-family: $family-bold;
+                -webkit-box-align: center;
                 text-transform: uppercase;
+                -webkit-box-pack: center;
                 justify-content: center;
+                -ms-flex-align: center;
+                -ms-flex-pack: center;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 align-items: center;
                 text-align: center;
                 position: relative;
@@ -345,22 +388,27 @@
             }
 
             &.completedRooms {
+                -ms-flex-preferred-size: 90px;
                 flex-basis: 90px;
             }
 
             &.maternityBag {
+                -ms-flex-preferred-size: 90px;
                 flex-basis: 90px;
             }
 
             &.customized {
+                -ms-flex-preferred-size: 99px;
                 flex-basis: 99px;
             }
 
             &.realeses {
+                -ms-flex-preferred-size: 85px;
                 flex-basis: 85px;
             }
 
             &.famousRoom {
+                -ms-flex-preferred-size: 90px;
                 flex-basis: 90px;
             }
         }
