@@ -1,0 +1,52 @@
+@import '_variables.scss';
+
+._benefits {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    color: #555555;
+
+    .free_shipping {
+        cursor: pointer;
+    }
+
+    div {
+        display: inline-block;
+        min-height: 25px;
+        max-height: 25px;
+        height: 25px;
+
+        p {
+            display: inline-block;
+            font-family: $family-black;
+            font-size: 12px;
+            float: left;
+            line-height: 23px;
+
+            spam {
+                float: left;
+            }
+
+            .rullers {
+                font-size: 10px;
+                margin-left: 10px;
+            }
+
+            .rullers:after {
+                content: "";
+                width: 0;
+                height: 0;
+                border: 4px solid transparent;
+                border-left-color: #555555;
+                position: relative;
+                display: inline-block;
+                margin-left: 4px;
+                top: 1px;
+            }
+        }
+
+        div {
+            float: left;
+        }
+    }
+}

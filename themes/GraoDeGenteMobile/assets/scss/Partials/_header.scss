@@ -1,0 +1,132 @@
+.header {
+    & &-content {
+        justify-self: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .icon-menu {
+            padding: 16px 10px;
+            display: table;
+        }
+
+        &--logo {
+            max-width: 148px;
+            margin-left: 3px;
+        }
+
+        &--tools {
+            justify-self: flex-end;
+            margin-left: auto;
+
+            a {
+                font-size: 26px;
+                color: $gray6;
+            }
+
+            .customer {
+                margin-right: 15px;
+                padding-top: 2px;
+                font-size: 22px;
+            }
+
+            .wishlist {
+                margin-right: 10px;
+                color: $pink;
+            }
+
+            .cart {
+                padding-right: 14px;
+                position: relative;
+
+                .counter {
+                    font-family: $family-bold;
+                    font-size: 12px!important;
+                    background-color: $green;
+                    border-radius: 10px;
+                    align-items: center;
+                    text-align: center;
+                    position: absolute;
+                    line-height: 19px;
+                    display: block;
+                    color: #FFF;
+                    height: 20px;
+                    width: 20px;
+                    left: 16px;
+                    top: -7px;
+                }
+            }
+        }
+
+        &--search {
+            background-color: $grayf1;
+            padding: 13px 10px 0;
+            flex: 1 0 100%;
+            width: 100%;
+
+            #searchInput {
+                font-family: $family-semibold;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                width: calc(100% - 38px);
+                font-size: 15px;
+                height: 36px;
+
+                &::placeholder {
+                    text-transform: uppercase;
+                }
+            }
+
+            button {
+                background-color: #00bfb3;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                margin-left: 2px;
+                color: #FFF;
+                font-size: 0;
+                height: 36px;
+                width: 36px;
+                padding: 0;
+
+                [class*="icon-"] {
+                    font-size: 23px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+
+    & &-menu {
+        &--list {
+            justify-content: space-between;
+        }
+
+        &--item {
+            background-color: $grayf1;
+            font-family: $family-bold;
+            text-align: center;
+            padding: 8px 10px;
+            font-size: 14px;
+            display: block;
+            margin: 0 3px;
+            width: auto;
+
+            &.products {
+                -webkit-flex-grow: 1;
+                margin-left: 0;
+                flex-grow: 1;
+            }
+
+            &.releases {
+                -webkit-flex-grow: 6;
+                flex-grow: 6;
+            }
+
+            &.famous {
+                -webkit-flex-grow: 4;
+                margin-right: 0;
+                flex-grow: 4;
+            }
+        }
+    }
+}

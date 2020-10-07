@@ -1,0 +1,12 @@
+name = "Grao de Gente Theme"
+license = "MIT"
+licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+description = "A custom theme for client."
+homepage = "http://example.com/"
+tags = ['grao', 'graodegente', 'enxoval', 'bebe']
+features = ['responsive']
+min_version = "0.41.0"
+
+[author]
+  name = "MKT Systems"
+  homepage = "Home"

@@ -1,0 +1,366 @@
+﻿@import "./_variables";
+
+@import "./_sprites";
+@import "./_benefits.scss";
+//@import "./_normalize";
+@import "./_reset";
+@import "./_fonts";
+@import "./_graoicon";
+@import "./_helpers";
+@import "./_full-loader";
+
+@import "./Partials/partials";
+@import "./Pages/pages";
+
+/*
+TODO: Arrumar asap PELO AMOR DE DEUS
+*/
+.smartbanner-button {
+    height: 100% !important;
+    padding: 30px 10px;
+}
+
+#menu-container {
+    width: 100%;
+    max-width: 500px;
+    min-height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    background-color: #FFFFFF;
+    display: none;
+    z-index: 9999;
+}
+
+.MenuProducts-token {
+    display: none;
+}
+
+#modal_free_shipping {
+    display: none;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 99999;
+}
+
+// Reset mobile
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+// Iphone - retirando aviso criteo
+.criteo_header {
+    display: none !important;
+}
+
+// Fix to disable ios auto zoom
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-device-width:1024px) {
+    select, textarea, input {
+        font-size: 16px !important;
+    }
+
+    input::-webkit-input-placeholder {
+        font-size: 13px !important;
+    }
+}
+
+.lockScroll, .showLoad {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden !important;
+    position: fixed;
+    touch-action: none;
+    height: 100%;
+    // -webkit-overflow-scrolling: auto!important;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: #ffffff !important;
+    box-shadow: 0 0 0 30px #ffffff inset;
+    -webkit-appearance: none;
+}
+
+.container {
+    padding: 20px;
+}
+
+%display-flex {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.container-flex {
+    @extend %display-flex;
+
+    &--sb {
+        @extend %display-flex;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+    }
+}
+
+// Forms
+input:not([type="submit"]), textarea {
+    border-bottom: 1px solid #00bfb3;
+    padding: 7px 5px;
+    line-height: 100%;
+    min-height: 36px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+// Titles
+.center {
+    text-align: center;
+}
+
+.title {
+    font-family: $family-semibold;
+    font-size: 20px;
+    color: #00bfb3;
+}
+
+// Grid
+.grid-3 {
+    @extend %display-flex;
+    margin-bottom: 20px;
+    align-items: stretch;
+    -ms-align-items: stretch;
+    -webkit-align-items: stretch;
+
+    li {
+        width: 32%;
+        max-width: 32%;
+        padding-bottom: 15px;
+
+        &:nth-child(3n -1) {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+    }
+}
+
+.grid-2 {
+    @extend %display-flex;
+    margin-bottom: 20px;
+    align-items: stretch;
+    -ms-align-items: stretch;
+    -webkit-align-items: stretch;
+
+    li {
+        max-width: 250px;
+        width: 48%;
+        padding-bottom: 15px;
+
+        &:nth-child(2n-1) {
+            margin-right: 4%;
+        }
+    }
+}
+
+// Grid
+.row {
+    @extend %display-flex;
+    align-items: stretch;
+    -webkit-align-items: stretch;
+    margin-bottom: 7px;
+    flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+
+
+    $grid-columns: 12;
+
+    @for $i from 1 through $grid-columns {
+        .col-#{$i} {
+            width: percentage($i / $grid-columns);
+        }
+    }
+
+    [class^='col-'] { //col-1
+        align-items: stretch;
+        -webkit-align-items: stretch;
+        margin: 5px 5px 0px 0;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+// .Dropdown > .dropdown__item > .item__link | .item.content
+.dropdown {
+    width: 100%;
+
+    &__item {
+        width: 100%;
+        border-bottom: 1px solid $gray2;
+        overflow: hidden;
+
+        &:first-child {
+            border-top: 1px solid $gray2;
+        }
+
+        &.active {
+            .item {
+                &__content {
+                    max-height: 500px;
+                    visibility: initial;
+                    overflow: visible;
+                }
+
+                &__link {
+                    &:after {
+                        -webkit-transform: rotate(-135deg);
+                        -ms-transform: rotate(-135deg);
+                        transform: rotate(-135deg);
+                    }
+                }
+            }
+        }
+        //item__link  / item__content
+        .item {
+            &__link {
+                position: relative;
+                display: block;
+                padding: 13px 20px;
+                text-transform: uppercase;
+                font-size: 14px;
+
+                &--bg {
+                    background-color: #f7f7f7;
+                }
+
+                &:after {
+                    content: '+';
+                    width: 20px;
+                    height: 16px;
+                    top: 0;
+                    bottom: 0;
+                    right: 15px;
+                    position: absolute;
+                    margin: auto;
+                    color: #999;
+                    font-size: 35px;
+                    line-height: 0.3;
+                    -webkit-transform: rotate(0);
+                    -ms-transform: rotate(0);
+                    transform: rotate(0);
+                    transition: all .6s ease-in-out;
+                }
+            }
+
+            &__content {
+                width: 100%;
+                border-top: 1px solid $gray2;
+                max-height: 0;
+                visibility: hidden;
+                overflow: hidden;
+                transition: all .5s ease-in-out 0s;
+            }
+        }
+    }
+}
+
+// LISTA DE LINKS (MENU/RODAPÉ)
+.list-menu {
+    &__item {
+        position: relative;
+        display: block;
+        border-bottom: 1px solid $gray2;
+
+        a {
+            &:after {
+                content: '';
+                width: 10px;
+                height: 10px;
+                border-top: 2px solid #ccc;
+                border-right: 2px solid #ccc;
+                -webkit-transform: rotate(43deg);
+                -ms-transform: rotate(43deg);
+                transform: rotate(43deg);
+                top: 0;
+                bottom: 0;
+                right: 20px;
+                position: absolute;
+                margin: auto;
+            }
+        }
+
+        &:last-child {
+            border-bottom: none
+        }
+
+        a {
+            display: block;
+            padding: 13px 30px 13px 40px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+    }
+}
+
+// FORMULARIO
+.forms {
+    input:not([type="submit"]), textarea {
+        width: 100%;
+        background-color: transparent;
+        font-family: $family-medium;
+    }
+
+    label {
+        color: $dark-gray;
+        font-size: 16px;
+        font-family: $family-medium;
+    }
+
+    select {
+        padding: 7px 30px 4px 3px;
+        font-family: $family-medium;
+
+        &:after {
+            content: "";
+            border-bottom: 3px solid #00bfb3;
+            border-right: 3px solid #00bfb3;
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            right: 8px;
+            top: 20px;
+            -webkit-transform: rotate(44deg);
+            transform: rotate(44deg);
+            -ms-transform: rotate(44deg);
+        }
+    }
+
+    &__btn {
+        background-color: $green;
+        font-family: $family-medium;
+        color: #ffffff;
+        padding: 6px 2px;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+
+        &:hover {
+            background-color: $dark-green;
+        }
+    }
+}

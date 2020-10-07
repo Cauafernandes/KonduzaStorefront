@@ -1,0 +1,205 @@
+﻿@import '_variables.scss';
+
+.footer {
+    position: relative;
+
+    .hidden {
+        height: 0;
+        overflow: hidden;
+    }
+    //footer__bottom
+    & &__bottom {
+        background-color: #f7f7f7;
+        padding: 30px 20px 5px;
+        line-height: 130%;
+
+        &--dev {
+            margin-top: 40px;
+
+            p {
+                font-size: 13px;
+            }
+        }
+
+        p {
+            font-size: 11px;
+            color: #000;
+        }
+
+        .site-version small {
+            color: #f7f7f7;
+        }
+    }
+
+    & &__flags {
+        padding: 30px 10px 0px;
+        align-items: center;
+        -webkit-align-items: center;
+        text-align: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+
+        > li {
+            width: 25%;
+            margin-bottom: 20px;
+        }
+
+        .flags--text {
+            font-family: $familyBold;
+
+            span {
+                font-size: 16px;
+            }
+        }
+
+        .box-inner {
+            width: 100%;
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .icon {
+        background-image: url($img_path + "ico/icone-rodape.png");
+        display: inline-block;
+        font-size: 0;
+
+        &.master {
+            background-position: -3px -82px;
+            width: 37px;
+            height: 24px;
+        }
+
+        &.visa {
+            background-position: -28px 0;
+            width: 52px;
+            height: 18px;
+        }
+
+        &.amex {
+            background-position: 32px 34px;
+            width: 32px;
+            height: 32px;
+        }
+
+        &.dinners {
+            background-position: -40px 29px;
+            width: 31px;
+            height: 25px
+        }
+
+        &.elo {
+            background-position: 0 21px;
+            width: 40px;
+            height: 22px;
+        }
+
+        &.aura {
+            background-position: -35px -17px;
+            width: 45px;
+            height: 31px;
+        }
+
+        &.hiper {
+            background-position: -34px -47px;
+            width: 51px;
+            height: 24px;
+        }
+
+        &.sorocred {
+            background-position: 65px 34px;
+            width: 33px;
+            height: 33px;
+        }
+
+        &.invoice {
+            background-position: -48px -71px;
+            width: 36px;
+            height: 25px;
+            margin-bottom: 10px;
+        }
+
+        &.trusted {
+            background-position: 82px 130px;
+            width: 83px;
+            height: 50px;
+        }
+
+        &.comodo {
+            background-position: 77px 80px;
+            width: 77px;
+            height: 47px;
+            margin: auto;
+        }
+
+        &.facebook {
+            background-position: -2px -1px;
+            min-width: 26px;
+            width: 26px;
+            height: 26px;
+        }
+
+        &.instagram {
+            background-position: -7px -28px;
+            width: 26px;
+            height: 26px;
+        }
+
+        &.youtube {
+            background-position: -7px -55px;
+            width: 26px;
+            height: 26px;
+        }
+
+        &.blog {
+            background-position: -71px -98px;
+            width: 26px;
+            height: 26px;
+        }
+    }
+    //////////////////////////////////////////////////////////////
+    & &__my-order {
+        .list-menu__item--space {
+            border-bottom: 1px solid $gray2 !important;
+            border-top: 1px solid $gray2 !important;
+            margin: 40px 0;
+        }
+    }
+
+    & &__social {
+        > a {
+            flex-wrap: initial;
+            -webkit-flex-wrap: initial;
+            align-items: center;
+            -webkit-align-items: center;
+            padding: 13px 20px;
+            border-bottom: 1px solid $gray2;
+            color: #000000;
+
+            &:last-child {
+                border: none;
+            }
+
+            b {
+                min-width: 110px;
+                display: inline-block;
+            }
+        }
+
+        &--big {
+            font-size: 20px;
+        }
+
+        .icon {
+            margin-right: 10px;
+        }
+    }
+
+    &__security {
+        padding: 20px 17%;
+        align-items: center;
+        -webkit-align-items: center;
+    }
+}
