@@ -1,4 +1,4 @@
 baseURL = "https://konduzastorefront.netlify.app/"
 languageCode = "pt-BR"
 title = "Grão de Gente"
-theme = "GraoDeGenteMobile"
+theme = "GraoDeGente"

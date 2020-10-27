@@ -86,7 +86,7 @@
                     </div>
                     <div class="header-content--search container-flex">
                         <div class="input-container container-flex">
-                            <input type="search" id="searchInput" />
+                            <input type="search" id="searchInput" required="true"/>
                             <span class="placeholder placeholderSearch">Procurar em mais de <span>50.000 itens</span></span>
                         </div>
                         <button class="btn btn-primary">BUSCAR</button>
@@ -180,25 +180,3 @@
                 </div>
             </div>
         </header>
-<script>
-    $(document).ready(function(){
-        var placeHolder = $(".placeholderSearch");
-        var searchId = $("#searchInput");
-
-        $(placeHolder).click(function(){
-            $(placeHolder).hide();
-            $(searchId).focus();
-            $("body").addClass('open-search open-focus');
-        });
-
-        $(searchId).on("blur", function(){
-            $(placeHolder).show();
-            $("body").removeClass('open-search open-focus');
-        });
-
-        $(searchId).on("focus", function(){
-            $(placeHolder).hide();
-            $("body").addClass('open-search open-focus');
-        });
-    });
-</script>

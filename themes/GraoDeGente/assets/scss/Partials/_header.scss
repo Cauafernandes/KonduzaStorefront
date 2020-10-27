@@ -280,6 +280,20 @@
                     color: #868686;
                     font-size: 16px;
                     height: 48px;
+
+                    &:focus {
+                        +.placeholder
+                        {
+                            display: none;
+                        }
+                    }
+
+                    &:valid {
+                        +.placeholder
+                        {
+                            display: none;
+                        }
+                    }
                 }
 
                 .placeholder {
@@ -295,7 +309,7 @@
                     left: 15px;
                     bottom: 0;
                     top: 2px;
-
+                    pointer-events: none;
                     span {
                         color: $pink;
                     }
