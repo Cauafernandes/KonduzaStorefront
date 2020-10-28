@@ -22,53 +22,17 @@
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v8.0" nonce="sZCrieaf"></script>
         <header class="header" id="header">
-            <div class="header-alert container-flex">
-                <p>Estamos Enviando Normalmente</p>
-            </div>
-            <div class="header-tools--container">
-                <div class="body-content">
-                    <div class="row">
-                        <div class="col-24">
-                            <ul class="header-tools container-flex">
-                                <li class="header-tools--item callCenter first">
-                                    <a href="" title="" class="container-flex">
-                                        <i class="icon-user"></i>
-                                        <p>Central de Atendimento</p>
-                                    </a>
-                                </li>
-                                <li class="header-tools--item myOrders">
-                                    <a href="" title="" class="container-flex">
-                                        <i class="icon-copy"></i>
-                                        <p>Meus Pedidos</p>
-                                    </a>
-                                </li>
-                                <li class="header-tools--item wishlist">
-                                    <a href="" title="" class="container-flex">
-                                        <i class="icon-heart-empty"></i>
-                                        <p>Favoritos</p>
-                                    </a>
-                                </li>
-                                <li class="header-tools--item cart last">
-                                    <a href="" title="" class="container-flex">
-                                        <i class="icon-cart"></i>
-                                        <p>Meu Carrinho</p>
-                                        <span class="counter">0</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{partialCached "header-alert.html" . }}
+            {{partialCached "header-tools.html" . }}
             <div class="body-content">
                 <div class="row">
                     <div class="col-24">
                         <div class="header-customer--container container-flex">
-                            <div class="header-customer--logged container-flex">
+                            <div class="header-customer--logged container-flex hidden">
                                 <a href="#" title="Minha Conta" class="header-customer--logged-name">Olá, Cauã</a>
                                 <a href="#" title="Sair" class="header-customer--logged-logout container-flex">Sair <span class="icon-cross container-flex">X</span></a>
                             </div>
-                            <div class="header-customer--unlogged hidden">
+                            <div class="header-customer--unlogged">
                                 <a href="#" title="Entre ou Cadastre-se" class="container-flex">Entre ou Cadastre-se <span class="icon-arrow-right"></span></a>
                             </div>
                         </div>
@@ -86,97 +50,17 @@
                     </div>
                     <div class="header-content--search container-flex">
                         <div class="input-container container-flex">
-                            <input type="search" id="searchInput" required="true"/>
+                            <input type="search" id="searchInput" title="Digite aqui o que você deseja pesquisar." required="true"/>
                             <span class="placeholder placeholderSearch">Procurar em mais de <span>50.000 itens</span></span>
+                            <div class="overlayer-searchInput"></div>
                         </div>
-                        <button class="btn btn-primary">BUSCAR</button>
+                        <button class="btn btn-primary" title="Clique aqui para pesquisar">BUSCAR</button>
                     </div>
                 </div>
             </div>
             <div class="header-menu--container">
                 <div class="body-content">
-                    <nav class="header-menu">
-                        <ul class="header-menu--list container-flex">
-                            <li class="header-menu--item allCategories">
-                                <a href="#" title="Todas as categorias">Todas as categorias</a>
-                                <ul class="header-menu--subitem">
-                                    
-                                </ul>
-                            </li>
-                            <li class="header-menu--item boy">
-                                <a href="#" title="Todas as categorias">Meninos</a>
-                                <ul class="header-menu--subitem">
-                                    
-                                </ul>
-                            </li>
-                            <li class="header-menu--item girl">
-                                <a href="#" title="Todas as categorias">Meninas</a>
-                                <ul class="header-menu--subitem">
-                                    
-                                </ul>
-                            </li>
-                            <li class="header-menu--item cribKit">
-                                <a href="#" title="Todas as categorias">Kits Berço</a>
-                                <ul class="header-menu--subitem">
-                                    
-                                </ul>
-                            </li>
-                            <li class="header-menu--item completedRooms">
-                                <a href="#" title="Todas as categorias">Quartos <br/>Completos</a>
-                                <ul class="header-menu--subitem">
-                                    
-                                </ul>
-                            </li>
-                            <li class="header-menu--item clothes">
-                                <a href="#" title="Todas as categorias">Roupas</a>
-                                <ul class="header-menu--subitem">
-                                    
-                                </ul>
-                            </li>
-                            <li class="header-menu--item maternityBag">
-                                <a href="#" title="Todas as categorias">Bolsa <br/>Maternidade</a>
-                                <ul class="header-menu--subitem">
-                                    
-                                </ul>
-                            </li>
-                            <li class="header-menu--item furniture">
-                                <a href="#" title="Todas as categorias">Móveis</a>
-                                <ul class="header-menu--subitem">
-                                    
-                                </ul>
-                            </li>
-                            <li class="header-menu--item premium">
-                                <a href="#" title="Todas as categorias">Premium</a>
-                                <ul class="header-menu--subitem">
-                                    
-                                </ul>
-                            </li>
-                            <li class="header-menu--item customized">
-                                <a href="#" title="Todas as categorias">Personalizados</a>
-                                <ul class="header-menu--subitem">
-                                    
-                                </ul>
-                            </li>
-                            <li class="header-menu--item kids">
-                                <a href="#" title="Todas as categorias">Infantil</a>
-                                <ul class="header-menu--subitem">
-                                    
-                                </ul>
-                            </li>
-                            <li class="header-menu--item releases">
-                                <a href="#" title="Todas as categorias">Lançamentos</a>
-                                <ul class="header-menu--subitem">
-                                    
-                                </ul>
-                            </li>
-                            <li class="header-menu--item famousRoom">
-                                <a href="#" title="Todas as categorias">Quarto dos <br/> famosos</a>
-                                <ul class="header-menu--subitem">
-                                    
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
+                    {{partialCached "menu-top.html" . }}
                 </div>
             </div>
-        </header>
+        </header>        

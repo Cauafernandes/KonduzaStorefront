@@ -97,11 +97,14 @@
     }
 
     & &-menu {
+        border:solid 1px red;
         &--list {
             justify-content: space-between;
+            border:solid 1px red;
         }
 
         &--item {
+            border:solid 1px red;
             background-color: $grayf1;
             font-family: $family-bold;
             text-align: center;

@@ -1,0 +1,33 @@
+<nav class="header-menu">    
+    <ul class="header-menu--list container-flex">
+        {{ range $menu :=$.Site.Data.menu }}
+
+        <li class="header-menu--item">
+            <a href="#" title="{{ $menu.name }}" class="header-menu--item__header">{{ $menu.name }}</a>
+
+            {{ if $menu.subitem }}
+            <div class="header-menu--item__subitem {{ $menu.template }}">
+                <ul class="spotlight">
+                    {{range $spotlight := $menu.spotlight}}
+                        <li>
+                            <a href="{{ $spotlight.link }}" title="{{ $spotlight.title }}">{{ $spotlight.name }}</a>
+                        </li>
+                    {{ end }}
+                </ul>
+         
+                <ul class="header-menu--item__items subitem">
+                    {{range $submenu := $menu.subitem}}
+                        <li>
+                            <span class="letter">B</span>
+                            <a href="{{ $submenu.link }}" title="{{ $submenu.title }}">{{ $submenu.title }}</a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+
+        </li>
+        {{ end }}
+    </ul>
+    <div class="header-overlayer"></div>
+</nav>

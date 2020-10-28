@@ -271,6 +271,21 @@
                 width: calc(100% - 120px);
                 padding-right: 6px;
                 position: relative;
+                
+                .overlayer-searchInput{
+                    top: 0;
+                    left: 0;
+                    position: fixed;
+                    display: block;
+                    width: 100%;
+                    height: -webkit-fill-available;
+                    min-height: 100%;
+                    background-color: #000;
+                    opacity: .0;
+                    z-index: 15;
+                    pointer-events: none;
+                    transition: opacity 1s ease;
+                }
 
                 input {
                     border-radius: 5px!important;
@@ -280,11 +295,17 @@
                     color: #868686;
                     font-size: 16px;
                     height: 48px;
+                    z-index: 20;
 
                     &:focus {
                         +.placeholder
                         {
                             display: none;
+
+                            +.overlayer-searchInput {
+                                opacity: .6;
+                                
+                            }
                         }
                     }
 
@@ -310,6 +331,7 @@
                     bottom: 0;
                     top: 2px;
                     pointer-events: none;
+                    z-index: 21;
                     span {
                         color: $pink;
                     }
@@ -334,7 +356,8 @@
                 color: #FFF;
                 width: 120px;
                 margin: 0;
-
+                z-index: 20;
+                
                 &:hover {
                     background-color: $btn-primary-hover;
                 }
@@ -343,8 +366,26 @@
     }
 
     &-menu {
-        background-color: $beige;
+        background-color: #fff;
         margin-top: 6px;
+
+        &:hover{
+            .header-overlayer{
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: -webkit-fill-available;
+                background-color: #000;
+                opacity: .4;
+                z-index: 1;
+                transition: all .5s;
+            }
+        }
+
+        .header-overlayer{
+            opacity: 0;
+            pointer-events: none;
+        }
 
         &--list {
             justify-content: space-between;
@@ -353,6 +394,7 @@
             -ms-flex-align: center;
             -ms-flex-pack: justify;
             align-items: center;
+            position: relative;
         }
 
         &--item {
@@ -361,7 +403,12 @@
             flex-basis: 66px;
             height: 50px;
 
-            a {
+            &__items {
+                column-count: 4;
+                text-align: left;
+            }
+
+            &__header {
                 font-family: $family-bold;
                 -webkit-box-align: center;
                 text-transform: uppercase;
@@ -399,6 +446,12 @@
                 a:after {
                     opacity: 1;
                 }
+
+                .header-menu--item__subitem {
+                    opacity: 1;
+                    pointer-events: all;
+                    z-index: 5;
+                }
             }
 
             &.completedRooms {
@@ -425,6 +478,76 @@
                 -ms-flex-preferred-size: 90px;
                 flex-basis: 90px;
             }
+
+            &__subitem {
+                position: absolute;
+                right: 0px;
+                width: 100%;
+                background-color: #fff;
+                min-height: 200px;
+                display: flex;
+                
+                opacity: 0;
+                pointer-events: none;
+                transition: all .5s;
+                padding-top: 15px;
+
+                .subitem{
+                    border:solid 1px red;
+                }
+
+                &.classic{
+                    border:solid 1px blue;
+                    flex-direction: column;
+
+                    .spotlight {
+                        flex-direction: row;
+                        display: flex;
+                        margin-bottom: 25px;
+                        justify-content: space-between;
+    
+                        background-color: #F8F7F5;
+                        -webkit-box-pack: space-between;
+                        -ms-flex-pack: space-between;
+                        justify-content: space-between;
+                        -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                        padding: 0 10px;
+    
+                        li{
+                            background-color: #F8F7F5;
+                            -webkit-box-pack: space-between;
+                            -ms-flex-pack: space-between;
+                            justify-content: space-between;
+                            -ms-flex-wrap: wrap;
+                            flex-wrap: wrap;
+                            
+                            border: solid 1px green;
+    
+                            a {
+                                align-items: center;
+                                font-size: 13px;
+                                text-transform: uppercase;
+                                color: #fff;
+                                text-align: center;
+                                background-color: #00b59b;
+                                line-height: 25px;
+                                max-width: 200px;
+                                display: flex;
+                                height: 50px;
+                            }
+                        }
+                    }
+                }
+
+                &.beside{
+                    flex-direction: row;
+                }
+
+
+            }
+
         }
+        
     }
 }
