@@ -16,11 +16,22 @@
                 </ul>
          
                 <ul class="header-menu--item__items subitem">
-                    {{range $submenu := $menu.subitem}}
+                    {{ $firstChar := "A" }}
+                    {{ $actualFirstChar := "" }}
+                    {{range $submenu := $menu.subitem}}  
+                        {{ $actualFirstChar := substr .name 0 1 | upper }}             
                         <li>
-                            <span class="letter">B</span>
-                            <a href="{{ $submenu.link }}" title="{{ $submenu.title }}">{{ $submenu.title }}</a>
-                        </li>
+                            <span class="letter">
+                                {{ if not (in $actualFirstChar $firstChar) }}
+                                    <b>{{$actualFirstChar}} - {{ $firstChar }}</b>
+                                    {{ $firstChar := substr .name 0 1 | upper }}
+                                {{ end }}
+                            </span>
+                            <a href="{{ $submenu.link }}" title="{{ $submenu.title }}">
+                                {{ $submenu.name }}
+                            </a>
+                        </li>    
+                        
                     {{ end }}
                 </ul>
             </div>
