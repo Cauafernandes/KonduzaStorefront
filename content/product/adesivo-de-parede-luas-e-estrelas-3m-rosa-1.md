@@ -6,5 +6,27 @@ name = "PAPEL DE PAREDE LUAS E ESTRELAS 3M"
 price = 144.05
 product_url = "/product/adesivo-de-parede-luas-e-estrelas-3m-rosa-1"
 categories = ["Adesivos"]
+pictures_thumb = [
+"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245257.jpg",
+"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245258.jpg",
+"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245259.jpg",
+"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245257.jpg",
+"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245258.jpg",
+"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245259.jpg",
+"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245257.jpg",
+"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245258.jpg",
+"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245259.jpg",
+"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245257.jpg",
+"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245258.jpg",
+"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245259.jpg",
+"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245257.jpg",
+"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245258.jpg",
+"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245259.jpg"
+]
+pictures = [
+    "https://dmhxz00kguanp.cloudfront.net/fotos/101901/papel-de-parede-luas-e-estrelas-3m-245257.jpg",
+    "https://dmhxz00kguanp.cloudfront.net/fotos/101901/papel-de-parede-luas-e-estrelas-3m-245258.jpg",
+    "https://dmhxz00kguanp.cloudfront.net/fotos/101901/papel-de-parede-luas-e-estrelas-3m-245259.jpg"
+    ]
 
 +++

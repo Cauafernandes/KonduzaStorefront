@@ -43,24 +43,27 @@
                                 <i class="icon-video"></i>
                                 <span>Vídeo</span>
                             </div>
-
-                            <ul id="mini-slide-photo" class="thumbnails--list">
+                            
+                            <button class="slick-arrow slick-arrow__next" aria-label="Proxima foto" type="button"></button>
+                            <ul id="mini-slide-photo" class="thumbnails--list">                                
                                 {{ $thumbCaption := print .name " Ref:" .id }}
                                 {{ $thumbUrl := .product_url }}
                                 {{ $picturefull := .pictures }}
-                                {{range $index, $thumbnails := .pictures_thumb}}
-                                 {{ $thumbTitle := print "Clique aqui para ver a foto número " (add $index 1) }}
-                                <li class="thumbnail--picture {{ if (eq $index 0) }}active{{ end }}">
-                                    <figure data-full-image="{{ index $picturefull $index }}">
-                                        <img src="{{ $thumbnails }}" title="{{$thumbTitle}}" alt="{{$thumbTitle}}"/>
-                                    </figure>
-                                    <meta itemprop="caption" content="{{ $thumbCaption }}">
-                                    <meta itemprop="thumbnail" content="{{ $thumbnails }}">
-                                    <meta itemprop="url" content="{{$thumbUrl}}">
-                                    <meta itemprop="representativeOfPage" content="true">
-                                </li>
+                                {{ range $index, $thumbnails := .pictures_thumb }}
+                                    {{ $thumbTitle := print "Clique aqui para ver a foto número " (add $index 1) }}
+                                    <li class="thumbnail--picture {{ if (eq $index 0) }}active{{ end }}">
+                                        <figure data-full-image="{{ index $picturefull $index }}">
+                                            <img src="{{ $thumbnails }}" title="{{$thumbTitle}}" alt="{{$thumbTitle}}"/>
+                                        </figure>
+                                        <meta itemprop="caption" content="{{ $thumbCaption }}">
+                                        <meta itemprop="thumbnail" content="{{ $thumbnails }}">
+                                        <meta itemprop="url" content="{{$thumbUrl}}">
+                                        <meta itemprop="representativeOfPage" content="true">
+                                    </li>
                                 {{ end }}
                             </ul>
+                            <button class="slick-arrow slick-arrow__prev" aria-label="Proxima foto" type="button"></button>             
+                            
                         </div>
                         <div class="product--image">
                             <figure>
@@ -214,13 +217,15 @@
             slidesToScroll: 1,
             centerMode: false,
             accessibility: false,
+            arrows: true,
+            prevArrow: $('.slick-arrow__next'),
+            nextArrow: $('.slick-arrow__prev'),
             vertical:true
         });
 
         $('.benefits--list').slick({
             dots: false,
             arrows: true,
-            autoPlay: true,
             infinite: true,
             speed: 300,
             slidesToShow: 1,
@@ -230,8 +235,29 @@
         $('.thumbnail--picture').click(function() {            
             $('.thumbnail--picture').removeClass('active');
             $(this).addClass('active');
-            $($('.product--image').find('img')).attr('src', $(this).find('figure').attr('data-full-image'));
+
+            var fullsrc = $(this).find('figure').attr('data-full-image');
+
+            if(fullsrc) {
+                $($('.product--image').find('img')).attr('src', fullsrc);
+            }else{
+               console.warn($(this).find('img').attr('title') + " não encontrado para o produto " + $('.product--name').text()); 
+            }            
         });
 
+        $(document).keydown(function (e) {
+            switch (e.which) {
+                case 37:
+                    $('.slick-arrow__prev').click();
+                    $('.thumbnail--picture').parent().find('.active').next().click();
+                    break;
+                case 39:
+                    $('.slick-arrow__next').click();
+                    $('.thumbnail--picture').parent().find('.active').prev().click();
+                    break;
+                default: return;
+            }
+            e.preventDefault();
+        });
     });
 </script>

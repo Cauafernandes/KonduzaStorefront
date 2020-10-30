@@ -129,6 +129,45 @@
             margin-right: 35px;
             overflow: hidden;
             width: 54px;
+            position: relative;
+
+            .slick-arrow {
+                height: 17px;
+                width: 100%;
+                margin: auto;
+                background-color: #fff;
+                cursor: pointer;
+
+                &:before {
+                    content: "";
+                    width: 15px;
+                    height: 15px;
+                    border-top: solid 3px #999;
+                    border-left: solid 3px #999;
+                    position: absolute;
+                    left: 20px;
+                }
+
+                &__next {
+                    &:before {
+                        transform: rotate(43deg);
+                    }
+                }
+
+                &__prev {                    
+                    &:before{
+                        transform: rotate(225deg);                        
+                    }
+                }
+            }
+
+            .thumbnails--list{
+                width: 100%;
+                position: relative;
+                max-height: 374px;
+                overflow: hidden;
+                margin-top: 10px;
+            }
 
             .thumbnail--picture {
                 position: relative;
