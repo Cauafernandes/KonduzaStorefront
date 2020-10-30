@@ -45,14 +45,18 @@
                             </div>
 
                             <ul id="mini-slide-photo" class="thumbnails--list">
-                                {{range $thumbnails := .pictures_thumb}}
-                                <li class="thumbnail--picture">
-                                    <figure>
-                                        <img src="{{ $thumbnails }}" alt=""/>
+                                {{ $thumbCaption := print .name " Ref:" .id }}
+                                {{ $thumbUrl := .product_url }}
+                                {{ $picturefull := .pictures }}
+                                {{range $index, $thumbnails := .pictures_thumb}}
+                                 {{ $thumbTitle := print "Clique aqui para ver a foto número " (add $index 1) }}
+                                <li class="thumbnail--picture {{ if (eq $index 0) }}active{{ end }}">
+                                    <figure data-full-image="{{ index $picturefull $index }}">
+                                        <img src="{{ $thumbnails }}" title="{{$thumbTitle}}" alt="{{$thumbTitle}}"/>
                                     </figure>
-                                    <meta itemprop="caption" content="Papel de Parede Luxo Listrado Branco/Bege 3m">
-                                    <meta itemprop="thumbnail" content="//dmhxz00kguanp.cloudfront.net/fotos/114818/papel-de-parede-luxo-listrado-branco-bege-3m-244153.jpg">
-                                    <meta itemprop="url" content="/papel-de-parede/adesivo-de-parede-luxo-listrado-3m-bege">
+                                    <meta itemprop="caption" content="{{ $thumbCaption }}">
+                                    <meta itemprop="thumbnail" content="{{ $thumbnails }}">
+                                    <meta itemprop="url" content="{{$thumbUrl}}">
                                     <meta itemprop="representativeOfPage" content="true">
                                 </li>
                                 {{ end }}
@@ -200,6 +204,7 @@
     </div>
 </main>
 <script>
+    var _
     $(document).ready(function() {
         $miniSlide = $("#mini-slide-photo");
 
@@ -222,6 +227,11 @@
             adaptiveHeight: true,
         });
 
-        $($('.thumbnail--picture')[0]).addClass('active');
+        $('.thumbnail--picture').click(function() {            
+            $('.thumbnail--picture').removeClass('active');
+            $(this).addClass('active');
+            $($('.product--image').find('img')).attr('src', $(this).find('figure').attr('data-full-image'));
+        });
+
     });
 </script>

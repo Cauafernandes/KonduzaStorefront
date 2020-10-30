@@ -132,20 +132,20 @@
 
             .thumbnail--picture {
                 position: relative;
-                margin: 6px 0;
+                margin: 8px 0;
                 cursor: pointer;
 
                 &:after {
                     content: '';
                     display: block;
                     height: 5px;
-                    margin-top: 4px;
-                    transition: width .8s;
+                    margin-top: 2px;
+                    transition: all .8s ease;
                     background-color: #ccc;
                     width: 0%;
                 }
 
-                &.active{
+                &.active {
                     &:after {
                         background-color: #00B59B;
                         width: 100%;
@@ -153,7 +153,7 @@
                 }
 
                 &:not(.active){
-                    &:hover{
+                    &:hover {
                         &:after {
                             content: '';
                             background-color: #ccc;
@@ -163,12 +163,12 @@
 
                     &:not(:hover){
                         width: 100%;
-                        animation-name: thumbbar;
+                        animation-name: fills-over;
                         animation-duration: 1s;
                     }
                 }
 
-                figure{
+                figure {
                     display: block;
                     width: 54px;
                     height: 54px;
@@ -179,7 +179,7 @@
                 background-color: $bg-gray;
                 font-family: $family-bold;
                 padding-bottom: 10px;
-                margin-bottom: 11px;
+                margin-bottom: 20px;
                 position: relative;
                 text-align: center;
                 padding-top: 10px;
@@ -436,8 +436,7 @@
     }
 }
 
-/* The animation code */
-@keyframes thumbbar {
+@keyframes fills-over {
     from {width: 100%;}
     to {width: 0%;}
-  }
+}
