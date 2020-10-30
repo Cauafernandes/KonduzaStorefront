@@ -43,12 +43,19 @@
                                 <i class="icon-video"></i>
                                 <span>Vídeo</span>
                             </div>
-                            <ul class="thumbnails--list">
-                                <li class="thumbnail">
+
+                            <ul id="mini-slide-photo" class="thumbnails--list">
+                                {{range $thumbnails := .pictures_thumb}}
+                                <li class="thumbnail--picture">
                                     <figure>
-                                        <img src="#" alt=""/>
+                                        <img src="{{ $thumbnails }}" alt=""/>
                                     </figure>
+                                    <meta itemprop="caption" content="Papel de Parede Luxo Listrado Branco/Bege 3m">
+                                    <meta itemprop="thumbnail" content="//dmhxz00kguanp.cloudfront.net/fotos/114818/papel-de-parede-luxo-listrado-branco-bege-3m-244153.jpg">
+                                    <meta itemprop="url" content="/papel-de-parede/adesivo-de-parede-luxo-listrado-3m-bege">
+                                    <meta itemprop="representativeOfPage" content="true">
                                 </li>
+                                {{ end }}
                             </ul>
                         </div>
                         <div class="product--image">
@@ -193,7 +200,18 @@
     </div>
 </main>
 <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
+        $miniSlide = $("#mini-slide-photo");
+
+        $miniSlide.slick({
+            infinite: true,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            centerMode: false,
+            accessibility: false,
+            vertical:true
+        });
+
         $('.benefits--list').slick({
             dots: false,
             arrows: true,
@@ -203,5 +221,7 @@
             slidesToShow: 1,
             adaptiveHeight: true,
         });
+
+        $($('.thumbnail--picture')[0]).addClass('active');
     });
 </script>

@@ -130,6 +130,51 @@
             overflow: hidden;
             width: 54px;
 
+            .thumbnail--picture {
+                position: relative;
+                margin: 6px 0;
+                cursor: pointer;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    height: 5px;
+                    margin-top: 4px;
+                    transition: width .8s;
+                    background-color: #ccc;
+                    width: 0%;
+                }
+
+                &.active{
+                    &:after {
+                        background-color: #00B59B;
+                        width: 100%;
+                    }
+                }
+
+                &:not(.active){
+                    &:hover{
+                        &:after {
+                            content: '';
+                            background-color: #ccc;
+                            width: 100%;
+                        }
+                    }
+
+                    &:not(:hover){
+                        width: 100%;
+                        animation-name: thumbbar;
+                        animation-duration: 1s;
+                    }
+                }
+
+                figure{
+                    display: block;
+                    width: 54px;
+                    height: 54px;
+                }
+            }
+
             .thumbnail--video {
                 background-color: $bg-gray;
                 font-family: $family-bold;
@@ -390,3 +435,9 @@
         }
     }
 }
+
+/* The animation code */
+@keyframes thumbbar {
+    from {width: 100%;}
+    to {width: 0%;}
+  }
