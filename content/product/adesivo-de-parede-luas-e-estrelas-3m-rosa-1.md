@@ -5,7 +5,8 @@ image = "https://dmhxz00kguanp.cloudfront.net/fotos/101901/media_papel-de-parede
 name = "PAPEL DE PAREDE LUAS E ESTRELAS 3M"
 price = 144.05
 product_url = "/product/adesivo-de-parede-luas-e-estrelas-3m-rosa-1"
-categories = ["Adesivos"]
+categories = ["Adesivos", "Decoração"]
+isRelatedTo = "Kit Berço, enxoval de bebê, enxoval infantil"
 pictures_thumb = [
 "https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245257.jpg",
 "https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245258.jpg",

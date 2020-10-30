@@ -1,207 +1,33 @@
-<main class="main" id="main">
-    <div class="product">
-        <div class="body-content">
-            <div class="row container-flex">
-                <div class="col-24">
-                    <div class="breadcrumb--container">
-                        <ul class="breadcrumb container-flex">
-                            <li class="breadcrumb--item">
-                                <a href="/" title="#">
-                                    <p>Home</p>
-                                </a>
-                            </li>
-                            <li class="breadcrumb--item current">
-                                <p>{{ .name }}</p>
-                            </li>
-                        </ul>
-                        <ul class="benefits--list">
-                            <li class="benefits--item">
-                                <p>
-                                    <strong>Frete grátis para TODO BRASIL</strong>
-                                    confira as regras
-                                </p>
-                            </li>
-                            <li class="benefits--item">
-                                <p>
-                                    <strong>30 dias para efetuar a troca ou</strong>
-                                    devolução de 100% do seu dinheiro
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row container-flex product--container">
-                <div class="column-left">
-                    <div class="product--name">
-                        {{ .name }}
-                        <span>Ref: {{ .id }}</span>
-                    </div>
-                    <div class="product--image-container container-flex">
-                        <div class="product--image-thumbnails">
-                            <div class="thumbnail--video">
-                                <i class="icon-video"></i>
-                                <span>Vídeo</span>
-                            </div>
-                            <ul class="thumbnails--list">
-                                <li class="thumbnail">
-                                    <figure>
-                                        <img src="#" alt=""/>
-                                    </figure>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="product--image">
-                            <figure>
-                                <img src="{{ .image }}" alt="{{ .name }}">
+<main class="product">
+    <section>
+        <div itemscope="" itemtype="https://schema.org/Product">
+            <meta itemprop="url" content="{{ .product_url }}">
+            <meta itemprop="name" content="{{ print .name }}">
+            <meta itemprop="category" content="{{ range $cat :=.categories }}{{ $cat }} {{ end }}">
+            <meta itemprop="isRelatedTo" content="{{ .isRelatedTo }}">
+            <meta itemprop="mpn" content="{{ .id }}">
+            <meta itemprop="sku" content="{{ .id }}">
+            <meta itemprop="productID" content="{{ .id }}">
+
+            <div class="product--img__container">
+                <ul id="slider-product" class="thumbnails--list">                                
+                    {{ $thumbCaption := print .name " Ref:" .id }}
+                    {{ $thumbUrl := .product_url }}
+                    {{ $picturefull := .pictures }}
+                    {{ range $index, $thumbnails := .pictures_thumb }}
+                        {{ $thumbTitle := print "Clique aqui para ver a foto número " (add $index 1) }}
+                        <li class="thumbnail--picture {{ if (eq $index 0) }}active{{ end }}">
+                            <figure data-full-image="{{ index $picturefull $index }}">
+                                <img src="{{ $thumbnails }}" title="{{$thumbTitle}}" alt="{{$thumbTitle}}"/>
                             </figure>
-                            <ul class="product--image-tags container-flex">
-                                <li class="product--image-tag exclusive">
-                                    <p>Exclusivo <b>Grão de Gente</b></p>
-                                </li>
-                                <li class="product--image-tag parts">
-                                    <p>17 peças</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="column-right">
-                    <div class="product--price-container">
-                        <div class="box-gray">
-                            <span class="discount">58%</span>
-                            <small>de R${{ .price }} por:</small>
-                            <p class="active-price--inCash">R${{ .price }} <span>no Boleto</span></p>
-                            <p class="active-price--installment">ou R${{ .price }}</p>
-                            <b class="price-installment">12x de R${{ lang.NumFmt 2 (div .price 12) }} <span>sem juros</span></b>
-                            <a href="#" title="ver parcelamento" class="installments">ver parcelamento</a>
-                        </div>
-                    </div>
-                    <div class="product--variants">
-                        <b class="product--variants-title">Selecione as opções</b>
-                        <ul class="product--variants-list">
-                            <li class="product--variants-item">
-                                <span class="title">Cor: Azul marinho</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="product--buy">
-                        <a class="product--buy-composition">Leia a descrição e composição <i class="icon-arrow-right"></i></a>
-                        <button class="btn btn--buy-desk">Comprar</button>
-                        <div class="product--buy-normalDelivery">
-                            <p>Enviando Normalmente</p>
-                        </div>
-                        <div class="product--security">
-                            <a href="#" title="Site Seguro" class="container-flex">
-                                <p class="flag-security">
-                                    <i class="icon-lock"></i>
-                                    Site Seguro
-                                </p>
-                                <span>Saiba Porque</span>
-                            </a>
-                        </div>
-                        <p class="product--delivery-date">Postagem de 6 a 13 dias úteis, mais prazo de entrega</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row container-flex">
-                <div class="col-24">
-                    <div class="product--list">
-                        <h3 class="product--list-title">Conheça todos os produtos da coleção</h3>
-                        <ul class="product--collection-list">
-                            <li class="product--collection-item">
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row container-flex">
-                <div class="col-24">
-                    <div class="product--list">
-                        <h3 class="product--list-title">Descrição</h3>
-                        <p class="product--list-content description">
-                            O Berço Minicama 3 em 1 Dom proporciona o máximo de funcionalidade para o quarto de bebê. Sua versatilidade permite que o berço seja transformado em minicama ou sofá, o que estende o tempo de uso do móvel, que será utilizado mesmo quando seu bebê estiver crescidinho.<br>
-                            Com design moderno, a cabeceira e a peseira se destacam com originais linhas curvilíneas, que harmonizam perfeitamente com a leveza da cor branca. As grades laterais são fixas, possui suporte para mosquiteiro, lastro com três regulagens e não inclui rodízios. Confeccionado com a resistência e qualidade das madeiras MDF e MDP, com estrado de madeira reflorestada e tamanho padrão americano.<br>
-                            Cor: Branco Brilho 
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row container-flex">
-                <div class="col-24">
-                    <div class="product--list">
-                        <h3 class="product--list-title">Especificações</h3>
-                        <p class="product--list-content specification">
-                            Berço/Minicama/Sofá<br>
-                            1,50m larg. x 91cm alt. x 77,5cm prof.<br><br>
-                            
-                            Tamanho do Colchão Indicado<br>
-                            1,30m x 70cm x 10cm<br>
-                            *Não incluso no produto<br><br>
-                            
-                            Acessórios<br>
-                            Suporte para Mosquiteiro<br><br>
-                            
-                            Peso Suportado<br>
-                            30kg<br><br>
-                            
-                            Ajustes<br>
-                            Altura das Regulagens<br>
-                            1ª regulagem: 14,5cm<br>
-                            2ª regulagem: 30,5cm<br>
-                            3ª regulagem: 46,5cm<br><br>
-                            
-                            Prazo de Garantia<br>
-                            3 meses<br><br>
-
-                            *Atenção: Montagem do produto não inclusa.<br>
-                            **Imagem Ilustrativa: O berço possui furações para os parafusos e não acompanha tapa furos, obedecendo normas do INMETRO.<br>
-                            ***Certificado pela ABNT, com selo de qualidade do INMETRO (Selo de Certificação Nº 008.2016.BER.07)
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row container-flex">
-                <div class="col-24">
-                    <div class="product--list">
-                        <h3 class="product--list-title">Composição</h3>
-                        <p class="product--list-content composition">
-                            Material<br><br>
- 
-                            Externo 86,6% PVC / 13,4% Poliéster<br>
-                            Interno 100% PVC<br><br>
-                             
-                            Bolsos Tricot 100% Acrílico<br>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row container-flex">
-                <div class="col-24">
-                    <div class="product--list">
-                        <h3 class="product--list-title">Produtos recomendados</h3>
-                        <ul class="product--recommendeds-list">
-                            <li class="product--recommendeds-item">
-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                            <meta itemprop="caption" content="{{ $thumbCaption }}">
+                            <meta itemprop="thumbnail" content="{{ $thumbnails }}">
+                            <meta itemprop="url" content="{{$thumbUrl}}">
+                            <meta itemprop="representativeOfPage" content="true">
+                        </li>
+                    {{ end }}
+                </ul>
             </div>
         </div>
-    </div>
+    </section>
 </main>
-<script>
-    $(document).ready(function(){
-        $('.benefits--list').slick({
-            dots: false,
-            arrows: true,
-            autoPlay: true,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 1,
-            adaptiveHeight: true,
-        });
-    });
-</script>
