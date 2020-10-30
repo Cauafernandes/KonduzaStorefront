@@ -211,17 +211,23 @@
     $(document).ready(function() {
         $miniSlide = $("#mini-slide-photo");
 
-        $miniSlide.slick({
-            infinite: true,
-            slidesToShow: 5,
-            slidesToScroll: 1,
-            centerMode: false,
-            accessibility: false,
-            arrows: true,
-            prevArrow: $('.slick-arrow__next'),
-            nextArrow: $('.slick-arrow__prev'),
-            vertical:true
-        });
+        // verify if thumbnail carousel is empty
+        if($('#mini-slide-photo').find('.slick-track').find('li').length){
+            $miniSlide.slick({
+                infinite: true,
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                centerMode: false,
+                accessibility: false,
+                arrows: true,
+                prevArrow: $('.slick-arrow__next'),
+                nextArrow: $('.slick-arrow__prev'),
+                vertical:true
+            });
+        } else {
+            $('.product--image-thumbnails').find('.slick-arrow').hide();
+        }
+
 
         $('.benefits--list').slick({
             dots: false,
