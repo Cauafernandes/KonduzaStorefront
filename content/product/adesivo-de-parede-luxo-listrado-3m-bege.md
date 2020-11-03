@@ -6,7 +6,7 @@ name = "XPapel de Parede Luxo Listrado Branco/Bege 3m "
 price = 132.29
 product_url = "/product/adesivo-de-parede-luxo-listrado-3m-bege"
 categories = ["Adesivos"]
-pictures_thumb = ["https://dmhxz00kguanp.cloudfront.net/fotos/114818/pequena_papel-de-parede-luxo-listrado-branco-bege-3m-244153.jpg","https://dmhxz00kguanp.cloudfront.net/fotos/114818/pequena_papel-de-parede-luxo-listrado-branco-bege-3m-244152.jpg"]
-pictures = ["https://dmhxz00kguanp.cloudfront.net/fotos/114818/papel-de-parede-luxo-listrado-branco-bege-3m-244152.jpg","https://dmhxz00kguanp.cloudfront.net/fotos/114818/papel-de-parede-luxo-listrado-branco-bege-3m-244153.jpg"]
-
+pictures_thumb = ["//dmhxz00kguanp.cloudfront.net/fotos/114818/pequena_papel-de-parede-luxo-listrado-branco-bege-3m-244152.jpg","//dmhxz00kguanp.cloudfront.net/fotos/114818/pequena_papel-de-parede-luxo-listrado-branco-bege-3m-244153.jpg"]
+pictures = ["//dmhxz00kguanp.cloudfront.net/fotos/114818/papel-de-parede-luxo-listrado-branco-bege-3m-244152.jpg","//dmhxz00kguanp.cloudfront.net/fotos/114818/papel-de-parede-luxo-listrado-branco-bege-3m-244153.jpg",]
+pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/114818/o_500_papel-de-parede-luxo-listrado-branco-bege-3m-244152.jpg","//dmhxz00kguanp.cloudfront.net/fotos/114818/o_500_papel-de-parede-luxo-listrado-branco-bege-3m-244153.jpg","//dmhxz00kguanp.cloudfront.net/fotos/114818/o_500_papel-de-parede-luxo-listrado-branco-bege-3m-244152.jpg"]
 +++

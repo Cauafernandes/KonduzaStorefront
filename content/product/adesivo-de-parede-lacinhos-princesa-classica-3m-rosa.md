@@ -85,5 +85,4 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
 "//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-tie-dye-ceu-azul-329247.jpg",
 "//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-tie-dye-ceu-azul-329248.jpg",
 "//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-tie-dye-ceu-azul-329249.jpg"]
-
 +++

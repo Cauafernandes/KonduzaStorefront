@@ -7,27 +7,7 @@ price = 144.05
 product_url = "/product/adesivo-de-parede-luas-e-estrelas-3m-rosa-1"
 categories = ["Adesivos", "Decoração"]
 isRelatedTo = "Kit Berço, enxoval de bebê, enxoval infantil"
-pictures_thumb = [
-"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245257.jpg",
-"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245258.jpg",
-"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245259.jpg",
-"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245257.jpg",
-"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245258.jpg",
-"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245259.jpg",
-"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245257.jpg",
-"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245258.jpg",
-"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245259.jpg",
-"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245257.jpg",
-"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245258.jpg",
-"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245259.jpg",
-"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245257.jpg",
-"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245258.jpg",
-"https://dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245259.jpg"
-]
-pictures = [
-    "https://dmhxz00kguanp.cloudfront.net/fotos/101901/papel-de-parede-luas-e-estrelas-3m-245257.jpg",
-    "https://dmhxz00kguanp.cloudfront.net/fotos/101901/papel-de-parede-luas-e-estrelas-3m-245258.jpg",
-    "https://dmhxz00kguanp.cloudfront.net/fotos/101901/papel-de-parede-luas-e-estrelas-3m-245259.jpg"
-    ]
-
+pictures_thumb = ["//dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245257.jpg","//dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245258.jpg","//dmhxz00kguanp.cloudfront.net/fotos/101901/pequena_papel-de-parede-luas-e-estrelas-3m-245259.jpg"]
+pictures = ["https://dmhxz00kguanp.cloudfront.net/fotos/101901/papel-de-parede-luas-e-estrelas-3m-245257.jpg","https://dmhxz00kguanp.cloudfront.net/fotos/101901/papel-de-parede-luas-e-estrelas-3m-245258.jpg","https://dmhxz00kguanp.cloudfront.net/fotos/101901/papel-de-parede-luas-e-estrelas-3m-245259.jpg"]
+pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/101901/o_500_papel-de-parede-luas-e-estrelas-3m-245257.jpg","//dmhxz00kguanp.cloudfront.net/fotos/101901/o_500_papel-de-parede-luas-e-estrelas-3m-245258.jpg","//dmhxz00kguanp.cloudfront.net/fotos/101901/o_500_papel-de-parede-luas-e-estrelas-3m-245259.jpg","//dmhxz00kguanp.cloudfront.net/fotos/101901/o_500_papel-de-parede-luas-e-estrelas-3m-245257.jpg"]
 +++

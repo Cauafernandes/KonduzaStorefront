@@ -6,11 +6,18 @@
         overflow: hidden;       
     }
 
-    .slick-slide{
-        max-width: 550px;
-        display: inline-block;
-        outline: none;
+    .slick-track{
+        display: flex;
+        align-items: center;
+        
+        .slick-slide{
+            max-width: 550px;
+            display: inline-block;
+            outline: none;
+        }
+
     }
+
 
     .slick-slider{
         margin-bottom: 0px !important;
