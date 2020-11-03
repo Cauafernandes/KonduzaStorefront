@@ -128,9 +128,12 @@
         display: block; 
 
         &-box {
-            display: block;
+            display: flex;
             position: relative;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
+            min-height: 550px;
 
             .arrow-preview {
                 cursor: pointer;
@@ -233,18 +236,12 @@
                 position: relative;
                 max-height: 374px;
                 overflow: hidden;
-                margin-top: 10px;
             }
 
             .thumbnail--picture {
                 position: relative;
-                margin: 8px 0;
+                margin: 13px 0;
                 cursor: pointer;
-
-                // Fix alignment of first thumbnail in slider
-                &:first-child {
-                    margin-top: 50px;
-                }
 
                 &:after {
                     content: '';

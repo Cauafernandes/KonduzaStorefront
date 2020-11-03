@@ -216,7 +216,7 @@
         $miniSlide = $("#mini-slide-photo");
 
         // verify if thumbnail carousel is empty
-        if($('#mini-slide-photo').find('li').length>0){
+        if($('#mini-slide-photo').find('li').length > 5){
             $miniSlide.slick({
                 infinite: true,
                 slidesToShow: 5,
@@ -230,6 +230,10 @@
             });
 
             $('.product--image-thumbnails').find('.slick-arrow').css('opacity','1');
+            if($('.thumbnail--picture').length > 0)
+                $($('.thumbnail--picture')[0]).css('margin-top','70px');
+        }else{
+            $('.slick-arrow').remove();
         }
 
         $('.benefits--list').slick({
@@ -279,12 +283,21 @@
     });
 
     function ImageNavigate(IsNextDirection) {
+        $('.arrow-preview--prev').show();
+        $('.arrow-preview--next').show();
+
         if(IsNextDirection) {
-            $('.slick-arrow__next').click();
             $('.thumbnail--picture').parent().find('.active').prev().click();
-        }else{
-            $('.slick-arrow__prev').click();
+
+            if($('.thumbnail--picture').parent().find('.active').prev().length==0){
+                $('.arrow-preview--prev').hide();
+            }            
+        } else {
             $('.thumbnail--picture').parent().find('.active').next().click();
+
+            if($('.thumbnail--picture').parent().find('.active').next().length==0){
+                $('.arrow-preview--next').hide();
+            }            
         }
     }
 </script>
