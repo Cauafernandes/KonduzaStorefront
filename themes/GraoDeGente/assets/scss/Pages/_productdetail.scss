@@ -133,7 +133,10 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            min-width: 550px;
+            max-width: 550px;
             min-height: 550px;
+            max-height: 550px;
 
             .arrow-preview {
                 cursor: pointer;

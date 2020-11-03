@@ -69,7 +69,7 @@
                             <div class="product--image-box">
                                 <div class="arrow-preview arrow-preview--next" title="Clique aqui para ver a proxima foto"> <span></span> </div>
                                 <figure>
-                                    <img src="{{ .image }}" alt="{{ .name }}">
+                                    <img src="{{ index $picturefull 0 }}" alt="{{ .name }}">
                                 </figure>
                                 <div class="arrow-preview arrow-preview--prev" title="Clique aqui para ver a foto anterior"> <span></span> </div>
                             </div>
@@ -211,8 +211,9 @@
     </div>
 </main>
 <script>
-    var _
     $(document).ready(function() {
+        SetGrayscale($('.arrow-preview--prev'), true); // Set gray color to prev arrow at first hit
+
         $miniSlide = $("#mini-slide-photo");
 
         // verify if thumbnail carousel is empty
@@ -280,24 +281,30 @@
             ImageNavigate(false);
             e.preventDefault();
         });
+
+        
     });
 
     function ImageNavigate(IsNextDirection) {
-        $('.arrow-preview--prev').show();
-        $('.arrow-preview--next').show();
+        SetGrayscale($('.arrow-preview--prev'), false);
+        SetGrayscale($('.arrow-preview--next'), false);
 
         if(IsNextDirection) {
             $('.thumbnail--picture').parent().find('.active').prev().click();
 
             if($('.thumbnail--picture').parent().find('.active').prev().length==0){
-                $('.arrow-preview--prev').hide();
+                SetGrayscale($('.arrow-preview--prev'), true);
             }            
         } else {
             $('.thumbnail--picture').parent().find('.active').next().click();
 
             if($('.thumbnail--picture').parent().find('.active').next().length==0){
-                $('.arrow-preview--next').hide();
+                SetGrayscale($('.arrow-preview--next'), true);
             }            
         }
+    }
+
+    function SetGrayscale(obj, isGray) {
+        $(obj).css({ "filter": "grayscale("+ (isGray?"100":"0") +"%)", "-webkit-filter": "grayscale("+ (isGray?"100":"0") +"%)" });
     }
 </script>
