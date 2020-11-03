@@ -44,7 +44,7 @@
                                 <span>Vídeo</span>
                             </div>
                             
-                            <button class="slick-arrow slick-arrow__next" aria-label="Proxima foto" type="button"></button>
+                            <button class="slick-arrow slick-arrow__next" title="Clique aqui para ver a proxima foto" type="button"></button>
                             <ul id="mini-slide-photo" class="thumbnails--list">                                
                                 {{ $thumbCaption := print .name " Ref:" .id }}
                                 {{ $thumbUrl := .product_url }}
@@ -62,13 +62,17 @@
                                     </li>
                                 {{ end }}
                             </ul>
-                            <button class="slick-arrow slick-arrow__prev" aria-label="Proxima foto" type="button"></button>             
+                            <button class="slick-arrow slick-arrow__prev" title="Clique aqui para ver a foto anterior" type="button"></button>             
                             
                         </div>
                         <div class="product--image">
-                            <figure>
-                                <img src="{{ .image }}" alt="{{ .name }}">
-                            </figure>
+                            <div class="product--image-box">
+                                <div class="arrow-preview arrow-preview--next" title="Clique aqui para ver a proxima foto"> <span></span> </div>
+                                <figure>
+                                    <img src="{{ .image }}" alt="{{ .name }}">
+                                </figure>
+                                <div class="arrow-preview arrow-preview--prev" title="Clique aqui para ver a foto anterior"> <span></span> </div>
+                            </div>
                             <ul class="product--image-tags container-flex">
                                 <li class="product--image-tag exclusive">
                                     <p>Exclusivo <b>Grão de Gente</b></p>
@@ -212,7 +216,7 @@
         $miniSlide = $("#mini-slide-photo");
 
         // verify if thumbnail carousel is empty
-        if($('#mini-slide-photo').find('.slick-track').find('li').length){
+        if($('#mini-slide-photo').find('li').length>0){
             $miniSlide.slick({
                 infinite: true,
                 slidesToShow: 5,
@@ -224,10 +228,9 @@
                 nextArrow: $('.slick-arrow__prev'),
                 vertical:true
             });
-        } else {
-            $('.product--image-thumbnails').find('.slick-arrow').hide();
-        }
 
+            $('.product--image-thumbnails').find('.slick-arrow').css('opacity','1');
+        }
 
         $('.benefits--list').slick({
             dots: false,
@@ -253,17 +256,35 @@
 
         $(document).keydown(function (e) {
             switch (e.which) {
-                case 37:
-                    $('.slick-arrow__prev').click();
-                    $('.thumbnail--picture').parent().find('.active').next().click();
-                    break;
                 case 39:
-                    $('.slick-arrow__next').click();
-                    $('.thumbnail--picture').parent().find('.active').prev().click();
+                    ImageNavigate(false);
+                    break;
+                case 37:
+                    ImageNavigate(true);
                     break;
                 default: return;
             }
             e.preventDefault();
         });
+
+        $('.arrow-preview--prev').bind('click', function(e){
+            ImageNavigate(false);
+            e.preventDefault();
+        });
+
+        $('.arrow-preview--next').bind('click', function(e){
+            ImageNavigate(true);
+            e.preventDefault();
+        });
     });
+
+    function ImageNavigate(IsNextDirection) {
+        if(IsNextDirection) {
+            $('.slick-arrow__next').click();
+            $('.thumbnail--picture').parent().find('.active').prev().click();
+        }else{
+            $('.slick-arrow__prev').click();
+            $('.thumbnail--picture').parent().find('.active').next().click();
+        }
+    }
 </script>

@@ -123,13 +123,78 @@
     }
 
     & &--image {
-        max-width: 550px;
+        min-width: 550px; 
+        margin-bottom: 10px;
+        display: block; 
+
+        &-box {
+            display: block;
+            position: relative;
+            overflow: hidden;
+
+            .arrow-preview {
+                cursor: pointer;
+                border-radius: 50px;
+                background-color: #fff;
+                width: 54px;
+                height: 54px;
+                position: absolute;
+                top: 45%;
+                opacity: .8;
+                transition: all .8s;
+
+                &:hover{
+                    transform: scale(1.1);
+                }
+
+                &--next{
+                    right: -23px;
+
+                    &:hover{
+                        -webkit-box-shadow: -13px 0px 16px -5px rgba(0,0,0,0.22); 
+                        box-shadow: -13px 0px 16px -5px rgba(0,0,0,0.22);
+                    }
+
+                    > span{
+                        left: 10%;
+                        transform: rotate(45deg);
+                    }
+                }
+                &--prev{
+                    left: -23px;
+
+                    &:hover{
+                        -webkit-box-shadow: 13px 3px 16px -5px rgba(0,0,0,0.22); 
+                        box-shadow: 13px 3px 16px -5px rgba(0,0,0,0.22);
+                    }
+
+                    > span{
+                        left: 60%;
+                        transform: rotate(225deg);
+                    }                  
+                }
+
+                > span{
+                    display: block; 
+                    position: relative;
+                    top: 35%;                    
+                    border-color: #00B59B;
+                    border-width: 4px 4px 0px 0px;
+                    border-style: solid;                    
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 4px;
+                }
+            }
+
+        }
 
         &-thumbnails {
             margin-right: 35px;
             overflow: hidden;
-            width: 54px;
-            position: relative;
+            min-width: 54px;
+            min-height: 550px;
+            position: relative;        
 
             .slick-arrow {
                 height: 17px;
@@ -137,6 +202,8 @@
                 margin: auto;
                 background-color: #fff;
                 cursor: pointer;
+                opacity: 0;
+                transition: opacity 1s;
 
                 &:before {
                     content: "";
@@ -173,6 +240,11 @@
                 position: relative;
                 margin: 8px 0;
                 cursor: pointer;
+
+                // Fix alignment of first thumbnail in slider
+                &:first-child {
+                    margin-top: 50px;
+                }
 
                 &:after {
                     content: '';
@@ -265,6 +337,7 @@
                 color: #FFF;
             }
         }
+
     }
 
     // INICIANDO COLUNA DA DIREITA
