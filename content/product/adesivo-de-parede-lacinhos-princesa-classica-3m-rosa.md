@@ -74,4 +74,16 @@ pictures = ["//dmhxz00kguanp.cloudfront.net/fotos/151300/kit-berco-dobravel-2-em
 "//dmhxz00kguanp.cloudfront.net/fotos/151300/kit-berco-dobravel-2-em-1-estrelinha-cinza-328665.jpg",
 "//dmhxz00kguanp.cloudfront.net/fotos/151300/kit-berco-dobravel-2-em-1-estrelinha-cinza-328818.jpg",
 "//dmhxz00kguanp.cloudfront.net/fotos/151300/kit-berco-dobravel-2-em-1-estrelinha-cinza-328819.jpg"]
+
+pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-tie-dye-ceu-azul-329193.jpg",
+"//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-tie-dye-ceu-azul-329190.jpg",
+"//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-tie-dye-ceu-azul-329194.jpg",
+"//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-tie-dye-ceu-azul-329191.jpg",
+"//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-tie-dye-ceu-azul-329192.jpg",
+"//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-tie-dye-ceu-azul-329189.jpg",
+"//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-tie-dye-ceu-azul-329195.jpg",
+"//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-tie-dye-ceu-azul-329247.jpg",
+"//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-tie-dye-ceu-azul-329248.jpg",
+"//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-tie-dye-ceu-azul-329249.jpg"]
+
 +++

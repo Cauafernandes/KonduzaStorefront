@@ -1,0 +1,49 @@
+.product-page {
+    position: relative;
+
+    .product--img__container{
+        max-height: 550px;
+        overflow: hidden;       
+    }
+
+    .slick-slide{
+        max-width: 550px;
+        display: inline-block;
+        outline: none;
+    }
+
+    .slick-slider{
+        margin-bottom: 0px !important;
+    }
+
+    .slick-dots {
+        margin-top: 10px;
+        left: 0px;
+        justify-content: start;
+        display: flex;
+
+        li {
+            width: 12px;
+            margin: 0px;
+            padding: 0px;
+
+            button {
+                margin: 0px;
+                padding: 0px;
+
+                &:hover,
+                &[aria-selected="true"]{
+                    &:before{
+                        color: #00bfb3;
+                    }
+                }
+
+                &:before{
+                    font-size: 7px;
+                    margin: 0px;
+                    padding: 0px;
+                }
+            }
+        }
+    }
+}

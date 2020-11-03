@@ -1,33 +1,32 @@
-<main class="product">
-    <section>
-        <div itemscope="" itemtype="https://schema.org/Product">
-            <meta itemprop="url" content="{{ .product_url }}">
-            <meta itemprop="name" content="{{ print .name }}">
-            <meta itemprop="category" content="{{ range $cat :=.categories }}{{ $cat }} {{ end }}">
-            <meta itemprop="isRelatedTo" content="{{ .isRelatedTo }}">
-            <meta itemprop="mpn" content="{{ .id }}">
-            <meta itemprop="sku" content="{{ .id }}">
-            <meta itemprop="productID" content="{{ .id }}">
-
-            <div class="product--img__container">
-                <ul id="slider-product" class="thumbnails--list">                                
-                    {{ $thumbCaption := print .name " Ref:" .id }}
-                    {{ $thumbUrl := .product_url }}
-                    {{ $picturefull := .pictures }}
-                    {{ range $index, $thumbnails := .pictures_thumb }}
-                        {{ $thumbTitle := print "Clique aqui para ver a foto número " (add $index 1) }}
-                        <li class="thumbnail--picture {{ if (eq $index 0) }}active{{ end }}">
-                            <figure data-full-image="{{ index $picturefull $index }}">
-                                <img src="{{ $thumbnails }}" title="{{$thumbTitle}}" alt="{{$thumbTitle}}"/>
-                            </figure>
-                            <meta itemprop="caption" content="{{ $thumbCaption }}">
-                            <meta itemprop="thumbnail" content="{{ $thumbnails }}">
-                            <meta itemprop="url" content="{{$thumbUrl}}">
-                            <meta itemprop="representativeOfPage" content="true">
-                        </li>
-                    {{ end }}
-                </ul>
-            </div>
+<section class="product-page">
+    
+    <div class="product--img__container" itemscope="" itemtype="https://schema.org/Product">
+        <meta itemprop="url" content="{{ .product_url }}">
+        <meta itemprop="name" content="{{ print .name }}">
+        <meta itemprop="category" content="{{ range $cat :=.categories }}{{ $cat }} {{ end }}">
+        <meta itemprop="isRelatedTo" content="{{ .isRelatedTo }}">
+        <meta itemprop="mpn" content="{{ .id }}">
+        <meta itemprop="sku" content="{{ .id }}">
+        <meta itemprop="productID" content="{{ .id }}">
+        
+        <div class="slider-product">                                
+            {{ range $index, $picture := .pictures_mobile }}
+                <div>
+                    <img src="{{ $picture }}" />
+                </div>
+            {{ end }}
         </div>
-    </section>
-</main>
+
+    </div>
+
+</section>
+
+<script>
+    $(document).ready(function() {
+        $('.slider-product').slick({
+            dots: true,
+            infinite: false,
+            arrows: false
+        });
+    });
+</script>

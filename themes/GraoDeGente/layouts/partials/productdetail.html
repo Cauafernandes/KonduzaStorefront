@@ -268,12 +268,12 @@
         });
 
         $('.arrow-preview--prev').bind('click', function(e){
-            ImageNavigate(false);
+            ImageNavigate(true);
             e.preventDefault();
         });
 
         $('.arrow-preview--next').bind('click', function(e){
-            ImageNavigate(true);
+            ImageNavigate(false);
             e.preventDefault();
         });
     });
