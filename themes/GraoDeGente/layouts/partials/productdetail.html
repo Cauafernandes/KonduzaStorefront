@@ -68,8 +68,8 @@
                         <div class="product--image">
                             <div class="product--image-box">
                                 <div class="arrow-preview arrow-preview--next" title="Clique aqui para ver a proxima foto"> <span></span> </div>
-                                <figure>
-                                    <img src="{{ index $picturefull 0 }}" alt="{{ .name }}">
+                                <figure>                                    
+                                    <img src="{{with .pictures}}{{index . 0}}{{end}}" alt="{{ .name }}">
                                 </figure>
                                 <div class="arrow-preview arrow-preview--prev" title="Clique aqui para ver a foto anterior"> <span></span> </div>
                             </div>
