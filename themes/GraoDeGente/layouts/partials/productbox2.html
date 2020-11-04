@@ -1,0 +1,11 @@
+<div class="product-box">
+    <h2>{{ .tagoff }}</h2>
+    <img src="{{ .thumb }}"/>
+    <div class="">{{ .exclusivetag | safeHTML }}</div>
+    <p class="">{{ .name }}</p>
+    <p class="">Ref: {{ .ref }}</p>
+    <p class="">{{ .priceold | safeHTML }}</p>
+    <p class="">{{ .price | safeHTML }}</p>
+    <p class="">{{ .installment | safeHTML }}</p>
+    <p class="">{{ .isfreeshipping }}</p>
+</div>  

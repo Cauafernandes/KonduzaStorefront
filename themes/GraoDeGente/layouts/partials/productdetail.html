@@ -126,11 +126,13 @@
                 <div class="col-24">
                     <div class="product--list">
                         <h3 class="product--list-title">Conheça todos os produtos da coleção</h3>
-                        <ul class="product--collection-list">
-                            <li class="product--collection-item">
-
-                            </li>
-                        </ul>
+                            <ul class="product--collection-list">
+                                {{ range $index, $productline := .products}}
+                                <li class="product--collection-item">
+                                    {{ partial "productbox2.html" . }}
+                                </li>
+                                {{end}}
+                            </ul>
                     </div>
                 </div>
             </div>
@@ -245,6 +247,14 @@
             slidesToShow: 1,
             adaptiveHeight: true,
         });
+
+        $('.product--collection-list').slick({
+                infinite: false,
+                centerMode: false,
+                accessibility: false,
+                arrows: true,
+                adaptiveHeight: true
+            });
 
         $('.thumbnail--picture').click(function() {            
             $('.thumbnail--picture').removeClass('active');

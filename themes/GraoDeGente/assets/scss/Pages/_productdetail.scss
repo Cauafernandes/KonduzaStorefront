@@ -1,3 +1,4 @@
+
 .product {
     .breadcrumb {
         border-bottom: 1px solid $gray;
@@ -94,6 +95,12 @@
         }
     }
 
+    &--collection-list{
+        border:solid 1px orange;
+        display: block;
+        width: 100%;
+
+    }
     &--container {
         margin-bottom: 50px;
     }
@@ -532,7 +539,7 @@
     &--list {
         margin: 0 0 50px;
         display: block;
-
+        
         &-title {
             font-family: $family-light;
             text-transform: uppercase;
