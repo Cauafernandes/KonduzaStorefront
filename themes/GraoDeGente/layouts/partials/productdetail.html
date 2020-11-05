@@ -124,15 +124,21 @@
             </div>
             <div class="row container-flex">
                 <div class="col-24">
-                    <div class="product--list">
+                    <div>
                         <h3 class="product--list-title">Conheça todos os produtos da coleção</h3>
-                            <ul class="product--collection-list">
-                                {{ range $index, $productline := .products}}
-                                <li class="product--collection-item">
-                                    {{ partial "productbox2.html" . }}
-                                </li>
-                                {{end}}
-                            </ul>
+                        <div class="product--list">
+                            <div class="product--list-collection__prev"><span /></div>
+                            <div class="product--list-collection__view">
+                                <ul class="product--list-collection">
+                                    {{ range $index, $productline := .products}}
+                                    <li class="product--collection-item">
+                                        {{ partial "productbox2.html" . }}
+                                    </li>
+                                    {{end}}
+                                </ul>
+                            </div>
+                            <div class="product--list-collection__next"><span /></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -247,12 +253,14 @@
             slidesToShow: 1,
             adaptiveHeight: true,
         });
-
-        $('.product--collection-list').slick({
+        
+        $('.product--list-collection').slick({
                 infinite: false,
                 centerMode: false,
                 accessibility: false,
                 arrows: true,
+                prevArrow: $('.product--list-collection__next'),
+                nextArrow: $('.product--list-collection__prev'),
                 adaptiveHeight: true
             });
 
