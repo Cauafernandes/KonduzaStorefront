@@ -85,7 +85,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
 "//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-tie-dye-ceu-azul-329249.jpg"]
 
 
-[[products]]
+[[productsline]]
     ref="103352"
     tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
@@ -97,7 +97,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     installment="12x ded R$95,28 s/juros"
     product_url = "/product/quarto-de-bebe-rosa-classico-2"
     isfreeshipping=true
-[[products]]
+[[productsline]]
     ref="103352"
     tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
@@ -109,7 +109,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     installment="12x ded R$95,28 s/juros"
     product_url = "/product/quarto-de-bebe-rosa-classico-1"
     isfreeshipping=true
-[[products]]
+[[productsline]]
     ref="103352"
     tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
@@ -121,7 +121,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     installment="12x ded R$95,28 s/juros"
     product_url = "/product/quarto-de-bebe-rosa-classico-2"
     isfreeshipping=true
-[[products]]
+[[productsline]]
     ref="103352"
     tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
@@ -133,7 +133,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     installment="12x ded R$95,28 s/juros"
     product_url = "/product/quarto-de-bebe-rosa-classico-2"
     isfreeshipping=true
-[[products]]
+[[productsline]]
     ref="103352"
     tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
@@ -145,7 +145,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     installment="12x ded R$95,28 s/juros"
     product_url = "/product/quarto-de-bebe-rosa-classico-1"
     isfreeshipping=true
-[[products]]
+[[productsline]]
     ref="103352"
     tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
@@ -157,7 +157,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     installment="12x ded R$95,28 s/juros"
     product_url = "/product/quarto-de-bebe-rosa-classico-2"
     isfreeshipping=true
-[[products]]
+[[productsline]]
     ref="103352"
     tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
@@ -169,7 +169,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     installment="12x ded R$95,28 s/juros"
     product_url = "/product/quarto-de-bebe-rosa-classico-2"
     isfreeshipping=true
-[[products]]
+[[productsline]]
     ref="103352"
     tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
@@ -181,7 +181,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     installment="12x ded R$95,28 s/juros"
     product_url = "/product/quarto-de-bebe-rosa-classico-1"
     isfreeshipping=true
-[[products]]
+[[productsline]]
     ref="103352"
     tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true

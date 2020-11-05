@@ -16,7 +16,20 @@
                 </div>
             {{ end }}
         </div>
+    </div>
 
+    <div class="product-line">
+        <div class="product-line--title">
+            <div>produtos da coleção</div>
+            <a href="#" target="_self" title="">ver todos</a>
+        </div>
+        <div class="product-line--list">
+            {{ range .productsline}}
+                <div>
+                    {{ .ref }}
+                </div>
+            {{ end }}
+        </div>
     </div>
 
 </section>
