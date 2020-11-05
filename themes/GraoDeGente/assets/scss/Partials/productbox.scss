@@ -3,4 +3,95 @@
     max-width: 222px;
     width: 222px;
     float: left;
+
+    .thumbpic{
+        max-width: 220px;
+        width: 220px;
+        margin-bottom: 5px;
+    }
+
+    p{
+        font-size: 16px;
+        color: #666;
+
+        &:first-child{
+            text-align: right;            
+            font-weight: bold;
+            line-height: 16px;            
+            margin-bottom: 2px;
+        }
+
+        strong {
+            span{
+                font-weight: bold;
+            }
+        }
+
+        .green{
+            color: #00B59B;
+        }        
+
+        &.exclusive{
+            margin: 10px 0 10px 0px;
+            font-size: 14px;
+
+            strong {
+                display: block;
+            }
+        }
+
+        &.name{
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        &.ref{
+            margin: 0 0 10px;
+            font-size: 14px;
+            line-height: 110%;
+        }
+
+        &.priceold {
+            text-decoration: line-through;
+            font-size: 11px;
+        }
+
+        &.price {
+            font-size: 16px;
+            font-weight: bold;
+
+            span{
+                font-weight: normal;
+            }
+        }
+
+        &.installment{
+            font-weight: bold;
+        }
+
+        &.freeshipping {
+            display: inline-block!important;
+            background-color: #00B59B;
+            text-align: center;
+            color: #fff;
+            padding: 3px 6px;
+            font-size: 11px;
+            margin-top: 10px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        &.alerta-envio {
+            background-color: #DC6C05;
+            display: block;
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+            text-align: center;
+            padding: 3px 10px;
+            font-size: 12px;
+            color: #fff;
+
+        }
+    }
 }

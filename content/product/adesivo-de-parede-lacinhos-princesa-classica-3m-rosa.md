@@ -87,7 +87,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
 
 [[products]]
     ref="103352"
-    tagoff="57% OFF"
+    tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
     exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
     thumb="https://dmhxz00kguanp.cloudfront.net/fotos/103351/media_quarto-de-bebe-bailarina-trapezista-236930.jpg"
@@ -99,7 +99,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     isfreeshipping=true
 [[products]]
     ref="103352"
-    tagoff="57% OFF"
+    tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
     exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
     thumb="https://dmhxz00kguanp.cloudfront.net/fotos/103352/media_quarto-de-bebe-bailarina-trapezista-236949.jpg"
@@ -111,7 +111,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     isfreeshipping=true
 [[products]]
     ref="103352"
-    tagoff="57% OFF"
+    tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
     exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
     thumb="https://dmhxz00kguanp.cloudfront.net/fotos/101176/media_kit-berco-bailarina-trapezista-236769.jpg"
@@ -123,7 +123,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     isfreeshipping=true
 [[products]]
     ref="103352"
-    tagoff="57% OFF"
+    tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
     exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
     thumb="https://dmhxz00kguanp.cloudfront.net/fotos/103351/media_quarto-de-bebe-bailarina-trapezista-236930.jpg"
@@ -135,7 +135,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     isfreeshipping=true
 [[products]]
     ref="103352"
-    tagoff="57% OFF"
+    tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
     exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
     thumb="https://dmhxz00kguanp.cloudfront.net/fotos/103352/media_quarto-de-bebe-bailarina-trapezista-236949.jpg"
@@ -147,7 +147,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     isfreeshipping=true
 [[products]]
     ref="103352"
-    tagoff="57% OFF"
+    tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
     exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
     thumb="https://dmhxz00kguanp.cloudfront.net/fotos/101176/media_kit-berco-bailarina-trapezista-236769.jpg"
@@ -159,7 +159,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     isfreeshipping=true
 [[products]]
     ref="103352"
-    tagoff="57% OFF"
+    tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
     exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
     thumb="https://dmhxz00kguanp.cloudfront.net/fotos/103351/media_quarto-de-bebe-bailarina-trapezista-236930.jpg"
@@ -171,7 +171,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     isfreeshipping=true
 [[products]]
     ref="103352"
-    tagoff="57% OFF"
+    tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
     exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
     thumb="https://dmhxz00kguanp.cloudfront.net/fotos/103352/media_quarto-de-bebe-bailarina-trapezista-236949.jpg"
@@ -183,7 +183,7 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     isfreeshipping=true
 [[products]]
     ref="103352"
-    tagoff="57% OFF"
+    tagoff="57% <span class='green'>OFF</span>"
     tagblackfriday=true
     exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
     thumb="https://dmhxz00kguanp.cloudfront.net/fotos/101176/media_kit-berco-bailarina-trapezista-236769.jpg"

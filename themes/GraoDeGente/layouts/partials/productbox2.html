@@ -1,11 +1,12 @@
 <div class="product-box">
-    <h2>{{ .tagoff }}</h2>
-    <img src="{{ .thumb }}"/>
-    <div class="">{{ .exclusivetag | safeHTML }}</div>
-    <p class="">{{ .name }}</p>
-    <p class="">Ref: {{ .ref }}</p>
-    <p class="">{{ .priceold | safeHTML }}</p>
-    <p class="">{{ .price | safeHTML }}</p>
-    <p class="">{{ .installment | safeHTML }}</p>
-    <p class="">{{ .isfreeshipping }}</p>
+    <p>{{ .tagoff | safeHTML }}</p>
+    <img src="{{ .thumb }}" class="thumbpic"/>
+    <p class="alerta-envio">Enviando Normalmente</p>
+    <p class="exclusive">{{ .exclusivetag | safeHTML }}</p>
+    <p class="name">{{ .name }}</p>
+    <p class="ref">Ref: {{ .ref }}</p>
+    <p class="priceold">{{ .priceold | safeHTML }}</p>
+    <p class="price">{{ .price | safeHTML }}</p>
+    <p class="installment">{{ .installment | safeHTML }}</p>
+    <p class="freeshipping"><span>Frete Grátis</span></p>
 </div>  
