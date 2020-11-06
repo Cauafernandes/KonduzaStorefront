@@ -84,17 +84,18 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
 "//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-tie-dye-ceu-azul-329248.jpg",
 "//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-tie-dye-ceu-azul-329249.jpg"]
 
-
 [[productsline]]
     ref="103352"
-    tagoff="57% <span class='green'>OFF</span>"
+    isNew=true
+    offperc="57%"
     tagblackfriday=true
     exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
     thumb="https://dmhxz00kguanp.cloudfront.net/fotos/103351/media_quarto-de-bebe-bailarina-trapezista-236930.jpg"
     name="Quarto de Bebê Bailarina Trapezista"
-    priceold="de R$2.320,06 por"
-    price="R$1.569,40 <span>boleto</span>"
-    installment="12x ded R$95,28 s/juros"
+    priceold="2.320,06"
+    price="1.569,40"
+    installmentqtd=12
+    installmentprice="95,28"
     product_url = "/product/quarto-de-bebe-rosa-classico-2"
     isfreeshipping=true
 [[productsline]]
@@ -104,93 +105,10 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
     thumb="https://dmhxz00kguanp.cloudfront.net/fotos/103352/media_quarto-de-bebe-bailarina-trapezista-236949.jpg"
     name="Quarto de Bebê Bailarina Trapezista"
-    priceold="de R$2.320,06 por"
-    price="R$1.569,40 <span>boleto</span>"
-    installment="12x ded R$95,28 s/juros"
-    product_url = "/product/quarto-de-bebe-rosa-classico-1"
-    isfreeshipping=true
-[[productsline]]
-    ref="103352"
-    tagoff="57% <span class='green'>OFF</span>"
-    tagblackfriday=true
-    exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
-    thumb="https://dmhxz00kguanp.cloudfront.net/fotos/101176/media_kit-berco-bailarina-trapezista-236769.jpg"
-    name="Quarto de Bebê Bailarina Trapezista"
-    priceold="de R$2.320,06 por"
-    price="R$1.569,40 <span>boleto</span>"
-    installment="12x ded R$95,28 s/juros"
-    product_url = "/product/quarto-de-bebe-rosa-classico-2"
-    isfreeshipping=true
-[[productsline]]
-    ref="103352"
-    tagoff="57% <span class='green'>OFF</span>"
-    tagblackfriday=true
-    exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
-    thumb="https://dmhxz00kguanp.cloudfront.net/fotos/103351/media_quarto-de-bebe-bailarina-trapezista-236930.jpg"
-    name="Quarto de Bebê Bailarina Trapezista"
-    priceold="de R$2.320,06 por"
-    price="R$1.569,40 <span>boleto</span>"
-    installment="12x ded R$95,28 s/juros"
-    product_url = "/product/quarto-de-bebe-rosa-classico-2"
-    isfreeshipping=true
-[[productsline]]
-    ref="103352"
-    tagoff="57% <span class='green'>OFF</span>"
-    tagblackfriday=true
-    exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
-    thumb="https://dmhxz00kguanp.cloudfront.net/fotos/103352/media_quarto-de-bebe-bailarina-trapezista-236949.jpg"
-    name="Quarto de Bebê Bailarina Trapezista"
-    priceold="de R$2.320,06 por"
-    price="R$1.569,40 <span>boleto</span>"
-    installment="12x ded R$95,28 s/juros"
-    product_url = "/product/quarto-de-bebe-rosa-classico-1"
-    isfreeshipping=true
-[[productsline]]
-    ref="103352"
-    tagoff="57% <span class='green'>OFF</span>"
-    tagblackfriday=true
-    exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
-    thumb="https://dmhxz00kguanp.cloudfront.net/fotos/101176/media_kit-berco-bailarina-trapezista-236769.jpg"
-    name="Quarto de Bebê Bailarina Trapezista"
-    priceold="de R$2.320,06 por"
-    price="R$1.569,40 <span>boleto</span>"
-    installment="12x ded R$95,28 s/juros"
-    product_url = "/product/quarto-de-bebe-rosa-classico-2"
-    isfreeshipping=true
-[[productsline]]
-    ref="103352"
-    tagoff="57% <span class='green'>OFF</span>"
-    tagblackfriday=true
-    exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
-    thumb="https://dmhxz00kguanp.cloudfront.net/fotos/103351/media_quarto-de-bebe-bailarina-trapezista-236930.jpg"
-    name="Quarto de Bebê Bailarina Trapezista"
-    priceold="de R$2.320,06 por"
-    price="R$1.569,40 <span>boleto</span>"
-    installment="12x ded R$95,28 s/juros"
-    product_url = "/product/quarto-de-bebe-rosa-classico-2"
-    isfreeshipping=true
-[[productsline]]
-    ref="103352"
-    tagoff="57% <span class='green'>OFF</span>"
-    tagblackfriday=true
-    exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
-    thumb="https://dmhxz00kguanp.cloudfront.net/fotos/103352/media_quarto-de-bebe-bailarina-trapezista-236949.jpg"
-    name="Quarto de Bebê Bailarina Trapezista"
-    priceold="de R$2.320,06 por"
-    price="R$1.569,40 <span>boleto</span>"
-    installment="12x ded R$95,28 s/juros"
-    product_url = "/product/quarto-de-bebe-rosa-classico-1"
-    isfreeshipping=true
-[[productsline]]
-    ref="103352"
-    tagoff="57% <span class='green'>OFF</span>"
-    tagblackfriday=true
-    exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
-    thumb="https://dmhxz00kguanp.cloudfront.net/fotos/101176/media_kit-berco-bailarina-trapezista-236769.jpg"
-    name="Quarto de Bebê Bailarina Trapezista"
-    priceold="de R$2.320,06 por"
-    price="R$1.569,40 <span>boleto</span>"
-    installment="12x ded R$95,28 s/juros"
-    product_url = "/product/quarto-de-bebe-rosa-classico-2"
+    priceold="2.320,06"
+    price="1.569,40"
+    installmentqtd=12
+    installmentprice="95,28"
+    product_url = "/product/adesivo-de-parede-luas-e-estrelas-3m-rosa-1/"
     isfreeshipping=true
 +++

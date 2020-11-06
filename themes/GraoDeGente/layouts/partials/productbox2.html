@@ -1,12 +1,18 @@
-<div class="product-box">
-    <p>{{ .tagoff | safeHTML }}</p>
-    <img src="{{ .thumb }}" class="thumbpic"/>
-    <p class="alerta-envio">Enviando Normalmente</p>
+<a href="{{.product_url}}" class="product-box" title="Clique aqui para ver mais detalhes do produto {{.name}}">
+    <p>
+        {{ if not (eq .offperc nil) }}
+            {{ .offperc }} <span class='green'>OFF</span>
+        {{ end }}
+    </p>
+    <div class="thumbpic">
+        <img src="{{ .thumb }}"/>
+    </div>
+    <p class='alerta-envio'>Enviando Normalmente</p>
     <p class="exclusive">{{ .exclusivetag | safeHTML }}</p>
     <p class="name">{{ .name }}</p>
     <p class="ref">Ref: {{ .ref }}</p>
-    <p class="priceold">{{ .priceold | safeHTML }}</p>
-    <p class="price">{{ .price | safeHTML }}</p>
-    <p class="installment">{{ .installment | safeHTML }}</p>
+    <p class="priceold">de R${{ .priceold }} por</p>
+    <p class="price">R$ {{ .price }} <span>boleto</span></p>
+    <p class="installment">{{.installmentqtd}}x de R${{.installmentprice}} s/juros</p>
     <p class="freeshipping"><span>Frete Grátis</span></p>
-</div>  
+</a>

@@ -26,7 +26,7 @@
         <div class="product-line--list">
             {{ range .productsline}}
                 <div>
-                    {{ .ref }}
+                    {{ partial "productbox2.html" . }}
                 </div>
             {{ end }}
         </div>
