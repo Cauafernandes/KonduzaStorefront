@@ -12,6 +12,10 @@
 @import "./Partials/partials";
 @import "./Pages/pages";
 
+body{
+    color: #666;
+}
+
 /*
 TODO: Arrumar asap PELO AMOR DE DEUS
 */
@@ -111,9 +115,20 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     @extend %display-flex;
 
     &--sb {
-        @extend %display-flex;
         justify-content: space-between;
         -webkit-justify-content: space-between;
+    }
+
+    &--c {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    &--vc {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
     }
 }
 
@@ -129,6 +144,10 @@ input:not([type="submit"]), textarea {
 
 // Titles
 .center {
+    text-align: center;
+}
+
+b, .bold {
     text-align: center;
 }
 

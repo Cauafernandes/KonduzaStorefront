@@ -1,12 +1,60 @@
-<div class="product-box">
-    <p>{{ .tagoff | safeHTML }}</p>
-    <img src="{{ .thumb }}" class="thumbpic"/>
-    <p class="alerta-envio">Enviando Normalmente</p>
-    <p class="exclusive">{{ .exclusivetag | safeHTML }}</p>
-    <p class="name">{{ .name }}</p>
-    <p class="ref">Ref: {{ .ref }}</p>
-    <p class="priceold">{{ .priceold | safeHTML }}</p>
-    <p class="price">{{ .price | safeHTML }}</p>
-    <p class="installment">{{ .installment | safeHTML }}</p>
-    <p class="freeshipping"><span>Frete Grátis</span></p>
-</div>  
+<div class="product-box" itemscope itemtype="http://schema.org/Thing">
+    <meta itemprop="description" content="{{ .name }}">
+    <meta itemprop="name" content="{{ .name }}">
+    <a href="{{ .product_url }}" title="{{ .name }}" class="box-thumbpic">
+        {{ if ne .offperc "" }}
+            <div class="tag tag--off">{{ .offperc | safeHTML }}</div>
+        {{ end }}
+        {{ if eq .tagrelease true }}
+            <div class="tag tag--release">Lançamento</div>
+        {{ end }}
+        {{ if eq .tagcoton true }}
+            <div class="tag tag--coton">100% Algodão</div>
+        {{ end }}
+        <img src="{{ .thumb }}" alt="{{ .name }}" class="thumbpic" />
+    </a>
+    <a href="{{ .product_url }}" title="{{ .name }}">
+        <!-- {{ if ne .tagcolection "" }}
+            <div class="tag--colection">{{ .tagcolection | safeHTML }}</div>
+        {{ end }} -->
+        {{ if eq .tagnormalshipping true }}
+            <p class="tag--shipping">Enviando Normalmente</p>
+        {{ end }}
+        <div class="price container-flex container-flex--sb container-flex--vc">
+            {{ if ne .price "" }}
+                {{ $price := ( split .price "," ) }}
+                <div class="price__original">
+                    R$ <span class="p">{{ range first 1 $price }}{{.}}{{end}}</span>
+                    <span class="c">,{{ range last 1 $price }}{{.}}{{end}}</span>
+                </div>
+            {{ end }}
+            {{ if ne .installmentqtd ""  |  ne .installmentprice "" }}
+                {{ $price := ( split .installmentprice "," ) }}
+                <div class="price__installment">
+                    {{ .installmentqtd | safeHTML }}x 
+                    R$ <span class="p">{{ range first 1 $price }}{{.}}{{end}}<span class="c">,{{ range last 1 $price }}{{.}}{{end}}</span>
+                    </span>
+                </div>
+            {{ end }}
+        </div>
+        {{ if eq .tagsale true }}
+            <img src="//dmhxz00kguanp.cloudfront.net/selos/mobile/selo_promocao_pequeno.png" alt="Promoção" class="tag--sale">
+        {{ end }}
+        <p class="name">{{ .name }}</p>
+        <div class="pieces">
+            {{ .piecesqtt | safeHTML }}  {{ if gt .piecesqtt 1}}peças{{ else }}peça{{ end }}
+        </div>
+    </a>
+
+    <p class="tag--free-shipping"><span>Frete Grátis</span></p>
+
+    <div class="seloEntregaImediata">
+        <span class="icon-ray"></span>
+        <b>Aproveite!</b><br>
+        <span class="envio">
+            Envio em até <br>
+            <b>48 Horas</b>
+        </span>
+    </div>
+
+</div>

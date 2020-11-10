@@ -88,8 +88,14 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     ref="103352"
     isNew=true
     offperc="57%"
-    tagblackfriday=true
-    exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
+    piecesqtt=1
+    tagsale=true
+    tagcoton=true
+    tagrelease=true
+    tagexclusive=true
+    isfreeshipping=true
+    tagnormalshipping=true
+    tagcolection="<b>Sabrina Sato</b> Mom"
     thumb="https://dmhxz00kguanp.cloudfront.net/fotos/103351/media_quarto-de-bebe-bailarina-trapezista-236930.jpg"
     name="Quarto de Bebê Bailarina Trapezista"
     priceold="2.320,06"
@@ -97,12 +103,17 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     installmentqtd=12
     installmentprice="95,28"
     product_url = "/product/quarto-de-bebe-rosa-classico-2"
-    isfreeshipping=true
 [[productsline]]
     ref="103352"
-    tagoff="57% <span class='green'>OFF</span>"
-    tagblackfriday=true
-    exclusivetag="<strong>Exclusivo <span>Grão de Gente</span></strong> <strong><span>Sabrina Sato</span> Mom</strong>"
+    offperc="59% <span class='green'>OFF</span>"
+    piecesqtt=8
+    tagsale=false
+    tagcoton=false
+    tagrelease=false
+    tagexclusive=false
+    isfreeshipping=true
+    tagnormalshipping=true
+    tagcolection="<img src='//dmhxz00kguanp.cloudfront.net/selos/selo-disney-lista.png' alt='Disney'>"
     thumb="https://dmhxz00kguanp.cloudfront.net/fotos/103352/media_quarto-de-bebe-bailarina-trapezista-236949.jpg"
     name="Quarto de Bebê Bailarina Trapezista"
     priceold="2.320,06"
@@ -110,5 +121,4 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     installmentqtd=12
     installmentprice="95,28"
     product_url = "/product/adesivo-de-parede-luas-e-estrelas-3m-rosa-1/"
-    isfreeshipping=true
 +++
