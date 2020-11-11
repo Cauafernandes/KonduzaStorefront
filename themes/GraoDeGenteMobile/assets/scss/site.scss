@@ -14,6 +14,9 @@
 @import "./_full-loader";
 
 
+.hidden{
+    display: none !important;
+}
 // Reset mobile
 body{
     color: #666;
