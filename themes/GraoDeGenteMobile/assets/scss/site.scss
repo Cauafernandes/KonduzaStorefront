@@ -1,30 +1,61 @@
 ﻿@import "./_variables";
-
-@import "./_sprites";
-@import "./_benefits.scss";
-//@import "./_normalize";
 @import "./_reset";
+//@import "./_normalize";
+
 @import "./_fonts";
 @import "./_graoicon";
+@import "./_sprites";
+@import "./_benefits.scss";
 @import "./_helpers";
-@import "./_full-loader";
 
 @import "./Partials/partials";
 @import "./Pages/pages";
 
+@import "./_full-loader";
+
+
+// Reset mobile
 body{
     color: #666;
 }
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+//--------------------------------
+// Iphone - retirando aviso criteo
+.criteo_header {
+    display: none !important;
+}
+//--------------------------------
+// retirando style de autocomplete do browser
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: #ffffff !important;
+    box-shadow: 0 0 0 30px #ffffff inset;
+    -webkit-appearance: none;
+}
+//--------------------------------
+// Fix to disable ios auto zoom
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-device-width:1024px) {
+    select, textarea, input {
+        font-size: 16px !important;
+    }
 
-/*
-TODO: Arrumar asap PELO AMOR DE DEUS
-*/
+    input::-webkit-input-placeholder {
+        font-size: 13px !important;
+    }
+}
+//--------------------------------
+// plugin banner inteligente para instalação de app
 .smartbanner-button {
     height: 100% !important;
     padding: 30px 10px;
 }
-
+//--------------------------------
+// menu
 #menu-container {
+    display: none;
     width: 100%;
     max-width: 500px;
     min-height: 100%;
@@ -34,13 +65,13 @@ TODO: Arrumar asap PELO AMOR DE DEUS
     top: 0px;
     bottom: 0px;
     background-color: #FFFFFF;
-    display: none;
     z-index: 9999;
 }
 
 .MenuProducts-token {
     display: none;
 }
+//--------------------------------
 
 #modal_free_shipping {
     display: none;
@@ -57,51 +88,6 @@ TODO: Arrumar asap PELO AMOR DE DEUS
     z-index: 99999;
 }
 
-// Reset mobile
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-// Iphone - retirando aviso criteo
-.criteo_header {
-    display: none !important;
-}
-
-// Fix to disable ios auto zoom
-@media screen and (-webkit-min-device-pixel-ratio:0) and (max-device-width:1024px) {
-    select, textarea, input {
-        font-size: 16px !important;
-    }
-
-    input::-webkit-input-placeholder {
-        font-size: 13px !important;
-    }
-}
-
-.lockScroll, .showLoad {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden !important;
-    position: fixed;
-    touch-action: none;
-    height: 100%;
-    // -webkit-overflow-scrolling: auto!important;
-}
-
-input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-    background-color: #ffffff !important;
-    box-shadow: 0 0 0 30px #ffffff inset;
-    -webkit-appearance: none;
-}
-
-.container {
-    padding: 20px;
-}
-
 %display-flex {
     display: flex;
     display: -ms-flexbox;
@@ -109,6 +95,10 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     display: -webkit-flex;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
+}
+
+.container {
+    padding: 20px;
 }
 
 .container-flex {
@@ -382,4 +372,16 @@ b, .bold {
             background-color: $dark-green;
         }
     }
+}
+
+.lockScroll, .showLoad {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden !important;
+    position: fixed;
+    touch-action: none;
+    height: 100%;
+    // -webkit-overflow-scrolling: auto!important;
 }
