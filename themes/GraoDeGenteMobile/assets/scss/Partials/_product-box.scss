@@ -2,11 +2,12 @@
 
 .product-box {
     max-width: 50%;
+
     .box-thumbpic{
         position: relative;
         padding-top: 16px;
         display: block;
-     }
+    }
 
     .tag{
         position: absolute;
@@ -73,6 +74,28 @@
         &--sale{
             margin-bottom: 10px;
             display: block;
+        }
+
+        &--shipping-immediate{
+            position: relative;
+            margin-top: 10px;
+            padding-left: 25px;
+            line-height: 100%;
+            font-size: 14px;
+            .text{
+                color: $orange;
+            }
+            .icon-ray{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: -5px;
+                margin: auto;
+                color: #00bfb3;
+                font-size: 30px;
+                width: 18px;
+                height: 30px;
+            }
         }
     }
 

@@ -1,6 +1,7 @@
 <div class="product-box" itemscope itemtype="http://schema.org/Thing">
     <meta itemprop="description" content="{{ .name }}">
     <meta itemprop="name" content="{{ .name }}">
+    <meta itemprop="url" content="{{ .Page.Site }}{{ .product_url }}" />
     <a href="{{ .product_url }}" title="{{ .name }}" class="box-thumbpic">
         {{ if ne .offperc "" }}
             <div class="tag tag--off">{{ .offperc | safeHTML }}</div>
@@ -32,15 +33,14 @@
                 {{ $price := ( split .installmentprice "," ) }}
                 <div class="price__installment">
                     {{ .installmentqtd | safeHTML }}x 
-                    R$ <span class="p">{{ range first 1 $price }}{{.}}{{end}}<span class="c">,{{ range last 1 $price }}{{.}}{{end}}</span>
-                    </span>
+                    R$ <span class="p"> {{ range first 1 $price }}{{ . }}{{ end }}<span class="c">,{{ range last 1 $price }}{{ . }}{{ end }}</span> </span>
                 </div>
             {{ end }}
         </div>
         {{ if eq .tagsale true }}
             <img src="//dmhxz00kguanp.cloudfront.net/selos/mobile/selo_promocao_pequeno.png" alt="Promoção" class="tag--sale">
         {{ end }}
-        <p class="name">{{ .name }}</p>
+        <h2 class="name">{{ .name }}</h2>
         <div class="pieces">
             {{ .piecesqtt | safeHTML }}  {{ if gt .piecesqtt 1}}peças{{ else }}peça{{ end }}
         </div>
@@ -48,10 +48,11 @@
 
     <p class="tag--free-shipping"><span>Frete Grátis</span></p>
 
-    <div class="seloEntregaImediata">
+    <!-- ADD REGRA: (Model.Item1.EstoqueReal > 0 || Model.Item1.PrazoDeEntrega <= 2) && Model.Item1.CanBuy() -->
+    <div class="tag--shipping-immediate">
         <span class="icon-ray"></span>
         <b>Aproveite!</b><br>
-        <span class="envio">
+        <span class="text">
             Envio em até <br>
             <b>48 Horas</b>
         </span>
