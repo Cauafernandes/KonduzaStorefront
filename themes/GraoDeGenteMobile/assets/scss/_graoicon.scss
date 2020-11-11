@@ -14,45 +14,46 @@
 }
 
 [class*='icon-']:before{
-    display: inline-block;
-    font-family: 'graodegente';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-transform: none !important;
+	display: inline-block;
+   font-family: 'graodegente';
+   font-style: normal;
+   font-weight: normal;
+   line-height: 1;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale
 }
-
-.icon-alert:before { content:'\0041'; }
-.icon-stamp-cotton:before { content:'\0042'; }
-.icon-barcode:before { content:'\0043'; }
-.icon-barcode-mini:before { content:'\0044'; }
-.icon-card:before { content:'\0045'; }
-.icon-cart-empty:before { content:'\0046'; }
-.icon-cart-full:before { content:'\0047'; }
-.icon-chat:before { content:'\0048'; }
-.icon-check-list:before { content:'\0049'; }
-.icon-check-list-filtered:before { content:'\004a'; }
-.icon-close-x:before { content: '\004b'; }
-.icon-document:before { content:'\004c'; }
-.icon-exit:before { content:'\004d'; }
-.icon-finder:before { content:'\004e'; }
-.icon-gift:before { content:'\004f'; }
-.icon-heart:before { content:'\0050'; }
-.icon-video-play:before { content:'\0051'; }
-.icon-truck:before { content:'\0052'; }
-.icon-list:before { content:'\0053'; }
-.icon-logo:before { content:'\0054'; }
-.icon-pinmap:before { content:'\0055'; }
-.icon-arrow-down:before { content:'\0056'; }
-.icon-phone:before { content:'\0057'; }
-.icon-mail:before { content:'\0058'; }
-.icon-user-login:before { content:'\0059'; }
-.icon-home:before { content:'\005a'; }
-.icon-dois-cartoes:before { content:'\0061'; }
-.icon-arrow-left-big:before { content:'\0062'; }
-.icon-fav-outline:before { content:'\0063'; }
+.icon-alert:before{content:'\0041';}
+.icon-stamp-cotton:before{content:'\0042';}
+.icon-barcode:before{content:'\0043';}
+.icon-barcode-mini:before{content:'\0044';}
+.icon-card:before{content:'\0045';}
+.icon-cart-empty:before{content:'\0046';}
+.icon-cart-full:before{content:'\0047';}
+.icon-chat:before{content:'\0048';}
+.icon-check-list:before{content:'\0049';}
+.icon-check-list-filtered:before{content:'\004a';}
+.icon-close-x:before {content: '\004b';}
+.icon-document:before{content:'\004c';}
+.icon-exit:before{content:'\004d';}
+.icon-finder:before{content:'\004e';}
+.icon-gift:before{content:'\004f';}
+.icon-heart:before{content:'\0050';}
+.icon-video-play:before{content:'\0051';}
+.icon-truck:before{content:'\0052';}
+.icon-truck2:before{content:'\0064';}
+.icon-list:before{content:'\0053';}
+.icon-logo:before{content:'\0054';}
+.icon-pinmap:before{content:'\0055';}
+.icon-arrow-down:before{content:'\0056';}
+.icon-phone:before{content:'\0057';}
+.icon-mail:before{content:'\0058';}
+.icon-user-login:before{content:'\0059';}
+.icon-home:before{content:'\005a';}
+.icon-dois-cartoes:before{content:'\0061';}
+.icon-arrow-left-big:before{content:'\0062';}
+.icon-fav-outline:before{content:'\0063';}
+.icon-ray:before {content: '\0065';}
+.icon-whatsapp:before {content: '\0066';}
 
 .icon-user-logado {
     background-repeat: no-repeat;
