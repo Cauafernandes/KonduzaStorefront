@@ -1,4 +1,9 @@
 <section class="product-page">
+    {{ partial "benefits.html" }}
+
+    <div class="header-alert container-flex">
+        <p>Estamos Enviando Normalmente</p>
+    </div>
     
     <div class="product--img__container" itemscope="" itemtype="https://schema.org/Product">
         <meta itemprop="url" content="{{ .product_url }}">
@@ -9,6 +14,7 @@
         <meta itemprop="sku" content="{{ .id }}">
         <meta itemprop="productID" content="{{ .id }}">
         
+        
         <div class="slider-product">                                
             {{ range $index, $picture := .pictures_mobile }}
                 <div>
@@ -18,20 +24,29 @@
         </div>
     </div>
 
-    <div class="product-line">
-        <div class="product-line--title">
-            <div>produtos da coleção</div>
-            <a href="#" target="_self" title="">ver todos</a>
-        </div>
-        <div class="product-line--list">
-            {{ range .productsline}}
-                <div>
-                    {{ partial "productbox2.html" . }}
-                </div>
-            {{ end }}
-        </div>
-    </div>
+    <a href="javascript:return" id="seeDescription" title="Ver descrição do produto">Descrição</a>
 
+    {{ if gt .productsline "" }} 
+        <div class="product-line">
+            <div class="product-line--title container-flex container-flex--sb">
+                <h4 class="bold">produtos da coleção</h4>
+                <a href="/{{ .category_url }}" target="_self" title="ver todos os produtos dessa coleção" class="bold">ver todos</a>
+            </div>
+            <div class="product-line--list" itemscope itemtype="http://schema.org/ItemList">
+                <div class="container-flex">
+                    {{ $lenght := len .productsline }}
+                    {{ range $index, $product := .productsline}}
+                        <div class="product-line--product" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            {{ if eq $lenght (add 1 $index) }}
+                                <meta itemprop="numberOfItems" content="{{ $lenght }}">
+                            {{ end }}
+                            {{ partial "productbox2.html" $product }}
+                        </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    {{end}}
 </section>
 
 <script>

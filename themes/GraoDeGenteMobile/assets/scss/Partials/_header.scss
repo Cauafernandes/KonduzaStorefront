@@ -1,8 +1,11 @@
 .header {
     & &-content {
         justify-self: flex-start;
-        align-items: center;
-        flex-wrap: wrap;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+                align-items: center;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
 
         .icon-menu {
             padding: 16px 10px;
@@ -60,7 +63,7 @@
         &--search {
             background-color: $grayf1;
             padding: 13px 10px 0;
-            flex: 1 0 100%;
+            -webkit-box-flex: 1;-ms-flex: 1 0 100%;flex: 1 0 100%;
             width: 100%;
 
             #searchInput {
@@ -99,8 +102,7 @@
     & &-menu {
 
         &--list {
-            justify-content: space-between;
-
+            -webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;
         }
 
         &--item {
@@ -115,20 +117,17 @@
             width: auto;
 
             &.products {
-                -webkit-flex-grow: 1;
                 margin-left: 0;
-                flex-grow: 1;
+                -webkit-box-flex: 1;-ms-flex-positive: 1;flex-grow: 1;
             }
 
             &.releases {
-                -webkit-flex-grow: 6;
-                flex-grow: 6;
+                -webkit-box-flex: 6;-ms-flex-positive: 6;flex-grow: 6;
             }
 
             &.famous {
-                -webkit-flex-grow: 4;
                 margin-right: 0;
-                flex-grow: 4;
+                -webkit-box-flex: 4;-ms-flex-positive: 4;flex-grow: 4;
             }
         }
     }

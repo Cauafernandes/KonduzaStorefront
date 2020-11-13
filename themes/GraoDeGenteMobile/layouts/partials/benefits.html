@@ -1,0 +1,31 @@
+<div class="benefits">
+    <p class="benefits--shipping bold trip" onclick="shippingModal(true);">
+        <span class="icon icon-truck2"></span>
+        Frete Grátis para todo o Brasil
+        <span class="rullers">regras</span>
+    </p>
+    <p class="benefits--payment bold trip">
+        <span class="icon icon-card"></span>
+        Tudo em até 12x sem juros
+    </p>
+    <p class="benefits--calendar bold trip">
+        <span class="sprite sprite-calendar"></span>
+        30 dias para troca ou devolução do dinheiro
+    </p>
+</div>
+<script>
+    $(document).ready(function () {
+        var $elem = $('.benefits .trip'), l = $elem.length, i = 0;
+
+        function go() {
+            $elem.eq(i % l).fadeIn(500, function () {
+                setTimeout(function () {
+                    $elem.eq(i % l).fadeOut(500, go);
+                    i++;
+                }, 2000)
+            })
+        }
+
+        go();
+    });
+</script>

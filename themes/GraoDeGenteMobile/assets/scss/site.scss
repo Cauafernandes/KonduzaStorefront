@@ -141,7 +141,7 @@ input:not([type="submit"]), textarea {
 }
 
 b, .bold {
-    text-align: center;
+    font-family: $family-bold;
 }
 
 .title {

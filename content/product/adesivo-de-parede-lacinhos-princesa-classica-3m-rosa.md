@@ -5,6 +5,7 @@ image = "https://dmhxz00kguanp.cloudfront.net/fotos/114818/papel-de-parede-luxo-
 name = "Papel de Parede Lacinhos Princesa Clássica 3m"
 price = 146.99
 product_url = "/product/adesivo-de-parede-lacinhos-princesa-classica-3m-rosa"
+category_url = "adesivo"
 categories = ["Adesivos"]
 pictures_thumb = ["//dmhxz00kguanp.cloudfront.net/fotos/151300/pequena_kit-berco-dobravel-2-em-1-estrelinha-cinza-328667.jpg",
 "//dmhxz00kguanp.cloudfront.net/fotos/151300/pequena_kit-berco-dobravel-2-em-1-estrelinha-cinza-328666.jpg",
