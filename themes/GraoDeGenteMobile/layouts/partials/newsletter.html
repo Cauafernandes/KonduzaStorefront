@@ -1,0 +1,63 @@
+<section class="newsletter">
+    <p class="newsletter__title"> RECEBA DICAS, PROMOÇÕES, CONCURSOS E DESCONTOS EXCLUSIVOS. </p>
+
+    <form role="form" method="post" id="newsletter-form">
+        <label for="email" class="control-label hidden"></label>
+        <input id="email" type="text" class="newsletter__input" placeholder="DIGITE SEU E-MAIL" autocomplete="off" />
+        <input type="submit" value="OK" class="newsletter__btn" />
+        <div asp-validation-summary="All" role="alert" class="newsletter--msg newsletter--error">
+            <p></p>
+        </div>
+        <input type="hidden" name="Sexo" value="@(Genre.Undefined)" />
+        <input type="hidden" name="MesDeGestacao" value="@(MonthOfPregnancy.NeverMind)" />
+    </form>
+    <div class="newsletter__succes">
+        <div class="content">
+            <div class="content-header success-title">
+                ISSO!
+                <button class="icon-close-x"><span class="hidden">fechar</span></button>
+            </div>
+            <div class="content-main">
+                <img src="{{.Page}}/imgs/ico-newsletter.jpg" />
+                <p class="success-subtitle">
+                    Seu cadastro foi realizado com sucesso.
+                </p>
+                <p>
+                    <b>Você receberá um e-mail confirmando esta ação.</b>
+                </p>
+                <p class="success-title">
+                    Obrigado.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    var GraoDeGente = GraoDeGente || {};
+    GraoDeGente.Newsletter = GraoDeGente.Newsletter || (function () {
+        return {
+            load: function () {
+                console.log('load');
+                $('.icon-close-x').click(function () {
+                    $('.newsletter__succes').hide();
+                    $('.newsletter--error').hide();
+                });
+            },
+            onSuccess: function () {
+                console.log('Sucesso');
+                $('.newsletter--error').hide();
+                $('.newsletter__succes').show();
+                $('#newsletter-form').trigger('reset');
+            },
+            onFailure: function (error) {
+                console.log('onFailure');
+                if (error.responseText) {
+                    var errorMessage = JSON.parse(error.responseText);
+                    $('.newsletter__succes').hide();
+                    $('.newsletter--error').show();
+                    $('.newsletter--error').find('p').text(errorMessage.Message);
+                }
+            }
+        }
+    })();
+</script> 

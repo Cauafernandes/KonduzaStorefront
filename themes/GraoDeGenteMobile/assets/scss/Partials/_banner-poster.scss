@@ -1,0 +1,57 @@
+.banner-poster {
+    text-align: center;
+    cursor: pointer;
+    
+    img {
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .tag-bf {
+        background-color: #000000;
+        color: #FFF;
+        font-size: 8.6px;
+        line-height: 100%;
+        font-weight: 500;
+        padding: 9px 3px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        @media screen and (min-width: 390px) {
+            font-size: 10px;
+        }
+
+        @media screen and (min-width: 420px) {
+            font-size: 11px;
+        }
+
+        @media screen and (min-width: 445px) {
+            font-size: 12px;
+        }
+
+        @media screen and (min-width: 480px) {
+            font-size: 13px;
+        }
+
+        .more {
+            color: #000;
+            background-color: #CFB88B;
+            display: inline-block;
+            font-family: $family-bold;
+            padding: 3px 5px;
+            margin-left: 5px;
+        }
+
+        span {
+            font-family: $family-bold;
+            padding-left: 3px;
+        }
+    }
+}

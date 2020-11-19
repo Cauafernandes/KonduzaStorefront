@@ -1,7 +1,7 @@
 <section class="product-page">
     {{ partial "benefits.html" }}
 
-    {{ partialCached "banner-poster.html" . }}
+    {{partial "header-alert.html" }}
     
     <div class="product--img__container" itemscope="" itemtype="https://schema.org/Product">
         <meta itemprop="url" content="{{ .product_url }}">
@@ -20,26 +20,6 @@
                 </div>
             {{ end }}
         </div>
-    </div>
-
-    <div class="product-page__container">
-        {{/*  @if (product.IsDisney)
-        {
-            <img src="@Options.Value.CdnProdutos/selos/selo-disney-detalhe.png" alt="Disney" style="margin: 0px 0 20px;" />
-        }
-
-        @if (Model.Product.QuantidadeDePecas > 0)
-        {
-            <p class="product__tag--pieces"> @Model.Product.QuantidadeDePecas peças </p>
-        }  */}}
-
-        <!-- @if (product.IsAlgodao) { -->
-            <meta name="material" content="100% Algodão" />
-            <p class="product__tag--cotton">100% algodão</p>
-        <!-- } -->
-
-        <h1 class="product-page__name"> {{ .name }} </h1>
-        <div class="product-page__ref"> Ref:  {{ .id }}  </div>
     </div>
 
     <a href="javascript:return" id="seeDescription" title="Ver descrição do produto" class="btn-description">Descrição</a>
@@ -66,22 +46,23 @@
         </div>
     {{end}}
 
-    {{ if gt .productdescription "" }}
+    <!-- {{ if gt .productdescription "" }}  -->
         <ul class="description" id="description">
-            {{ range $index, $desc := .productdescription }}
+            <!-- {{ range $index, $desc := .productdescription }} -->
                 <li class="description__contianer" itemprop="description">
-                    <p class="description__title">{{ $desc.nome | safeHTML }}</p>
+                    <p class="description__title">{{ $desc }}</p>
                     <p class="description__name">
-                        <strong>{{ $.name }}</strong>
-                        <span>Ref: {{ $.id }} </span>
+                        <strong>{{ .name }}</strong>
+                        <span>Ref: {{ .id }} </span>
                     </p>
                     <div class="description__info">
-                        {{ $desc.conteudo  | safeHTML }}
+                        {{ $desc }}
+                        aaaaa
                     </div>
                 </li>
-            {{ end }}
+            <!-- {{ end }} -->
         </ul>
-    {{end}}    
+    <!-- {{end}} -->
 
     {{ if gt .productsline "" }} 
         <div class="product-line">

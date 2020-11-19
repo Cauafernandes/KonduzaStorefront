@@ -1,4 +1,5 @@
-        <footer class="footer" id="footer">
+        <footer class="footer" id="footer" data-footer>
+            {{ partial "newsletter.html" }}
             <ul class="footer-menu--list" itemtype="http://schema.org/SiteNavigationElement">
                 <li class="footer-menu--item closed">
                     <meta itemprop="name" content="Institucional">
@@ -187,9 +188,47 @@
         <script src="{{ `js/jquery.form.js` | absURL}}"></script>
         <script src="{{ `js/jquery.nav.js` | absURL}}"></script>
     </body>
+    <script type="application/ld+json">
+        {
+            "@@context": "https://schema.org",
+            "@@type": "Organization",
+            "name" : "{{ .Title }}",
+            "url": "https://www.graodegente.com.br/",
+            "logo": "https://www.graodegente.com.br/imgs/desktop/logos/graodegenteLogo.png",
+            "contactPoint" : [{
+                "@@type" : "ContactPoint",
+                "telephone" : "+55 (11) 3522-8379",
+                "contactType" : "customer service"
+            }],
+            "sameAs" : [
+                "https://www.facebook.com/graodegente",
+                "https://instagram.com/graodegente/",
+                "https://open.spotify.com/user/u6kl0i4v5sqxn2f48odyhg3zq",
+                "https://www.pinterest.com/graodegente/",
+                "http://bloggraodegente.com.br/" 
+            ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@@context" : "http://schema.org",
+            "@@type" : "WebSite",
+            "name" : "Grão de Gente",
+            "url" : "https://www.graodegente.com.br",
+            "potentialAction" : [
+                {
+                    "@@type" : "SearchAction",
+                    "target" : "https://www.graodegente.com.br/busca/{search_term_string}?utm_source=google&utm_medium=sitelinksearchbox&utm_campaign=sitelinksearchbox",
+                    "query-input" : "required name=search_term_string"
+                }
+            ]
+        }
+    </script>
 </html>
 <script>
     $(document).ready(function(){
+        GraoDeGente.Newsletter.load();
+        
         $(".footer-menu--item-title").on("click", function(){
             var field = $(this).parent();
 

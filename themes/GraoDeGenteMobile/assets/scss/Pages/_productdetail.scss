@@ -3,6 +3,10 @@
     display: flex;
     flex-direction: column;
 
+    .banner-poster > div {
+        margin-bottom: 5px;
+    }
+
     .product--img__container{
         max-height: 550px;
         overflow: hidden;
@@ -54,6 +58,21 @@
                     padding: 0px;
                 }
             }
+        }
+    }
+
+    &__container{
+        padding: 10px 20px 0;
+        
+        .product-page__name{
+            font-size: 15px;
+            line-height: 100%;
+            margin-bottom: 6px;
+        }
+        .product-page__ref{
+            margin-bottom: 20px;
+            display: block;
+            font-size: 12px;
         }
     }
 
@@ -136,5 +155,134 @@
             font-size: 53px;
             line-height: 10px;
         }
+    }
+
+    .description{
+        padding: 30px 20px 0;
+
+        &__contianer{
+            margin: 0 0 30px;
+            &:not(:last-child) {
+                border-bottom: solid 1px #ccc;
+                display: block;
+                padding-bottom: 30px;
+            }
+        }
+
+        &__title{
+            margin-bottom: 10px;
+            font-family: $family-semibold;
+            text-transform: uppercase;
+            font-size: 17px;
+            color: #00bfb3;
+        }
+
+        &__name{
+            margin-bottom: 15px;
+            strong,
+            span {
+                display: block;
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            strong {
+                font-family: $family-semibold;
+            }
+        }
+
+        &__info{
+            * {
+                font-family: $family-regular;
+                vertical-align: top;
+                line-height: 19px;
+                font-size: 13px;
+                color: $gray6;
+                text-align: initial !important;
+            }
+            
+            strong {
+                font-family: $family-semibold;
+                line-height: 20px;
+            }
+
+            .templateDetalheTabela tr:first-child > td {
+
+                &.templateDetalheNome,
+                &.templateDetalheQuantidade,
+                &.templateDetalheDescricao {
+                    display: none;
+                }
+            }
+
+            table {
+                width: 100%;
+                display: table;
+                border-spacing: 0;
+                border-collapse: collapse;
+
+                tr {
+                    display: table;
+                    width: 100%;
+                    margin-bottom: 2px;
+                }
+
+                td {
+                    &.templateDetalheDescricaoDetalhe {
+                        padding-left: 7px;
+                    }
+
+                    &.templateDetalheTipo {
+                        width: 53%;
+                    }
+                    // &.templateDetalheDescricao{
+                    // width: 100%;
+                    // }
+                }
+            }
+    
+            .templateDetalheTitulo {
+                width: 100%;
+                margin-top: 15px;
+    
+                .templateDetalheNome {
+                    display: block;
+                    font-family: $family-semibold;
+                }
+    
+                .templateDetalheNomeDetalhe {
+                    font-family: $family-semibold;
+                    width: 100%;
+                    padding: 10px 0;
+                }
+    
+                .templateDetalheQuantidade {
+                    width: 20%;
+                }
+            }
+    
+            .templateDetalheTituloBloco {
+                font-family: $family-semibold;
+                font-size: 14px;
+                padding-top: 15px;
+                color: $green;
+                border-top: solid 1px #ccc;
+                margin-top: 25px;
+                display: block;
+            }
+    
+            .templateDetalheTituloGeralBloco {
+                text-transform: uppercase;
+                display: block;
+                position: relative;
+                bottom: -23px;
+            }
+    
+            .templateDetalheTexto,
+            .templateDetalheTituloBlocoDivisor,
+            .templateDetalheTituloGeralBlocoDivisor {
+                display: none
+            }
+        }        
     }
 }
