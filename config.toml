@@ -2,3 +2,6 @@ baseURL = "https://konduzastorefront.netlify.app/"
 languageCode = "pt-BR"
 title = "Grão de Gente"
 theme = "GraoDeGenteMobile"
+
+[params]
+    cdnURL = "http://dmhxz00kguanp.cloudfront.net/"

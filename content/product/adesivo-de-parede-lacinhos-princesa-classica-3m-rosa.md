@@ -6,6 +6,8 @@ name = "Papel de Parede Lacinhos Princesa Clássica 3m"
 price = 146.99
 product_url = "/product/adesivo-de-parede-lacinhos-princesa-classica-3m-rosa"
 category_url = "adesivo"
+contadorinicio = "2020-11-23 15:01:00"
+contadorfim = "2020-11-23 18:00:00"
 categories = ["Adesivos"]
 pictures_thumb = ["//dmhxz00kguanp.cloudfront.net/fotos/151300/pequena_kit-berco-dobravel-2-em-1-estrelinha-cinza-328667.jpg",
 "//dmhxz00kguanp.cloudfront.net/fotos/151300/pequena_kit-berco-dobravel-2-em-1-estrelinha-cinza-328666.jpg",
@@ -131,4 +133,19 @@ pictures_mobile = ["//dmhxz00kguanp.cloudfront.net/fotos/151716/o_500_kit-berco-
     installmentqtd=12
     installmentprice="95,28"
     product_url = "/product/adesivo-de-parede-luas-e-estrelas-3m-rosa-1/"
+
+[[especificacoes]]
+    nome = "Kit Berço"
+    exibirFoto = false
+    [[especificacoes_item]]
+        nome = "Com mosquiteiro" 
+        produtoUrl = "kit-berco-fofinho-com-rolinho-amiguinhas-rosa" 
+        foto = "kit-berco-amiguinhas-pet-180600" 
+        produtoId = 81253
+
+    [[especificacoes_item]]
+        nome = "Sem mosquiteiro" 
+        produtoUrl = "kit-berco-fofinho-com-rolinho-amiguinhas-rosa-1" 
+        foto ="kit-berco-amiguinhas-209747" 
+        produtoId = 92948
 +++
