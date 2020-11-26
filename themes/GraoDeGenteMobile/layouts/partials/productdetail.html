@@ -3,7 +3,8 @@
 
     {{ partialCached "banner-poster.html" . }}
     
-    <div class="product--img__container" itemscope="" itemtype="https://schema.org/Product">
+    
+    <div class="slider" itemscope="" itemtype="https://schema.org/Product">
         <meta itemprop="url" content="{{ .product_url }}">
         <meta itemprop="name" content="{{ print .name }}">
         <meta itemprop="category" content="{{ range $cat :=.categories }}{{ $cat }} {{ end }}">
@@ -11,14 +12,61 @@
         <meta itemprop="mpn" content="{{ .id }}">
         <meta itemprop="sku" content="{{ .id }}">
         <meta itemprop="productID" content="{{ .id }}">
+
+        <div id="product-wish" class="wish-button" onclick="GraoDeGente.WishProduct.checkWish(this)" data-sku="{{ .id }}">
+            <i class="icon-heart-empty"></i>
+        </div>
         
-        
-        <div class="slider-product">                                
-            {{ range $index, $picture := .pictures_mobile }}
-                <div>
-                    <img src="{{ $picture }}" />
-                </div>
-            {{ end }}
+        <div class="slider__container--cover">
+            <div class="animated-background"></div>
+        </div>
+        <!-- @( !(product.Fotos.Count > 0) ? "img-default" : "" )" -->
+        <div class="slider__container" id="pinchCarousel" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">     
+            <!-- @if( product.Fotos.Count > 0 ){ -->
+                {{ range $index, $picture := .pictures_mobile }}
+                    <div class="slider__item">
+                        <img src="{{ $picture }}" class="slider__img" title="{{ $.name }}" alt="{{ $.name }}"/>
+                    </div>
+                {{ end }}
+            <!-- } -->
+            <!-- @if (!string.IsNullOrEmpty(product.Foto360)) { -->
+                {{ with .pictures_mobile }}
+                    {{ range first 1 . }}
+                        {{ $img_destaque := .}}
+                        {{ with $.product_360 }}
+                            <div class="slider__item slider__item--btn360">
+                                <img src="{{ $img_destaque }}" class="slider__img" title="{{ $.name }}" alt="{{ $.name }}"/>
+                                <button id="btnOpen360" data-spotlight="{{.}}" data-modal="modal360">
+                                    &gt; VER
+                                </button>
+                            </div>
+                        {{end}}
+                        {{ with $.product_video }}
+                            <div class="slider__item slider__item--btnvideo">
+                                <img src="{{ $img_destaque }}" class="slider__img @(isSquarePhoto(product.FotoDestaque.Width, product.FotoDestaque.Height) ? 'square' : 'rectangle')" title="{{ $.name }}" alt="{{ $.name }}"/>
+                                <button class="btnOpenVideo" data-modal="modalYoutube" data-videoid="{{.}}" thumbnail="{{ $img_destaque }}">
+                                    <span> Vídeo </span>
+                                </button>
+                            </div>
+                        {{end}}
+                    {{end}}
+                {{end}}
+            <!-- } -->
+            <!-- @*// video    *@ -->
+            <!-- @if (product.Fotos.Count > 0 && product.Videos.Count > 0) { -->
+                <!-- @for (int i = 0; i < product.Videos.Count; i++) {
+                    <figure class="video-youtube" style="display: none">
+                        <button type="button" class="slick-prev video-youtube--prev icon-arrow-left-big"><span class="hidden">anterior</span></button>
+                        <img src="@Model.GetPhotoSliderUrl(product.FotoDestaque.Id)" class="@(isSquarePhoto(product.FotoDestaque.Width, product.FotoDestaque.Height) ? "square" : "rectangle")" />
+                        <button class="btnOpenVideo" data-modal="modalYoutube" data-videoid="@Model.GetVideoId(product.Videos[i].Url.ToString())" thumbnail="@Model.GetPhotoSliderUrl(product.FotoDestaque.Id)" style="position: absolute">
+                            <span> Vídeo </span>
+                        </button>
+                        @if (i < product.Videos.Count - 1){
+                            <button type="button" class="slick-next video-youtube--next icon-arrow-left-big"><span class="hidden">próximo</span></button>
+                        }
+                    </figure>
+                } -->
+            <!-- } -->
         </div>
     </div>
 
@@ -257,14 +305,25 @@
         <a class="btn-description btn-description--arrow" href="/@product.CategoriaUrl" title="@product.Categoria">Ver mais @product.Categoria</a>
     <!-- } -->
 
+    <!-- @if (product.Fotos.Count > 0 && product.Videos.Count > 0) { -->
+        <!-- @for (int i = 0; i < product.Videos.Count; i++) { -->
+            <figure class="video-youtube video-youtube--descbox">
+                <img src="@Model.GetPhotoSliderUrl(product.FotoDestaque.Id)" class="@(isSquarePhoto(product.FotoDestaque.Width, product.FotoDestaque.Height) ? 'square' : 'rectangle')" />
+                <button class="btnOpenVideo" data-modal="modalYoutube" data-videoid="@Model.GetVideoId(product.Videos[i].Url.ToString())" thumbnail="@Model.GetPhotoSliderUrl(product.FotoDestaque.Id)" style="position: absolute">
+                    <span> Vídeo </span>
+                </button>
+            </figure>
+        <!-- } -->
+    <!-- } -->
+
     {{ if gt .productdescription "" }}
         <ul class="description" id="description">
             {{ range $index, $desc := .productdescription }}
                 <li class="description__contianer" itemprop="description">
                     <p class="description__title">{{ $desc.nome | safeHTML }}</p>
                     <p class="description__name">
-                        <strong>{{ $.name }}</strong>
-                        <span>Ref: {{ $.id }} </span>
+                        <strong> {{ $.name }} </strong>
+                        <span> Ref: {{ $.id }} </span>
                     </p>
                     <div class="description__info">
                         {{ $desc.conteudo  | safeHTML }}
@@ -299,10 +358,34 @@
 
 <script>
     $(document).ready(function() {
-        $('.slider-product').slick({
-            dots: true,
-            infinite: false,
-            arrows: false
-        });
+        initCarousel();
     });
+
+
+    function initCarousel() {
+        var width = $("body").width();
+        $('.slider__container--cover').height(width+1);
+        var heightImg = calcSizeImg();
+
+        $('#pinchCarousel').on('init', function (event, slick, currentSlide, nextSlide) {
+            setTimeout(function () {
+                $('.slider__container--cover').remove();
+            }, 1000);
+            $('.product-page .slider__container .slider__item').height(width);
+        });
+
+        $('#pinchCarousel').slick({
+            lazyLoad: 'anticipated',
+            infinite: false,
+            dots: true,
+            arrows: false,
+            speed: 200
+        });
+    }
+
+    function calcSizeImg() {
+        var widthClient = $("body").width();
+        return (widthClient / 5) * 4;
+    }
+
 </script>

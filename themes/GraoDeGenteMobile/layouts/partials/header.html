@@ -17,8 +17,8 @@
         {{ $.Site.Params.customHead | safeHTML }}
         {{ $style := resources.Get "scss/site.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
         
-        <link rel="stylesheet" href="{{ $style.Permalink }}">
         <link rel="stylesheet" href="{{ `js/slick/slick/slick-theme.css` | absURL }}">
+        <link rel="stylesheet" href="{{ $style.Permalink }}">
         <script src="{{`js/jquery.min.js` | absURL}}"></script>
         <script src="{{`js/slick/slick/slick.min.js` | absURL}}"></script>
     </head>
