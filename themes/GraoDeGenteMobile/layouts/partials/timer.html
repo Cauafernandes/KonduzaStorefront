@@ -1,0 +1,60 @@
+<div id="divTimer-@Model.Id" class="banner-contador mobile" style="display: none;">
+    {{ $id :=  index . 0  }} 
+    {{ $style := index . 1  }} 
+    {{ $endCounter := index . 2  }}
+    <span class="tituloTimer">ESTA PROMOÇÃO TERMINA EM:</span>
+    <timer class="timer">
+        <span id="timer-@Model.Id"></span>
+    </timer>
+    <!--@Html.Raw(Model.Style)-->
+</div>
+<script type="text/javascript">
+    (function escopedJs(window) {
+        //var end = new Date(@Model.EndDate.Year, @Model.EndDate.Month - 1, @Model.EndDate.Day, @Model.EndDate.Hour, @Model.EndDate.Minute, @Model.EndDate.Second, @Model.EndDate.Millisecond);
+        var end = new Date({{ $endCounter }});
+        var _second = 1000;
+        var _minute = _second * 60;
+        var _hour = _minute * 60;
+        var _day = _hour * 24;
+        var animationId;
+        var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+        var divSlick = document.getElementById('slider-@Model.Id');
+        var div = document.getElementById('@Model.Id');
+        var countdownElement = document.getElementById('timer-@Model.Id');
+        var element = divSlick ? divSlick.parentElement.parentElement : div;
+
+        function showRemaining() {
+            if (!element) {
+                $('#divTimer-@Model.Id').hide();
+                return;
+            }
+
+            if ($(element).hasClass('active') || $(element).hasClass('slick-active')) {
+                var distance = end - new Date();
+
+                if (distance <= 0){
+                    cancelAnimationFrame(animationId); 
+
+                    if (!(countdownElement.parentElement.parentElement.parentElement.id.includes('slider-')))
+                        countdownElement.parentElement.parentElement.parentElement.style.display = 'none';
+                }
+                else {
+                    var hours = Math.floor((distance % _day) / _hour);
+                    var minutes = Math.floor((distance % _hour) / _minute);
+                    var seconds = Math.floor((distance % _minute) / _second);
+                    var milliseconds = (distance % _second);
+                    milliseconds = (milliseconds < 10 ? '0' + milliseconds : milliseconds).toString().substring(0, 2);
+
+                    countdownElement.innerHTML = (hours ? hours + 'h' : '') + (minutes ? minutes + 'm' : '') + seconds + 's' + milliseconds + '';
+                    $('#divTimer-@Model.Id').show();
+                }
+            } else {
+                $('#divTimer-@Model.Id').hide();
+            }
+
+            animationId = requestAnimationFrame(showRemaining);
+        }
+
+        animationId = requestAnimationFrame(showRemaining);
+    })(window);
+</script>

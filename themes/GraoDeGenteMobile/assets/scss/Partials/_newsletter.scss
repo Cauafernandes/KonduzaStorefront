@@ -1,0 +1,103 @@
+.newsletter {
+    padding: 40px 20px;
+    display: inline-block;
+
+    &__title {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        color: $green;
+        padding-bottom: 20px;
+    }
+
+    &__input {
+        float: left;
+        max-width: calc( 100% - 36px);
+        padding-bottom: 0px !important;
+        color: $dark-gray
+    }
+
+    &__btn {
+        float: left;
+        background-color: $green;
+        color: #fff;
+        width: 36px;
+        padding: 10px 0;
+        font-size: 14px !important;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &__succes {
+        display: none;
+        padding: 20px;
+        z-index: 999;
+        background-color: rgba(0, 0, 0, 0.66);
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        .content {
+            width: auto;
+            margin: auto;
+            background-color: #fff;
+            text-align: center;
+            color: #555555;
+            font-size: 16px;
+            line-height: 19px;
+
+            p {
+                margin-bottom: 20px;
+            }
+
+            img {
+                display: block;
+                margin: 20px auto;
+                width: auto;
+            }
+        }
+
+        .content-main {
+            padding: 20px;
+        }
+
+        .content-header {
+            background-color: #E6F9F8;
+            padding: 40px 10px;
+            position: relative;
+
+            .icon-close-x {
+                font-size: 32px;
+                background: no-repeat;
+                border: none;
+                color: $green;
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 15px;
+            }
+        }
+
+        .success-title {
+            font-family: $family-bold;
+            color: $green;
+            font-size: 26px;
+            line-height: 32px;
+        }
+
+        .success-subtitle {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+
+    &--error {
+        /*display: none;*/
+        clear: both;
+        margin-top: 10px;
+        float: left;
+        font-size: 12px;
+    }
+}

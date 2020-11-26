@@ -1,11 +1,10 @@
-<section class="product-page">
+<section class="product-page">    
     {{ partial "benefits.html" }}
 
-    <div class="header-alert container-flex">
-        <p>Estamos Enviando Normalmente</p>
-    </div>
+    {{ partialCached "banner-poster.html" . }}
     
-    <div class="product--img__container" itemscope="" itemtype="https://schema.org/Product">
+    
+    <div class="slider" itemscope="" itemtype="https://schema.org/Product">
         <meta itemprop="url" content="{{ .product_url }}">
         <meta itemprop="name" content="{{ print .name }}">
         <meta itemprop="category" content="{{ range $cat :=.categories }}{{ $cat }} {{ end }}">
@@ -13,24 +12,331 @@
         <meta itemprop="mpn" content="{{ .id }}">
         <meta itemprop="sku" content="{{ .id }}">
         <meta itemprop="productID" content="{{ .id }}">
+
+        <div id="product-wish" class="wish-button" onclick="GraoDeGente.WishProduct.checkWish(this)" data-sku="{{ .id }}">
+            <i class="icon-heart-empty"></i>
+        </div>
         
-        
-        <div class="slider-product">                                
-            {{ range $index, $picture := .pictures_mobile }}
-                <div>
-                    <img src="{{ $picture }}" />
-                </div>
-            {{ end }}
+        <div class="slider__container--cover">
+            <div class="animated-background"></div>
+        </div>
+        <!-- @( !(product.Fotos.Count > 0) ? "img-default" : "" )" -->
+        <div class="slider__container" id="pinchCarousel" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">     
+            <!-- @if( product.Fotos.Count > 0 ){ -->
+                {{ range $index, $picture := .pictures_mobile }}
+                    <div class="slider__item">
+                        <img src="{{ $picture }}" class="slider__img" title="{{ $.name }}" alt="{{ $.name }}"/>
+                    </div>
+                {{ end }}
+            <!-- } -->
+            <!-- @if (!string.IsNullOrEmpty(product.Foto360)) { -->
+                {{ with .pictures_mobile }}
+                    {{ range first 1 . }}
+                        {{ $img_destaque := .}}
+                        {{ with $.product_360 }}
+                            <div class="slider__item slider__item--btn360">
+                                <img src="{{ $img_destaque }}" class="slider__img" title="{{ $.name }}" alt="{{ $.name }}"/>
+                                <button id="btnOpen360" data-spotlight="{{.}}" data-modal="modal360">
+                                    &gt; VER
+                                </button>
+                            </div>
+                        {{end}}
+                        {{ with $.product_video }}
+                            <div class="slider__item slider__item--btnvideo">
+                                <img src="{{ $img_destaque }}" class="slider__img @(isSquarePhoto(product.FotoDestaque.Width, product.FotoDestaque.Height) ? 'square' : 'rectangle')" title="{{ $.name }}" alt="{{ $.name }}"/>
+                                <button class="btnOpenVideo" data-modal="modalYoutube" data-videoid="{{.}}" thumbnail="{{ $img_destaque }}">
+                                    <span> Vídeo </span>
+                                </button>
+                            </div>
+                        {{end}}
+                    {{end}}
+                {{end}}
+            <!-- } -->
+            <!-- @*// video    *@ -->
+            <!-- @if (product.Fotos.Count > 0 && product.Videos.Count > 0) { -->
+                <!-- @for (int i = 0; i < product.Videos.Count; i++) {
+                    <figure class="video-youtube" style="display: none">
+                        <button type="button" class="slick-prev video-youtube--prev icon-arrow-left-big"><span class="hidden">anterior</span></button>
+                        <img src="@Model.GetPhotoSliderUrl(product.FotoDestaque.Id)" class="@(isSquarePhoto(product.FotoDestaque.Width, product.FotoDestaque.Height) ? "square" : "rectangle")" />
+                        <button class="btnOpenVideo" data-modal="modalYoutube" data-videoid="@Model.GetVideoId(product.Videos[i].Url.ToString())" thumbnail="@Model.GetPhotoSliderUrl(product.FotoDestaque.Id)" style="position: absolute">
+                            <span> Vídeo </span>
+                        </button>
+                        @if (i < product.Videos.Count - 1){
+                            <button type="button" class="slick-next video-youtube--next icon-arrow-left-big"><span class="hidden">próximo</span></button>
+                        }
+                    </figure>
+                } -->
+            <!-- } -->
         </div>
     </div>
 
-    <a href="javascript:return" id="seeDescription" title="Ver descrição do produto">Descrição</a>
+    <div class="product-page__container">
+        <!-- @if (product.IsDisney){ -->
+            <img src="http://dmhxz00kguanp.cloudfront.net/selos/selo-disney-detalhe.png" alt="Disney" class="tags--disney" />
+        <!-- } -->
+
+        <!-- @if (Model.Product.QuantidadeDePecas > 0) { -->
+            <p class="tags bold"> {{ 10 }} peças </p>
+        <!-- } -->
+
+        <!-- @if (product.IsAlgodao){ -->
+            <meta name="material" content="100% Algodão" />
+            <p class="tags tags--cotton">100% algodão</p>
+        <!-- } -->
+        
+        <h1 class="product-page__name"> {{ .name }} </h1>
+        <span class="product-page__ref"> Ref: {{ .id }} </span>
+
+        <div class="specifications">
+            <!-- @foreach (var esp in product.Especificacoes.OrderBy(x => x.Nome)){ -->
+                <div class="specifications__item">
+                    <p class="specifications__title">Escolher  <!-- @esp.Nome --> Kit Berço</p>
+                    <p id="specificationError-@esp.Nome" style="display: none;" class="specifications--error"> Selecione: <!-- @esp.Nome --> Kit Berço </p>
+
+                    <div data-name="@esp.Nome" data-variation-selected="@(esp.EspecificacaoItens.Any(x=> x.ProdutoUrl == Model.ProductUrl))">
+                        <!-- @if (esp.ExibirFoto){ -->
+                            <ul class="container-flex specifications--colors">
+
+                                <!-- @foreach (var item in esp.EspecificacaoItens) { -->
+                                    <li class="@(Model.ProductUrl == item.ProdutoUrl ? 'active' : '')">
+                                        <!-- @if (esp.ExibirFoto && Model.ProductUrl == item.ProdutoUrl){ -->
+                                            <meta itemprop="color" content="@item.Nome">
+                                        <!-- } -->
+                                        <a data-specification-item href="@item.ProdutoUrl" style="@item.Estilo">
+                                            <!-- @item.Nome --> Kit Berço
+                                        </a>
+                                    </li>
+                                <!-- } -->
+                            </ul>
+                        <!-- } else {
+                            var i = esp.EspecificacaoItens.Find(x => x.ProdutoUrl == Model.ProductUrl); -->
+
+                            <div class="specifications--button">
+                                <!-- @if (i is null){ -->
+                                    <button data-modal="@esp.Nome" style="@esp.Nome" class="specifications--button--active">Escolha</button>
+                                <!-- }else{ -->
+                                    <button data-modal="@i.Nome" style="@i.Estilo" class="specifications--button--active">Sem mosqueteiro | P</button>
+                                <!-- } -->
+                            </div>
+
+                            <div id="orderBox" style="display: none;" class="modal modal-select" data-modal="@(i is null ? esp.Nome : i.Nome )">
+                                <div class="modal__bg" data-modal="close">
+                                    <div class="modal__main">
+                                        <p class="modal-select__title" data-modal="close">Escolha <i class="icon-close-x modal-select__title--icon" data-modal="close"></i></p>
+                                        <ul class="modal-select__options">
+                                            <!-- @foreach (var item in esp.EspecificacaoItens) { -->
+                                                <li class="@(Model.ProductUrl == item.ProdutoUrl ? 'active' : '')">
+                                                    <!-- @if (item.ProdutoUrl != Model.ProductUrl) { -->
+                                                        <a data-specification-item href="@item.ProdutoUrl" style="@item.Estilo" title="Sem mosqueteiro | P">
+                                                            Sem mosqueteiro | P
+                                                        </a>
+                                                    <!-- } else { -->
+                                                        <a style="@item.Estilo" title="Sem mosqueteiro | P"> Sem mosqueteiro | P </a>
+                                                    <!-- } -->
+                                                </li>
+                                            <!-- } -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- } -->
+                    </div>
+                </div>
+            <!-- } -->
+        </div>
+
+
+        <div itemprop="offers" itemscope="" itemtype="https://schema.org/Offer" class="offers @(Model.CanBuy()?null:'soldoff')">
+            <meta itemprop="itemCondition" content="https://schema.org/NewCondition" />
+            <meta itemprop="availability" content="https://schema.org/@(Model.CanBuy() ? 'InStock' : 'SoldOut')">
+            <meta itemprop="priceCurrency" content="BRL">
+            <meta itemprop="price" content="@Model.Product.CondicaoComMenorValor?.Parcelas?.FirstOrDefault()?.Valor.ToString('0.00').Replace(',','.')">
+            <meta itemprop="url" content="https://www.graodegente.com.br@(fullUrl)">
+            <meta itemprop="priceValidUntil" content="@DateTime.Now.ToString('yyyy'-'MM'-'dd')" />
+
+            <!-- @if (Model.ExibeDescontoPorcentual){ -->
+                <div class="offers__percent">
+                    <i class="icon-arrow2-down"></i>
+                    35<span>%</span>
+                </div>
+            <!-- } -->
+
+            <p class="offers__prices">
+                <!-- @if (product.PrecoPromocional > 0) { -->
+                    <span class="block">
+                        <span class="line-through">de 692,22</span> por:
+                    </span>
+                <!-- } -->
+
+                <b class="block">
+                    R$ <span class="prices--big">306,99</span>
+                    no Boleto
+                </b>
+            </p>
+
+
+            <p class="offers__prices">
+                <b class="block">ou R$341,10</b>
+
+                <!-- @if (Model.Product.Parcelamento != null) { -->
+                    <b class="prices--medium">
+                        12x de R$28,43
+                        <span>sem/com juros</span>
+                    </b>
+                <!-- } -->
+            </p>
+
+            <!-- @if (product.QuantidadeDeBrindes > 0) { -->
+                <p class="offers__gift">
+                    GANHE 1 BRINDE
+                </p>
+            <!-- } -->
+        </div>
+
+        <!-- @if (Model.CanBuy()) { -->
+            <form id="comprarForm" method="post" asp-controller="Cart" asp-action="PostAsync">
+                <input type="hidden" asp-for="@Model.Product.Id" />
+                <button id="btnComprar" type="button" class="buy-button">
+                    COMPRAR
+                    <i class="icon-cart-empty"></i>
+                </button>
+                <!-- @if (!Model.Product.EnvioNormal) { -->
+                    <p class="shipping-alert">
+                        Enviando Normalmente
+                    </p>
+                <!-- } -->
+            </form>
+
+            <!-- @*
+                //aguardando validação do valor freteGratis
+                <div class="seloContainer">
+                    <a href="javascript:shippingModal(true);" title="Frete Grátis" class="freeShip freeShip-open">Frete Grátis</a>
+                </div>
+            *@ -->
+
+            <!-- @if (Model.Product.EstoqueReal > 0 || Model.Product.PrazoDeEntrega <= 2) { -->
+                <div class="immediate-shipping">
+                    <div class="immediate-shipping__box">
+                        <b>Aproveite!</b>
+                        <span class="envio"><b>Envio</b> em até <b>48 Horas</b></span>
+                        <span class="icon-truck2"><span class="icon-ray"></span></span>
+                    </div>
+                </div>
+            <!-- } -->
+
+
+            <div id="{{ .id }}" class="buy__timer container-flex active">
+                <div class="timer-text container-flex">
+                    <div class="timer-text--text" data-timer-text>
+                        <span class="timer-text--hide">Promoção</span> termina em:
+                    </div>
+                    <!-- @if (product.Promocao){ -->
+                        <div class="timer-text--tag" data-timer-tag>
+                            <img class="tituloTimer--selo" alt="Selo de promoção" src="http://dmhxz00kguanp.cloudfront.net/selos/mobile/selo_promocao_grande_contador.png"
+                                 title="Selo de promoção">
+                        </div>
+                    <!-- } else { -->
+                        <div class="timer-text--tag" data-timer-tag>
+                            <span class="tituloTimer--selo">Promoção</span>
+                        </div>
+                    <!-- } -->
+                </div>
+                <!-- {{ $timer := (slice .id "" .contadorfim)   }} -->
+                {{ partial "timer.html" (slice .id "" .contadorfim)  }}
+            </div>
+
+        <!-- } else { -->
+            <div class="product-sold-out">
+                <p class="buy--soldoff">PRODUTO ESGOTADO</p>
+            </div>
+        <!-- } -->
+
+        <meta itemprop="brand" content="Grão de Gente">
+        <!-- @if (product.Promocao && Model.CanBuy() && !Model.HasTimer()) { -->
+            <div class="tags--sale container-flex container-flex--c container-flex--vc">
+                Promoção <img src="http://dmhxz00kguanp.cloudfront.net/selos/mobile/selo_promocao_grande.png" alt="Selo de promoção" title="Produto em Promoção" />
+            </div>
+        <!-- } -->
+        <!-- @if (product.Exclusivo) { -->
+            <p class="tags--exclusive">
+                Exclusivo <b>GRÃO DE GENTE</b>
+            </p>
+        <!-- } -->
+        <!-- @if (product.IsSabrina) { -->
+            <div class="tags--img">
+                <!-- @if (Model.IsZoeRoom()) { -->
+                    <img src="http://dmhxz00kguanp.cloudfront.net/selos/mobile/selo-sabrina-quarto-zoe.jpg" alt="Coleção Sabrina Sato Mom by Grão de gente">
+                <!-- } else { -->
+                    <img src="http://dmhxz00kguanp.cloudfront.net/selos/mobile/selo-sabrina.png" alt="Coleção Sabrina Sato Mom by Grão de gente">
+                <!-- } -->
+            </div>
+        <!-- } -->
+    </div>
+
+    <!-- @if (product.Colecoes.Count >= 1) { -->
+        <a href="javascript:return" id="seeDescription" title="Ver descrição do produto" class="btn-description">Descrição</a>
+    <!-- } -->
+
+    <!-- @if (product.Colecoes.Count == 1){ -->
+        {{ if gt .productsline "" }} 
+            <div class="product-line">
+                <div class="product-line--title container-flex container-flex--sb">
+                    <h4 class="bold">produtos da coleção</h4>
+                    <a href="/{{ .category_url }}" target="_self" title="ver todos os produtos dessa coleção" class="bold">ver todos</a>
+                </div>
+                <div class="product-line--list" itemscope itemtype="http://schema.org/ItemList">
+                    <div class="container-flex">
+                        {{ $lenght := len .productsline }}
+                        {{ range $index, $product := .productsline}}
+                            <div class="product-line--product" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                {{ if eq $lenght (add 1 $index) }}
+                                    <meta itemprop="numberOfItems" content="{{ $lenght }}">
+                                {{ end }}
+                                {{ partial "productbox2.html" $product }}
+                            </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        {{end}}
+    <!-- } -->
+
+    <!-- @if (!string.IsNullOrEmpty(product.CategoriaUrl)) { -->
+        <a class="btn-description btn-description--arrow" href="/@product.CategoriaUrl" title="@product.Categoria">Ver mais @product.Categoria</a>
+    <!-- } -->
+
+    <!-- @if (product.Fotos.Count > 0 && product.Videos.Count > 0) { -->
+        <!-- @for (int i = 0; i < product.Videos.Count; i++) { -->
+            <figure class="video-youtube video-youtube--descbox">
+                <img src="@Model.GetPhotoSliderUrl(product.FotoDestaque.Id)" class="@(isSquarePhoto(product.FotoDestaque.Width, product.FotoDestaque.Height) ? 'square' : 'rectangle')" />
+                <button class="btnOpenVideo" data-modal="modalYoutube" data-videoid="@Model.GetVideoId(product.Videos[i].Url.ToString())" thumbnail="@Model.GetPhotoSliderUrl(product.FotoDestaque.Id)" style="position: absolute">
+                    <span> Vídeo </span>
+                </button>
+            </figure>
+        <!-- } -->
+    <!-- } -->
+
+    {{ if gt .productdescription "" }}
+        <ul class="description" id="description">
+            {{ range $index, $desc := .productdescription }}
+                <li class="description__contianer" itemprop="description">
+                    <p class="description__title">{{ $desc.nome | safeHTML }}</p>
+                    <p class="description__name">
+                        <strong> {{ $.name }} </strong>
+                        <span> Ref: {{ $.id }} </span>
+                    </p>
+                    <div class="description__info">
+                        {{ $desc.conteudo  | safeHTML }}
+                    </div>
+                </li>
+            {{ end }}
+        </ul>
+    {{end}}    
 
     {{ if gt .productsline "" }} 
         <div class="product-line">
             <div class="product-line--title container-flex container-flex--sb">
-                <h4 class="bold">produtos da coleção</h4>
-                <a href="/{{ .category_url }}" target="_self" title="ver todos os produtos dessa coleção" class="bold">ver todos</a>
+                <h4 class="bold">Produtos Recomendados</h4>
             </div>
             <div class="product-line--list" itemscope itemtype="http://schema.org/ItemList">
                 <div class="container-flex">
@@ -49,12 +355,37 @@
     {{end}}
 </section>
 
+
 <script>
     $(document).ready(function() {
-        $('.slider-product').slick({
-            dots: true,
-            infinite: false,
-            arrows: false
-        });
+        initCarousel();
     });
+
+
+    function initCarousel() {
+        var width = $("body").width();
+        $('.slider__container--cover').height(width+1);
+        var heightImg = calcSizeImg();
+
+        $('#pinchCarousel').on('init', function (event, slick, currentSlide, nextSlide) {
+            setTimeout(function () {
+                $('.slider__container--cover').remove();
+            }, 1000);
+            $('.product-page .slider__container .slider__item').height(width);
+        });
+
+        $('#pinchCarousel').slick({
+            lazyLoad: 'anticipated',
+            infinite: false,
+            dots: true,
+            arrows: false,
+            speed: 200
+        });
+    }
+
+    function calcSizeImg() {
+        var widthClient = $("body").width();
+        return (widthClient / 5) * 4;
+    }
+
 </script>

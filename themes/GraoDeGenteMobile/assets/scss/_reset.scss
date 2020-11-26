@@ -125,70 +125,13 @@ a, a:hover, a:active, a:visited, a:link, a:focus {
     text-decoration: none;
     outline: none;
 }
-/////////////////////////////////////////////////
-body {
-    display: block;
-    max-width: 500px;
-    min-width: 280px;
-    width: 100%;
-    margin: auto;
-    font-family: $family-regular;
-    font-size: 14px;
-    line-height: 1;
-}
-
-ul, ol {
-    padding: 0;
-    margin: 0;
-
-    li {
-        display: block
-    }
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
 
 .lz-src {
     min-width: 100%;
     min-height: 100px;       
 }
 
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px #f9fbfd inset !important;
-    -webkit-text-fill-color: #666666 !important;
-}
-
-strong, h1, h2, h3, h4, h5, h6 {
-    font-weight: normal;
-}
-
-b {
-    font-family: $family-bold;
-}
-
-a, a:hover, a:active, a:visited, a:link, a:focus {
-    color: #666666;
-    text-decoration: none;
-    outline: none;
-}
-
 /// forms
 button, input, optgroup, select, textarea {
     border: none
-}
-
-input, button, summary, select {
-    outline: none;
-    border: none;
-    -webkit-appearance: none;
-    border-radius: 0;
-   
-}
-
-textarea {
-    outline: none;
-    border: none;
 }

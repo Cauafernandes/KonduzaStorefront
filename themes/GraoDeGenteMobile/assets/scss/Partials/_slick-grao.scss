@@ -1,0 +1,40 @@
+.slick-dotted.slick-slider{
+    margin-bottom: 0px !important;
+}
+.slick-dots {
+    background-color: #ffffff;
+    display: block;
+    text-align: left;
+    padding: 5px 5% 0;
+    line-height: 0px;
+    position: relative;
+    bottom: 0;
+
+    li {
+        display: inline-block;
+        width: auto;
+        margin: 0;
+        height: auto;
+
+        button {
+            background-color: #cccccc;
+            margin: 0 2px;
+            width: 6px;
+            height: 6px;
+            text-indent: -9999999999999px;
+            padding: 0;
+            border-radius: 50%;
+        }
+
+        &.slick-active button {
+            background-color: $green;
+        }
+    }
+}
+.slick-list {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+.slick-track{
+    @extend %display-flex;
+}
