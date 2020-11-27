@@ -108,7 +108,7 @@
                                 <!-- } -->
                             </div>
 
-                            <div id="orderBox" style="display: none;" class="modal modal-select" data-modal="@(i is null ? esp.Nome : i.Nome )">
+                            <div id="orderBox" style="display: none;" class="modal modal-bottom" data-modal="@(i is null ? esp.Nome : i.Nome )">
                                 <div class="modal__bg" data-modal="close">
                                     <div class="modal__main">
                                         <p class="modal-select__title" data-modal="close">Escolha <i class="icon-close-x modal-select__title--icon" data-modal="close"></i></p>
@@ -345,6 +345,16 @@
             </div>
         </div>
     {{end}}
+
+    <div tabindex="-1" role="dialog" class="modal modal-active">
+        <div class="modal-bg-close"></div>
+        <div class="modal-container">
+            <div class="modal-body">
+                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close"><span class="icon-close">×</span> <span class="hidden">fechar</span></button>
+                modal
+            </div>
+        </div>
+    </div>
 </section>
 
 
