@@ -30,6 +30,7 @@
                 {{ end }}
             <!-- } -->
             <!-- @if (!string.IsNullOrEmpty(product.Foto360)) { -->
+            {{ if or (ne .product_360 "") (ne .product_video "")}}
                 {{ with .pictures_mobile }}
                     {{ range first 1 . }}
                         {{ $img_destaque := .}}
@@ -42,30 +43,18 @@
                             </div>
                         {{end}}
                         {{ with $.product_video }}
-                            <div class="slider__item slider__item--btnvideo">
-                                <img src="{{ $img_destaque }}" class="slider__img @(isSquarePhoto(product.FotoDestaque.Width, product.FotoDestaque.Height) ? 'square' : 'rectangle')" title="{{ $.name }}" alt="{{ $.name }}"/>
-                                <button class="btnOpenVideo" data-modal="modalYoutube" data-videoid="{{.}}" thumbnail="{{ $img_destaque }}">
-                                    <span> Vídeo </span>
-                                </button>
-                            </div>
+                            {{ range $index, $video := $.product_video }}
+                                <div class="slider__item open-video">
+                                    <img src="{{ $img_destaque }}" class="slider__img @(isSquarePhoto(product.FotoDestaque.Width, product.FotoDestaque.Height) ? 'square' : 'rectangle')" title="{{ $.name }}" alt="{{ $.name }}"/>
+                                    <button class="btn-open-video btnOpenVideo" data-modal="modalYoutube" data-videoid="{{ $video }}" thumbnail="{{ $img_destaque }}">
+                                        <span> Vídeo </span>
+                                    </button>
+                                </div>
+                            {{ end }}
                         {{end}}
                     {{end}}
                 {{end}}
-            <!-- } -->
-            <!-- @*// video    *@ -->
-            <!-- @if (product.Fotos.Count > 0 && product.Videos.Count > 0) { -->
-                <!-- @for (int i = 0; i < product.Videos.Count; i++) {
-                    <figure class="video-youtube" style="display: none">
-                        <button type="button" class="slick-prev video-youtube--prev icon-arrow-left-big"><span class="hidden">anterior</span></button>
-                        <img src="@Model.GetPhotoSliderUrl(product.FotoDestaque.Id)" class="@(isSquarePhoto(product.FotoDestaque.Width, product.FotoDestaque.Height) ? "square" : "rectangle")" />
-                        <button class="btnOpenVideo" data-modal="modalYoutube" data-videoid="@Model.GetVideoId(product.Videos[i].Url.ToString())" thumbnail="@Model.GetPhotoSliderUrl(product.FotoDestaque.Id)" style="position: absolute">
-                            <span> Vídeo </span>
-                        </button>
-                        @if (i < product.Videos.Count - 1){
-                            <button type="button" class="slick-next video-youtube--next icon-arrow-left-big"><span class="hidden">próximo</span></button>
-                        }
-                    </figure>
-                } -->
+            {{end}}
             <!-- } -->
         </div>
     </div>
@@ -305,16 +294,19 @@
         <a class="btn-description btn-description--arrow" href="/@product.CategoriaUrl" title="@product.Categoria">Ver mais @product.Categoria</a>
     <!-- } -->
 
-    <!-- @if (product.Fotos.Count > 0 && product.Videos.Count > 0) { -->
-        <!-- @for (int i = 0; i < product.Videos.Count; i++) { -->
-            <figure class="video-youtube video-youtube--descbox">
-                <img src="@Model.GetPhotoSliderUrl(product.FotoDestaque.Id)" class="@(isSquarePhoto(product.FotoDestaque.Width, product.FotoDestaque.Height) ? 'square' : 'rectangle')" />
-                <button class="btnOpenVideo" data-modal="modalYoutube" data-videoid="@Model.GetVideoId(product.Videos[i].Url.ToString())" thumbnail="@Model.GetPhotoSliderUrl(product.FotoDestaque.Id)" style="position: absolute">
-                    <span> Vídeo </span>
-                </button>
-            </figure>
-        <!-- } -->
-    <!-- } -->
+    {{ if and (gt .pictures_mobile "") (gt .product_video "")}}
+        {{ range first 1 .pictures_mobile }}
+            {{ $img_destaque := . }}
+            {{ range $index, $video := $.product_video }}
+                <div class="open-video video-description">
+                    <img src="{{ $img_destaque }}" class="@(isSquarePhoto(product.FotoDestaque.Width, product.FotoDestaque.Height) ? 'square' : 'rectangle')" title="{{ $.name }}" alt="{{ $.name }}"/>
+                    <button class="btn-open-video btnOpenVideo" data-modal="modalYoutube" data-videoid="{{ $video }}" thumbnail="{{ $img_destaque }}">
+                        <span> Vídeo </span>
+                    </button>
+                </div>
+            {{ end }}
+        {{end}}
+    {{end}}
 
     {{ if gt .productdescription "" }}
         <ul class="description" id="description">
