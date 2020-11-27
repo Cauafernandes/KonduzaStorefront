@@ -1,0 +1,165 @@
+/*
+<div tabindex="-1" role="dialog" class="modal">
+    <div class="modal-bg-close"></div>
+    <div class="modal-container">
+        <div class="modal-body">
+            <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close"> X </button>
+            conteudo aqui
+        </div>
+    </div>
+</div>
+*/
+.modal{
+    opacity: 0;
+    z-index: -10!important;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    outline: 0;
+    -webkit-transition: all 230ms ease-in;
+    -o-transition: all 230ms ease-in;
+    transition: all 230ms ease-in;
+
+    // area de fundo transparente onde contem funcao de fechar para  o modal em toda a area fora da area de conteudo (.modal-body)
+    .modal-bg-close{
+        z-index: 0;
+        background-color: #0000007d;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        outline: 0;
+    }
+
+    .modal-close{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        background: none;
+        padding: 0;
+
+        .icon-close{
+            line-height: .6;
+            color: $green;
+            font-size: 55px;
+        }
+    }
+
+    // activa o modal
+    &.modal-active{
+        opacity: 1;
+        z-index: 1000000000!important;
+    }
+
+    // controla a posicao central do body
+    .modal-container{
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        @extend %display-flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+
+        // bloco centralizado do conteudo em si
+        .modal-body{
+            background: #ffffff;
+            width: auto;
+            height: auto;
+            margin: auto;
+            padding: 20px;
+            max-width: calc(100% - 40px);
+            max-height: calc(100% - 40px);
+            position: relative;
+            min-width: 300px;
+            min-height: 100px;
+        }
+    }
+
+
+    //--------------------------------------
+    //-------- Estilos: categoria ----------
+    //--------------------------------------
+    // modal estilo especificacao e categoria
+
+    &.modal-bottom{
+        &.modal-active .modal-container .modal-body{
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            pointer-events: initial;
+        }
+
+        .modal-container{
+            -webkit-box-align: end;
+            -ms-flex-align: end;
+            align-items: flex-end;
+            .modal-body{
+                padding: 0;
+                will-change: transform;
+                overflow-y: auto;
+                -webkit-transition: all 230ms ease-in;
+                -o-transition: all 230ms ease-in;
+                transition: all 230ms ease-in;
+                margin: initial;
+                width: 100%;
+                max-width: 100%;
+                max-height: 62vh;
+                -webkit-transform: translateY(100%);
+                transform: translateY(100%);
+                pointer-events: none;
+            }
+
+            .modal-close{
+                background-color: #f6f6f6;
+                position: relative;
+                padding: 15px 30px 15px 20px;
+                width: 100%;
+                height: 50px;
+                text-align: left;
+                color: #555;
+                font-size: 18px;
+                text-transform: uppercase;
+        
+                .icon-close{
+                    position: absolute;
+                    top: 12px;
+                    right: 12px;
+                    font-size: 45px;
+                    color: #ccc;
+                }
+            }        
+        }
+    }
+
+
+    //--------------------------------------
+    //---------- Estilos: Full -------------
+    //--------------------------------------
+    &.modal-full{
+        .modal-container{
+            .modal-body{
+                width: 100%;
+                height: 100%;
+                max-width: 100%;
+                max-height: 100%;
+                overflow-y: auto;
+            }
+        }
+    }
+}

@@ -1,5 +1,9 @@
 +++
-
+product_360 = "product_360Aqui"
+product_video = [
+    "product_videoAqui",
+    "product_videoAqui2"
+]
 id = "100966"
 image = "https://dmhxz00kguanp.cloudfront.net/fotos/114818/papel-de-parede-luxo-listrado-branco-bege-3m-244152.jpg"
 name = "Papel de Parede Lacinhos Princesa Clássica 3m"
