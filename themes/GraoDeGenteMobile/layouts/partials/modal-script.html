@@ -1,0 +1,40 @@
+<script>
+    $(document).ready(function () {
+        $('[data-modal]').click(function (a, b) {
+            if (a.target.localName != "a" && a.target.attributes["data-modal"]) {
+                var data_modal_value = a.target.attributes["data-modal"].value;
+
+                console.log("clo--", data_modal_value)
+                if (data_modal_value == "close") {
+                    GraoDeGente.Components.Modal.close();
+                }
+                else {
+                    GraoDeGente.Components.Modal.open(data_modal_value);
+                }
+            }
+        });
+    });
+
+    var GraoDeGente = GraoDeGente || {};
+    GraoDeGente.Components = GraoDeGente.Components || {};
+    GraoDeGente.Components.Modal = (function () {    
+        function open(data_modal_value){
+            console.log("open")
+            $('.modal[data-modal="' + data_modal_value + '"]')
+            .addClass("modal-active");
+            $("body").css("overflow", "hidden");
+        }
+
+        function close(){
+            console.log("close");
+            $('.modal[data-modal]').removeClass("modal-active");
+            $("body").css("overflow", "auto");
+            console.log("close2");
+        }
+
+        return {
+            open: open,
+            close: close
+        }
+    })()
+</script>
