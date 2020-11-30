@@ -107,20 +107,21 @@
                                     <button data-modal="@i.Nome" style="@i.Estilo" class="specifications--button--active">Sem mosqueteiro | P</button>
                                 <!-- } -->
                             </div>
-
-                            <div id="orderBox" style="display: none;" class="modal modal-bottom" data-modal="@(i is null ? esp.Nome : i.Nome )">
-                                <div class="modal__bg" data-modal="close">
-                                    <div class="modal__main">
-                                        <p class="modal-select__title" data-modal="close">Escolha <i class="icon-close-x modal-select__title--icon" data-modal="close"></i></p>
-                                        <ul class="modal-select__options">
+                            <div id="orderBox" class="modal modal-bottom" data-modal="@(i is null ? esp.Nome : i.Nome )" tabindex="-1" role="dialog">
+                                <div class="modal-container modal-bg-close" data-modal="close">
+                                    <div class="modal-body">
+                                        <p data-modal="close" class="modal-close" data-dismiss="modal" aria-label="Close"> 
+                                            Escolha  <span class="icon-close">×</span> <span class="hidden">fechar</span>
+                                        </p>
+                                        <ul class="select-options">
                                             <!-- @foreach (var item in esp.EspecificacaoItens) { -->
-                                                <li class="@(Model.ProductUrl == item.ProdutoUrl ? 'active' : '')">
+                                                <li class="select-options__item @(Model.ProductUrl == item.ProdutoUrl ? 'select-options--active' : '')">
                                                     <!-- @if (item.ProdutoUrl != Model.ProductUrl) { -->
-                                                        <a data-specification-item href="@item.ProdutoUrl" style="@item.Estilo" title="Sem mosqueteiro | P">
+                                                        <a data-specification-item href="@item.ProdutoUrl" style="@item.Estilo" title="Sem mosqueteiro | P" class="select-options__link">
                                                             Sem mosqueteiro | P
                                                         </a>
                                                     <!-- } else { -->
-                                                        <a style="@item.Estilo" title="Sem mosqueteiro | P"> Sem mosqueteiro | P </a>
+                                                        <a style="@item.Estilo" title="Sem mosqueteiro | P" class="select-options__link"> Sem mosqueteiro | P </a>
                                                     <!-- } -->
                                                 </li>
                                             <!-- } -->
@@ -345,18 +346,18 @@
             </div>
         </div>
     {{end}}
-
-    <div tabindex="-1" role="dialog" class="modal modal-active">
-        <div class="modal-bg-close"></div>
-        <div class="modal-container">
+    <p data-modal="modteste">modalteste open</p>
+    <div tabindex="-1" role="dialog" class="modal modal-bottom modal-activeE" data-modal="modteste">
+        <div class="modal-container modal-bg-close" data-modal="close">
             <div class="modal-body">
-                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close"><span class="icon-close">×</span> <span class="hidden">fechar</span></button>
+                <button data-modal="close" class="modal-close" data-dismiss="modal" aria-label="Close"><span class="icon-close" data-modal="close" >×</span> <span class="hidden">fechar</span></button>
                 modal
             </div>
         </div>
     </div>
 </section>
 
+{{ partial "modal-script.html" }}
 
 <script>
     $(document).ready(function() {
