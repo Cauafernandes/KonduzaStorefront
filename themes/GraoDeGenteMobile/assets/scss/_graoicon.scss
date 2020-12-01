@@ -38,6 +38,7 @@
 .icon-finder:before{content:'\004e';}
 .icon-gift:before{content:'\004f';}
 .icon-heart:before{content:'\0050';}
+.icon-heart-empty:before{content:'\0063';}
 .icon-video-play:before{content:'\0051';}
 .icon-truck:before{content:'\0052';}
 .icon-truck2:before{content:'\0064';}
@@ -51,7 +52,6 @@
 .icon-home:before{content:'\005a';}
 .icon-dois-cartoes:before{content:'\0061';}
 .icon-arrow-left-big:before{content:'\0062';}
-.icon-fav-outline:before{content:'\0063';}
 .icon-ray:before {content: '\0065';}
 .icon-whatsapp:before {content: '\0066';}
 
@@ -72,14 +72,6 @@
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 60px;
-}
-
-.icon-heart-empty {
-    background-repeat: no-repeat;
-    background-image: url("/imgs/ico/heart-empty.svg");
-    width: 26px;
-    height: 22px;   
-    display: block;
 }
 
 .icon-close {
