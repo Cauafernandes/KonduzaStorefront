@@ -27,22 +27,22 @@
                 float: left;
             }
 
-            .rullers {
+            .rules {
                 font-size: 10px;
                 margin-left: 10px;
+                &:after {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border: 4px solid transparent;
+                    border-left-color: #555555;
+                    position: relative;
+                    display: inline-block;
+                    margin-left: 4px;
+                    top: 1px;
+                }
             }
 
-            .rullers:after {
-                content: "";
-                width: 0;
-                height: 0;
-                border: 4px solid transparent;
-                border-left-color: #555555;
-                position: relative;
-                display: inline-block;
-                margin-left: 4px;
-                top: 1px;
-            }
         }
 
         div {

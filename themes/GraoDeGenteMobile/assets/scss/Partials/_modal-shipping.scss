@@ -1,0 +1,59 @@
+.modal-shipping{
+    .modal-body{
+        padding:0 !important;
+    }
+
+    &__top{
+        background-color: $light-green2;
+        min-height: 90px;
+        padding: 25px 15px 15px 110px;
+
+        .icon-truck2{
+            &:before{
+                font-size: 72px;
+                position: absolute;
+                left: 15px;
+                top: 10px;
+            }
+        }
+    }
+
+    &__content{
+        padding: 20px;
+
+        .rules-small{
+            font-size: 10px;
+            margin-top: 20px;
+        }
+
+        .title-content{
+            span{
+                margin-bottom: 5px;
+                display: block;
+            }
+
+            .small{
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+
+        .margin-area{
+            display: block;
+            position: relative;
+            margin: 20px 0;
+            padding-left: 41px;
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        .icon-pinmap{
+            &:before{
+                font-size: 28px;
+                color: $green;
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
+}

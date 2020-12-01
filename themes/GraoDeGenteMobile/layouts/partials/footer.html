@@ -187,6 +187,8 @@
         <script src="{{ `js/jquery.validate.min.js` | absURL}}"></script>
         <script src="{{ `js/jquery.form.js` | absURL}}"></script>
         <script src="{{ `js/jquery.nav.js` | absURL}}"></script>
+
+        {{ partialCached "modal-frete-gratis.html" . }}
     </body>
     <script type="application/ld+json">
         {
@@ -224,19 +226,19 @@
             ]
         }
     </script>
-</html>
-<script>
-    $(document).ready(function(){
-        GraoDeGente.Newsletter.load();
-        
-        $(".footer-menu--item-title").on("click", function(){
-            var field = $(this).parent();
-
-            if ( field.hasClass("open") ) {
-                field.removeClass("open").addClass("closed")
-            } else {
-                field.addClass("open").removeClass("closed")
-            }
+    <script>
+        $(document).ready(function(){
+            GraoDeGente.Newsletter.load();
+            
+            $(".footer-menu--item-title").on("click", function(){
+                var field = $(this).parent();
+    
+                if ( field.hasClass("open") ) {
+                    field.removeClass("open").addClass("closed")
+                } else {
+                    field.addClass("open").removeClass("closed")
+                }
+            });
         });
-    });
-</script>
+    </script>
+</html>

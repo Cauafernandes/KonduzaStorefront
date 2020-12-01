@@ -57,6 +57,43 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     padding: 30px 10px;
 }
 //--------------------------------
+// colors
+.green{
+    color: $green;
+}
+.dark-green{
+    color: $dark-green;
+}
+.black{
+    color: #000;
+}
+.gray{
+    color: $gray2;
+}
+//--------------------------------
+// fonts
+.center {
+    text-align: center;
+}
+.semibold{
+    font-family: $family-semibold;
+}
+b, .bold {
+    font-family: $family-bold;
+}
+.line-through{
+    text-decoration: line-through;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+
+.title {
+    font-family: $family-semibold;
+    font-size: 20px;
+    color: #00bfb3;
+}
+//--------------------------------
 // menu
 #menu-container {
     display: none;
@@ -134,25 +171,6 @@ input:not([type="submit"]), textarea {
     min-height: 36px;
     box-sizing: border-box;
     width: 100%;
-}
-
-// Text
-.center {
-    text-align: center;
-}
-
-b, .bold {
-    font-family: $family-bold;
-}
-
-.line-through{
-    text-decoration: line-through;
-}
-
-.title {
-    font-family: $family-semibold;
-    font-size: 20px;
-    color: #00bfb3;
 }
 
 // Grid

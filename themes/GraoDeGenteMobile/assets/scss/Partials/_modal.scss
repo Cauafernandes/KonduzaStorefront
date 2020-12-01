@@ -2,7 +2,7 @@
 <div tabindex="-1" role="dialog" class="modal">
     <div class="modal-container modal-bg-close" data-modal="close">
         <div class="modal-body">
-            <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close" data-modal="close"> X </button>
+            <button data-modal="close" class="modal-close" data-dismiss="modal" aria-label="Close"><span class="icon-close" data-modal="close">×</span> <span class="hidden">fechar</span></button>
             conteudo aqui
         </div>
     </div>
