@@ -114,6 +114,10 @@
             .slick-dotted.slick-slider{
                 margin-bottom: 0px !important;
             }
+
+            .slick-dots{
+                text-align: left;
+            }
             
             .slick-list {
                 background-color: #ffffff;
@@ -561,9 +565,7 @@
             -webkit-overflow-scrolling: touch;
             margin: 20px 0;
             
-            > .container-flex{
-                -webkit-flex-wrap: nowrap;
-                flex-wrap: nowrap;
+            > .flex{
                 margin: 10px 0 20px;
                 padding: 0 10px;
             }

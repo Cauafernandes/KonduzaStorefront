@@ -8,14 +8,14 @@
                     </div>
                     <ul class="footer-menu--item-content">
                         <li>
-                            <a href="https://apps.graodegente.com.br/CentraldeAtendimento/" itemprop="url" title="Central de Atendimento" class="container-flex">
+                            <a href="https://apps.graodegente.com.br/CentraldeAtendimento/" itemprop="url" title="Central de Atendimento" class="flex">
                                 Central de Atendimento
                                 <i class="icon-arrow-right"></i>
                             </a>
                         </li>
                         <li>
                             <link itemprop="url" href="https://www.graodegente.com.br/meu-cadastro">
-                            <a href="/meu-cadastro" title="Meu Cadastro" class="container-flex">
+                            <a href="/meu-cadastro" title="Meu Cadastro" class="flex">
                                 Meu Cadastro
                                 <i class="icon-arrow-right"></i>
                             </a>
@@ -29,7 +29,7 @@
                     <ul class="footer-menu--item-content">
                         <li class="box-orders">
                             <strong>Quando vai chegar o meu pedido?</strong>
-                            <div class="box-orders--input container-flex">
+                            <div class="box-orders--input flex">
                                 <input type="text" name="orderId"/>
                                 <button class="btn btn-primary">Ok</button>
                             </div>
@@ -49,7 +49,7 @@
                     <ul class="footer-menu--item-content">
                         <li>
                             <link itemprop="url" href="https://www.graodegente.com.br/a-empresa">
-                            <a href="/a-empresa" title="A Empresa" class="container-flex">
+                            <a href="/a-empresa" title="A Empresa" class="flex">
                                 A empresa 
                             </a>
                         </li>
@@ -92,28 +92,28 @@
                     </div>
                     <ul class="footer-menu--item-content networks">
                         <li>
-                            <a href="https://www.facebook.com/graodegente" title="Acessar nosso Facebook" class="container-flex facebook"  itemprop="url"  rel="nofollow" target="_blank">
+                            <a href="https://www.facebook.com/graodegente" title="Acessar nosso Facebook" class="flex facebook"  itemprop="url"  rel="nofollow" target="_blank">
                                 <i class="icon-facebook"></i>
                                 <span class="content-title">Facebook</span>
                                 <span class="content-info"><strong>5.008.713</strong> de curtidas</span>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/graodegente/" title="Acessar nosso Instagram" class="container-flex instagram"  itemprop="url"  rel="nofollow" target="_blank">
+                            <a href="https://www.instagram.com/graodegente/" title="Acessar nosso Instagram" class="flex instagram"  itemprop="url"  rel="nofollow" target="_blank">
                                 <i class="icon-instagram"></i>
                                 <span class="content-title">Instagram</span> 
                                 <span class="content-info">Siga-nos</span>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/channel/UCQWrIIYl2Q2bbshU_dUIlbA" title="Acessar nosso Youtube" class="container-flex youtube" itemprop="url"  rel="nofollow" target="_blank">
+                            <a href="https://www.youtube.com/channel/UCQWrIIYl2Q2bbshU_dUIlbA" title="Acessar nosso Youtube" class="flex youtube" itemprop="url"  rel="nofollow" target="_blank">
                                 <i class="icon-youtube"></i>
                                 <span class="content-title">Youtube</span>
                                 <span class="content-info">Inscreva-se</span>
                             </a>
                         </li>
                         <li>
-                            <a href="http://www.bloggraodegente.com.br/" title="Acessar nosso Blog" class="container-flex blog" itemprop="url"  rel="nofollow" target="_blank">
+                            <a href="http://www.bloggraodegente.com.br/" title="Acessar nosso Blog" class="flex blog" itemprop="url"  rel="nofollow" target="_blank">
                                 <i class="icon-blog"></i>
                                 <span class="content-title">Blog</span>
                                 <span class="content-info">Acesse</span>
@@ -126,7 +126,7 @@
                         <p>Formas de pagamento<i class="icon-plus">+</i></p>
                     </div>
                     <div class="footer-menu--item-content payments">
-                        <ul class="payments--list container-flex">
+                        <ul class="payments--list flex">
                             <li class="payments--item">
                                 <span class="hidden">MasterCard</span>
                                 <i class="icon-mastercard"></i>
@@ -188,7 +188,9 @@
         <script src="{{ `js/jquery.form.js` | absURL}}"></script>
         <script src="{{ `js/jquery.nav.js` | absURL}}"></script>
 
-        {{ partialCached "modal-frete-gratis.html" . }}
+        {{ partialCached "modal-free-shipping.html" . }}
+        {{ partialCached "modal-black-friday.html" . }}
+        {{ partialCached "modal-script.html" . }}
     </body>
     <script type="application/ld+json">
         {

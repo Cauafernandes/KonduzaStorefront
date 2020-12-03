@@ -1,0 +1,136 @@
+@import "./_reset";
+
+*, ::after, ::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input, button, summary, select, optgroup {
+    outline: none;
+    border: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+input:-webkit-autofill {
+	-webkit-text-fill-color: #666666 !important;
+	-webkit-box-shadow: 0 0 0px 1000px #f9fbfd inset !important;
+	box-shadow: 0 0 0px 1000px #f9fbfd inset !important;
+}
+
+textarea {
+    outline: none;
+    border: none;
+}
+
+body {
+    display: block;
+    max-width: 500px;
+    min-width: 280px;
+    width: 100%;
+    margin: auto;
+    font-family: $family-regular;
+	font-size: 14px;
+	color: $gray6;
+}
+
+ul, ol {
+    padding: 0;
+
+    li {
+        display: block
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+
+// -------- text --------
+
+strong, h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+b {
+    font-family: $family-bold;
+}
+
+a, a:link, a:hover, a:visited, a:active, a:focus {
+    color: #666666;
+    text-decoration: none;
+    outline: none;
+}
+
+
+
+// -------- pre-loader --------
+
+.lz-src {
+    min-width: 100%;
+    min-height: 100px;       
+}
+[data-lazy], [lz-src] {
+    color: transparent;
+    animation-duration: 1.1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 40%, #eeeeee 20%);
+    background-size: 800px 104px;
+}
+
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: -468px 0
+    }
+
+    100% {
+        background-position: 468px 0
+    }
+}
+
+
+
+// -------- Iphone - retirando aviso criteo --------
+
+.criteo_header {
+    display: none !important;
+}
+
+// -------- Fix to disable ios auto zoom --------
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-device-width:1024px) {
+    select, textarea, input {
+        font-size: 16px !important;
+    }
+
+    input::-webkit-input-placeholder {
+        font-size: 13px !important;
+    }
+}
+
+
+
+// -------- remove autocomplete browser style --------
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: #ffffff !important;
+    box-shadow: 0 0 0 30px #ffffff inset;
+    -webkit-appearance: none;
+}
+
+
+
+// -------- plugin banner inteligente para instalação de app --------
+
+.smartbanner-button {
+    height: 100% !important;
+    padding: 30px 10px;
+}

@@ -21,7 +21,7 @@
         {{ if eq .tagnormalshipping true }}
             <p class="tag--shipping">Enviando Normalmente</p>
         {{ end }}
-        <div class="price container-flex container-flex--sb container-flex--vc">
+        <div class="price flex flex--justify-sb flex--items-c">
             {{ if ne .price "" }}
                 {{ $price := ( split .price "," ) }}
                 <div class="price__original">

@@ -11,23 +11,32 @@
         <input type="hidden" name="Sexo" value="@(Genre.Undefined)" />
         <input type="hidden" name="MesDeGestacao" value="@(MonthOfPregnancy.NeverMind)" />
     </form>
-    <div class="newsletter__succes">
-        <div class="content">
-            <div class="content-header success-title">
-                ISSO!
-                <button class="icon-close-x"><span class="hidden">fechar</span></button>
-            </div>
-            <div class="content-main">
-                <img src="{{.Page}}/imgs/ico-newsletter.jpg" />
-                <p class="success-subtitle">
-                    Seu cadastro foi realizado com sucesso.
-                </p>
-                <p>
-                    <b>Você receberá um e-mail confirmando esta ação.</b>
-                </p>
-                <p class="success-title">
-                    Obrigado.
-                </p>
+
+    <div tabindex="-1" role="dialog" class="modal newsletter__succes" data-modal="newsletter">
+        <div class="modal-container modal-bg-close" data-modal="close">
+            <div class="modal-body modal-body--full">
+                <button data-modal="close" class="modal-close" data-dismiss="modal" aria-label="Close">
+                    <span class="icon-close-x" data-modal="close"></span>
+                    <span class="hidden">fechar</span>
+                </button>
+                
+                <div class="content">
+                    <div class="content-header success-title">
+                        ISSO!
+                    </div>
+                    <div class="content-main">
+                        <img src="{{.Page}}/imgs/ico-newsletter.jpg" />
+                        <p class="success-subtitle">
+                            Seu cadastro foi realizado com sucesso.
+                        </p>
+                        <p>
+                            <b>Você receberá um e-mail confirmando esta ação.</b>
+                        </p>
+                        <p class="success-title">
+                            Obrigado.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -38,22 +47,20 @@
         return {
             load: function () {
                 console.log('load');
-                $('.icon-close-x').click(function () {
-                    $('.newsletter__succes').hide();
-                    $('.newsletter--error').hide();
-                });
+                $('.newsletter--error').hide();
+                GraoDeGente.Components.Modal.close();
             },
             onSuccess: function () {
                 console.log('Sucesso');
                 $('.newsletter--error').hide();
-                $('.newsletter__succes').show();
                 $('#newsletter-form').trigger('reset');
+                GraoDeGente.Components.Modal.open("newsletter");
             },
             onFailure: function (error) {
                 console.log('onFailure');
                 if (error.responseText) {
                     var errorMessage = JSON.parse(error.responseText);
-                    $('.newsletter__succes').hide();
+                    GraoDeGente.Components.Modal.close();
                     $('.newsletter--error').show();
                     $('.newsletter--error').find('p').text(errorMessage.Message);
                 }

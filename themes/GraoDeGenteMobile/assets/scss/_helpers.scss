@@ -1,13 +1,88 @@
-﻿.m {
-    &-b {
-        &-8 {
-            margin-bottom: 8px;
-        }
-    }
+﻿// -------- blocos --------
+
+.hidden{
+    display: none !important;
+}
+.show{
+    display: block !important;
 }
 
-.d{
-    &-inline-block{
-        display:inline-block;
-    }
+.block{
+    display: block;
+}
+.inline-block{
+    display: inline-block;
+}
+.inline{
+    display: inline;
+}
+
+
+// -------- colors --------
+
+.green{
+    color: $green;
+}
+.dark-green{
+    color: $dark-green;
+}
+.black{
+    color: #000;
+}
+.gray{
+    color: $gray2;
+}
+.orange{
+    color: $orange;
+}
+.error{
+    color: $red-alert;
+}
+.alert{
+    color: $red;
+}
+
+// -------- fonts --------
+
+.regular{
+    font-family: $family-regular;
+}
+.semibold{
+    font-family: $family-semibold;
+}
+b, .bold {
+    font-family: $family-bold;
+}
+.italic{
+    font-style: italic;
+}
+
+.line-through{
+    text-decoration: line-through;
+}
+.underline {
+    text-decoration: underline;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+.capitalize{
+    text-transform: capitalize;
+}
+.lowercase{
+    text-transform: lowercase;
+}
+
+
+// -------- alinhamento --------
+
+.left{
+    text-align: left;
+}
+.right{
+    text-align: right;
+}
+.center {
+    text-align: center;
 }
