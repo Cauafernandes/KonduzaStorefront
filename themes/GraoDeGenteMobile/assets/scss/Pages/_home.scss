@@ -1,0 +1,27 @@
+.home{
+    .banner{
+        margin-bottom: 30px;
+        &__top{
+            margin-bottom: 5px;
+            height: auto;
+        }
+        &__slider{
+            height: 520px;
+        }
+    }
+
+    .benefits{
+        &:before{
+            display: block;
+            content:"";
+            height: 1px;
+            width: calc(100% - 30px);
+            background-color: $gray;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+}

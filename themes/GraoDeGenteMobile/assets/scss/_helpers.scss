@@ -86,3 +86,20 @@ b, .bold {
 .center {
     text-align: center;
 }
+
+
+
+
+// -------- bkp - verificar conteudo dinamico ---------
+.d{
+    &-inline-block{
+        display:inline-block;
+    }
+}
+.m {
+    &-b {
+        &-8 {
+            margin-bottom: 8px;
+        }
+    }
+}

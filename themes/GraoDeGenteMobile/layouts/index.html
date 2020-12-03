@@ -1,15 +1,108 @@
 {{ partial "header.html" . }}
 
-{{ partial "benefits.html" }}
-
-<div class="body-content">
-    <div class="row">
-        <div class="col-24">
-            {{ range where .Site.RegularPages "Section" "product"}}
-                {{ partial "productbox.html" .Params }}
-            {{ end }}
+<div class="home">
+    <div class="banner">
+        <div class="banner__top">
+            <figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject">
+                <meta itemprop="caption" content="Grão de Gente">
+                <meta itemprop="representativeOfPage" content="true">
+                    <link itemprop="url" href="https://www.graodegente.com.br/ofertas/todo-o-site-com-desconto">
+                    <a href="https://www.graodegente.com.br/ofertas/todo-o-site-com-desconto" title="Grão de Gente">
+                        <img alt="Grão de Gente" title="Grão de Gente" src="https://dmhxz00kguanp.cloudfront.net/banners/home/25972banner-categoria-alltype_decor-monday.jpg" itemprop="thumbnail">
+                    </a>
+            </figure>
         </div>
+
+        <div class="slider" itemscope itemtype="http://schema.org/ImageGallery">
+            <a href="https://www.graodegente.com.br/ofertas/disney-novidades" itemprop="contentUrl" tabindex="-1"> 
+                <meta itemprop="thumbnail" content="https://dmhxz00kguanp.cloudfront.net/banners/home/25842fullbanner-mobo-disney ok.jpg">
+                <img class="" src="https://dmhxz00kguanp.cloudfront.net/banners/home/25842fullbanner-mobo-disney ok.jpg" style="opacity: 1;">
+                <div id="divTimer-26012" class="banner-contador mobile" style="display: none;">
+                    <span class="tituloTimer">ESTA PROMOÇÃO TERMINA EM:</span>
+                    <timer class="timer">
+                        <span id="timer-26012">2h5m48s71</span>
+                    </timer>
+                </div>
+                <script type="text/javascript">
+                    (function escopedJs(window) {
+                        var end = new Date(2020, 12 - 1, 2, 12,0,0, 0);
+                        var _second = 1000;
+                        var _minute = _second * 60;
+                        var _hour = _minute * 60;
+                        var _day = _hour * 24;
+                        var animationId;
+                        var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+                        var divSlick = document.getElementById('slider-26012');
+                        var div = document.getElementById('26012');
+                        var countdownElement = document.getElementById('timer-26012');
+                        var element = divSlick ? divSlick.parentElement.parentElement : div;
+                
+                        function showRemaining() {
+                            if (!element) {
+                                $('#divTimer-26012').hide();
+                                return;
+                            }
+                
+                            if ($(element).hasClass('active') || $(element).hasClass('slick-active')) {
+                                var distance = end - new Date();
+                
+                                if (distance <= 0){
+                                    cancelAnimationFrame(animationId); 
+                
+                                    if (!(countdownElement.parentElement.parentElement.parentElement.id.includes('slider-')))
+                                        countdownElement.parentElement.parentElement.parentElement.style.display = 'none';
+                                }
+                                else {
+                                    var hours = Math.floor((distance % _day) / _hour);
+                                    var minutes = Math.floor((distance % _hour) / _minute);
+                                    var seconds = Math.floor((distance % _minute) / _second);
+                                    var milliseconds = (distance % _second);
+                                    milliseconds = (milliseconds < 10 ? '0' + milliseconds : milliseconds).toString().substring(0, 2);
+                
+                                    countdownElement.innerHTML = (hours ? hours + 'h' : '') + (minutes ? minutes + 'm' : '') + seconds + 's' + milliseconds + '';
+                                    $('#divTimer-26012').show();
+                                }
+                            } else {
+                                $('#divTimer-26012').hide();
+                            }
+                
+                            animationId = requestAnimationFrame(showRemaining);
+                        }
+                
+                        animationId = requestAnimationFrame(showRemaining);
+                    })(window);
+                </script>
+            </a>
+        </div>
+    </div>
+
+    {{ partial "benefits.html" }}
+
+    <div class="alerta-envio-topo">
+        {{/*}}<vc:dynamic-banner position="8" height="0" width="0" local="1" slug=" " has-timer="false" is-lazy="false"></vc:dynamic-banner> {{*/}}
+    </div>
+
+    <div class="body-content">
+        <ul class="flex gutter">
+            {{ range where .Site.RegularPages "Section" "product"}}
+                <li class="col-6 flex--items-c flex">    
+                    {{ partial "productbox.html" .Params }}
+                </li>
+            {{ end }}
+            </ul>
     </div>
 </div>
 
 {{ partial "footer.html" . }}
+
+<script>
+    $(document).ready(function() {
+        $('.slider').slick({
+            lazyLoad: 'anticipated',
+            infinite: false,
+            dots: true,
+            arrows: false,
+            speed: 200
+        });
+    });
+</script>
