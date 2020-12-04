@@ -6,7 +6,6 @@
 .show{
     display: block !important;
 }
-
 .block{
     display: block;
 }
@@ -15,6 +14,43 @@
 }
 .inline{
     display: inline;
+}
+
+// margins
+.mb{
+    &-10{
+        margin-bottom: 10px;
+    }
+    &-20{
+        margin-bottom: 20px;
+    }
+    &-30{
+        margin-bottom: 34px;
+    }
+    &-40{
+        margin-bottom: 40px;
+    }
+    &-50{
+        margin-bottom: 50px;
+    }
+}
+
+.mt{
+    &-10{
+        margin-top: 10px;
+    }
+    &-20{
+        margin-top: 20px;
+    }
+    &-30{
+        margin-top: 34px;
+    }
+    &-40{
+        margin-top: 40px;
+    }
+    &-50{
+        margin-top: 50px;
+    }
 }
 
 
@@ -32,6 +68,9 @@
 .gray{
     color: $gray2;
 }
+.dark-gray{
+    color: $gray9;
+}
 .orange{
     color: $orange;
 }
@@ -43,6 +82,27 @@
 }
 
 // -------- fonts --------
+.h1,.h2,.h3,.h4,.h5,.h6{
+    line-height: 130%;
+}
+.h1{
+    font-size: 20px
+}
+.h2{
+    font-size: 18px
+}
+.h3{
+    font-size: 16px
+}
+.h4{
+    font-size: 14px
+}
+.h5{
+    font-size: 12px
+}
+.h6{
+    font-size: 10px
+}
 
 .regular{
     font-family: $family-regular;
