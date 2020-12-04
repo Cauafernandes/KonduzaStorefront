@@ -192,21 +192,6 @@ $grid-columns: 12;
         min-height: 1px;
     }
 
-    .col{
-        -ms-flex-preferred-size: 0;
-        flex-basis: 0;
-        -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-        flex-grow: 1;
-        max-width: 100%;
-    }
-
-    @for $i from 1 through $grid-columns {
-        .col-#{$i} {
-            @include row-cols($i);
-        }        
-    }
-
     &.gutter{
         > .col,
         > [class*="col-"] {
@@ -216,3 +201,17 @@ $grid-columns: 12;
     }
 }
 
+.col{
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+@for $i from 1 through $grid-columns {
+    .col-#{$i} {
+        @include row-cols($i);
+    }        
+}
