@@ -85,11 +85,11 @@
     <div class="body-content">
         <ul class="flex gutter">
             {{ range where .Site.RegularPages "Section" "product"}}
-                <li class="col-6 flex--items-c flex">    
+                <li class="col-6 flex">    
                     {{ partial "productbox.html" .Params }}
                 </li>
             {{ end }}
-            </ul>
+        </ul>
     </div>
 </div>
 

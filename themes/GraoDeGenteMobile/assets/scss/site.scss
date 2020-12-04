@@ -303,10 +303,6 @@ input:not([type="submit"]), textarea {
             content: "";
             border: 1px solid $gray9;
             border-radius: 50%;
-            // display: flex;
-            // display: -ms-flexbox;
-            // display: -webkit-box;
-            // display: -webkit-flex;
             float: right;
             width: 16px;
             height: 16px;
@@ -322,10 +318,6 @@ input:not([type="submit"]), textarea {
             content: "";
             background-color: $green;
             border-radius: 8px;
-            // display: flex;
-            // display: -ms-flexbox;
-            // display: -webkit-box;
-            // display: -webkit-flex;
             float: right;
             margin-right: -14px;
             width: 10px;
@@ -334,3 +326,5 @@ input:not([type="submit"]), textarea {
         }
     }
 }
+
+

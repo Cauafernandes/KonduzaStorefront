@@ -558,24 +558,6 @@
                 }
             }
         }
-
-        &--list{
-            width: 100%;
-            overflow-x: scroll;
-            -webkit-overflow-scrolling: touch;
-            margin: 20px 0;
-            
-            > .flex{
-                margin: 10px 0 20px;
-                padding: 0 10px;
-            }
-        }
-
-        &--product{
-            min-width: 50%;
-            max-width: 50%;
-            margin: 0 8px 16px;
-        }
     }
 
     .btn-description{
