@@ -11,6 +11,7 @@
     }
 
     .benefits{
+        margin-bottom: 30px;
         &:before{
             display: block;
             content:"";
@@ -22,6 +23,42 @@
             left: 0;
             right: 0;
             margin: auto;
+        }
+    }
+    
+    &__banner-full{
+        position: relative;
+        display: block;
+        .box{
+            background-color: #fff;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 105px;
+            padding: 20px 10px;
+            box-sizing: border-box;
+            text-align: center;
+            text-transform: uppercase;
+            color: #000;
+            letter-spacing: -1px;
+
+            span{
+                font-size: 18px;
+            }
+            b{
+                font-size: 13px;
+            }
+
+            &--big{
+                span{
+                    font-size: 28px;
+                }
+                b{
+                    font-size: 17px;
+                }
+            }
         }
     }
 }
