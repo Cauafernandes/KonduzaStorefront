@@ -1,0 +1,31 @@
+/*
+    // class .col-6 em no item do carrossel determina o 
+    // tamanho da quantidae de itens que serão mostrados antes
+    // da rolagem, como no grid
+
+    <div class="carousel-scroll">
+        <div class="carousel-scroll__container">
+            <div class="carousel-scroll__item col-6">
+                {... conteúdo aqui ...}
+            </div>
+        </div>
+    </div>
+*/
+
+.carousel-scroll{
+    width: 100%;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    margin: 20px 0 10px;
+    padding-bottom: 30px;
+
+    & &__container{
+        @extend %display-flex;
+        @extend %flex-nowrap;
+    }    
+    
+    & &__item{
+        margin-left: 10px;
+        padding-right: 10px;
+    }
+}

@@ -274,11 +274,11 @@
                     <h4 class="bold">produtos da coleção</h4>
                     <a href="/{{ .category_url }}" target="_self" title="ver todos os produtos dessa coleção" class="bold">ver todos</a>
                 </div>
-                <div class="product-line--list" itemscope itemtype="http://schema.org/ItemList">
-                    <div class="flex">
+                <div class="carousel-scroll" itemscope itemtype="http://schema.org/ItemList">
+                    <div class="carousel-scroll__container">
                         {{ $lenght := len .productsline }}
                         {{ range $index, $product := .productsline}}
-                            <div class="product-line--product" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <div class="carousel-scroll__item col-6" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                                 {{ if eq $lenght (add 1 $index) }}
                                     <meta itemprop="numberOfItems" content="{{ $lenght }}">
                                 {{ end }}
@@ -331,11 +331,11 @@
             <div class="product-line--title flex flex--justify-sb">
                 <h4 class="bold">Produtos Recomendados</h4>
             </div>
-            <div class="product-line--list" itemscope itemtype="http://schema.org/ItemList">
-                <div class="flex flex--nowrap">
+            <div class="carousel-scroll" itemscope itemtype="http://schema.org/ItemList">
+                <div class="carousel-scroll__container">
                     {{ $lenght := len .productsline }}
                     {{ range $index, $product := .productsline}}
-                        <div class="product-line--product" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <div class="carousel-scroll__item col-6" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                             {{ if eq $lenght (add 1 $index) }}
                                 <meta itemprop="numberOfItems" content="{{ $lenght }}">
                             {{ end }}
