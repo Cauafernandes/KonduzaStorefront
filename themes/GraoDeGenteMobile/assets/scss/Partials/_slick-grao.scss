@@ -1,40 +1,158 @@
-.slick-dotted.slick-slider{
-    margin-bottom: 0px !important;
-}
-.slick-dots {
-    background-color: #ffffff;
-    display: block;
-    text-align: left;
-    padding: 5px 5% 0;
-    line-height: 0px;
-    position: relative;
-    bottom: 0;
+.slider{
+    &__item{
+        position: relative;
+        display: block;
+        
+        /* Contador */
+        .banner-contador{
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            align-items: baseline;
+            -webkit-align-items: baseline;
+            background-color: #000;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            padding: 5px;
+            color: #fff;
+            font-size: 10px;
+            text-align: center;
 
-    li {
-        display: inline-block;
-        width: auto;
-        margin: 0;
-        height: auto;
-
-        button {
-            background-color: #cccccc;
-            margin: 0 2px;
-            width: 6px;
-            height: 6px;
-            text-indent: -9999999999999px;
-            padding: 0;
-            border-radius: 50%;
+            .tituloTimer{
+                font-family: $family-bold;
+                font-size: 10px;
+            }
         }
 
-        &.slick-active button {
-            background-color: $green;
+        .timer{
+            font-size: 17px;
+            text-align: left;
+            width: auto;
+            font-family: Arial;
+            font-weight: 700;
+            padding-left: 5px;
         }
     }
-}
-.slick-list {
-    background-color: #ffffff;
-    overflow: hidden;
-}
-.slick-track{
-    @extend %display-flex;
+
+
+    .slick-slider{
+        overflow: hidden;
+        &.slick-dotted{
+            margin-bottom: 0px !important;
+        }
+    }
+    .slick-dots {
+        background-color: #ffffff;
+        display: block;
+        padding: 5px 5% 0;
+        line-height: 0px;
+        position: relative;
+        bottom: 0;
+    
+        li {
+            display: inline-block;
+            width: auto;
+            margin: 0;
+            height: auto;
+    
+            button {
+                background-color: #cccccc;
+                margin: 0 2px;
+                width: 6px;
+                height: 6px;
+                text-indent: -9999999999999px;
+                padding: 0;
+                border-radius: 50%;
+            }
+    
+            &.slick-active button {
+                background-color: $green;
+            }
+        }
+    }
+
+    .slick-list {
+        background-color: #ffffff;
+        overflow: hidden;
+    }
+
+    .slick-track{
+        @extend %display-flex;
+    }
+
+    .slick-slider{
+        position: relative;
+    }
+
+    .slick-arrow{
+        position: absolute;
+        margin: auto;
+        z-index: 1;
+        height: 90%;
+        width: 25px;
+
+        &.slick-disabled {
+            opacity: .3;
+        }
+
+        &:after{
+            content: "";
+            height: 10px;
+            width: 10px;
+            display: block;
+            border-top: solid 2px #fff;
+            border-right: solid 2px #fff;
+            z-index: 2;
+            position: relative;
+        }
+
+        &::before{
+            content:"";
+            width: 50px;
+            height: 50px;
+            background-color: #00000042;
+            border-radius: 50%;
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 1;
+        }
+
+        &.slick-prev{
+            left: 0;
+
+            &:after{
+                -webkit-transform: rotate(228deg);
+                -ms-transform: rotate(228deg);
+                transform: rotate(228deg);
+                margin-left: 7px;
+            }
+
+            &::before{
+                left: -25px;
+            }
+        }
+
+        &.slick-next{
+            right: 0;
+
+            &:after{
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+                margin-left: 7px;
+            }
+
+            &::before{
+                right: -25px;
+            }
+        }
+    }
+
+    
 }

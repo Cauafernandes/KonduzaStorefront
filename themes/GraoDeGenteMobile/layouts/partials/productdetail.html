@@ -84,7 +84,7 @@
 
                     <div data-name="@esp.Nome" data-variation-selected="@(esp.EspecificacaoItens.Any(x=> x.ProdutoUrl == Model.ProductUrl))">
                         <!-- @if (esp.ExibirFoto){ -->
-                            <ul class="container-flex specifications--colors">
+                            <ul class="flex specifications--colors">
 
                                 <!-- @foreach (var item in esp.EspecificacaoItens) { -->
                                     <li class="@(Model.ProductUrl == item.ProdutoUrl ? 'active' : '')">
@@ -111,7 +111,7 @@
                                 <div class="modal-container modal-bg-close" data-modal="close">
                                     <div class="modal-body">
                                         <p data-modal="close" class="modal-close" data-dismiss="modal" aria-label="Close"> 
-                                            Escolha  <span class="icon-close">×</span> <span class="hidden">fechar</span>
+                                            Escolha  <span class="icon-close-x"></span> <span class="hidden">fechar</span>
                                         </p>
                                         <ul class="select-options">
                                             <!-- @foreach (var item in esp.EspecificacaoItens) { -->
@@ -215,8 +215,8 @@
             <!-- } -->
 
 
-            <div id="{{ .id }}" class="buy__timer container-flex active">
-                <div class="timer-text container-flex">
+            <div id="{{ .id }}" class="buy__timer flex active">
+                <div class="timer-text flex">
                     <div class="timer-text--text" data-timer-text>
                         <span class="timer-text--hide">Promoção</span> termina em:
                     </div>
@@ -243,7 +243,7 @@
 
         <meta itemprop="brand" content="Grão de Gente">
         <!-- @if (product.Promocao && Model.CanBuy() && !Model.HasTimer()) { -->
-            <div class="tags--sale container-flex container-flex--c container-flex--vc">
+            <div class="tags--sale flex flex--justify-c flex--items-c">
                 Promoção <img src="http://dmhxz00kguanp.cloudfront.net/selos/mobile/selo_promocao_grande.png" alt="Selo de promoção" title="Produto em Promoção" />
             </div>
         <!-- } -->
@@ -270,15 +270,15 @@
     <!-- @if (product.Colecoes.Count == 1){ -->
         {{ if gt .productsline "" }} 
             <div class="product-line">
-                <div class="product-line--title container-flex container-flex--sb">
+                <div class="product-line--title flex flex--justify-sb">
                     <h4 class="bold">produtos da coleção</h4>
                     <a href="/{{ .category_url }}" target="_self" title="ver todos os produtos dessa coleção" class="bold">ver todos</a>
                 </div>
-                <div class="product-line--list" itemscope itemtype="http://schema.org/ItemList">
-                    <div class="container-flex">
+                <div class="carousel-scroll" itemscope itemtype="http://schema.org/ItemList">
+                    <div class="carousel-scroll__container">
                         {{ $lenght := len .productsline }}
                         {{ range $index, $product := .productsline}}
-                            <div class="product-line--product" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <div class="carousel-scroll__item col-6" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                                 {{ if eq $lenght (add 1 $index) }}
                                     <meta itemprop="numberOfItems" content="{{ $lenght }}">
                                 {{ end }}
@@ -328,14 +328,14 @@
 
     {{ if gt .productsline "" }} 
         <div class="product-line">
-            <div class="product-line--title container-flex container-flex--sb">
+            <div class="product-line--title flex flex--justify-sb">
                 <h4 class="bold">Produtos Recomendados</h4>
             </div>
-            <div class="product-line--list" itemscope itemtype="http://schema.org/ItemList">
-                <div class="container-flex">
+            <div class="carousel-scroll" itemscope itemtype="http://schema.org/ItemList">
+                <div class="carousel-scroll__container">
                     {{ $lenght := len .productsline }}
                     {{ range $index, $product := .productsline}}
-                        <div class="product-line--product" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <div class="carousel-scroll__item col-6" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                             {{ if eq $lenght (add 1 $index) }}
                                 <meta itemprop="numberOfItems" content="{{ $lenght }}">
                             {{ end }}
@@ -356,14 +356,10 @@
         </div>
     </div>
 </section>
-
-{{ partial "modal-script.html" }}
-
 <script>
     $(document).ready(function() {
         initCarousel();
     });
-
 
     function initCarousel() {
         var width = $("body").width();
@@ -390,5 +386,4 @@
         var widthClient = $("body").width();
         return (widthClient / 5) * 4;
     }
-
 </script>

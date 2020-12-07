@@ -19,22 +19,19 @@
     GraoDeGente.Components = GraoDeGente.Components || {};
     GraoDeGente.Components.Modal = (function () {    
         function open(data_modal_value){
-            console.log("open")
             $('.modal[data-modal="' + data_modal_value + '"]')
             .addClass("modal-active");
             $("body").css("overflow", "hidden");
         }
 
         function close(){
-            console.log("close");
             $('.modal[data-modal]').removeClass("modal-active");
             $("body").css("overflow", "auto");
-            console.log("close2");
         }
 
         return {
             open: open,
             close: close
         }
-    })()
+    })();
 </script>

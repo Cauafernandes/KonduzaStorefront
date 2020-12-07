@@ -1,13 +1,206 @@
-﻿.m {
+﻿// -------- blocos --------
+
+.hidden{
+    display: none !important;
+}
+.show{
+    display: block !important;
+}
+.block{
+    display: block;
+}
+.inline-block{
+    display: inline-block;
+}
+.inline{
+    display: inline;
+}
+
+// margins
+.mlr-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+.mtb-auto{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.m-auto{
+    margin: auto;
+}
+.mb{
+    &-10{
+        margin-bottom: 10px;
+    }
+    &-20{
+        margin-bottom: 20px;
+    }
+    &-30{
+        margin-bottom: 34px;
+    }
+    &-40{
+        margin-bottom: 40px;
+    }
+    &-50{
+        margin-bottom: 50px;
+    }
+    &-60{
+        margin-bottom: 20px;
+    }
+    &-70{
+        margin-bottom: 34px;
+    }
+    &-80{
+        margin-bottom: 40px;
+    }
+    &-90{
+        margin-bottom: 50px;
+    }
+    &-100{
+        margin-bottom: 50px;
+    }
+}
+
+.mt{
+    &-10{
+        margin-top: 10px;
+    }
+    &-20{
+        margin-top: 20px;
+    }
+    &-30{
+        margin-top: 34px;
+    }
+    &-40{
+        margin-top: 40px;
+    }
+    &-50{
+        margin-top: 50px;
+    }
+    &-60{
+        margin-top: 20px;
+    }
+    &-70{
+        margin-top: 34px;
+    }
+    &-80{
+        margin-top: 40px;
+    }
+    &-90{
+        margin-top: 50px;
+    }
+    &-100{
+        margin-top: 50px;
+    }
+}
+
+
+// -------- colors --------
+
+.green{
+    color: $green;
+}
+.dark-green{
+    color: $dark-green;
+}
+.black{
+    color: #000;
+}
+.gray{
+    color: $gray2;
+}
+.dark-gray{
+    color: $gray9;
+}
+.orange{
+    color: $orange;
+}
+.error{
+    color: $red-alert;
+}
+.alert{
+    color: $red;
+}
+
+// -------- fonts --------
+.h1,.h2,.h3,.h4,.h5,.h6{
+    line-height: 130%;
+}
+.h1{
+    font-size: 20px
+}
+.h2{
+    font-size: 18px
+}
+.h3{
+    font-size: 16px
+}
+.h4{
+    font-size: 14px
+}
+.h5{
+    font-size: 12px
+}
+.h6{
+    font-size: 10px
+}
+
+.regular{
+    font-family: $family-regular;
+}
+.semibold{
+    font-family: $family-semibold;
+}
+b, .bold {
+    font-family: $family-bold;
+}
+.italic{
+    font-style: italic;
+}
+
+.line-through{
+    text-decoration: line-through;
+}
+.underline {
+    text-decoration: underline;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+.capitalize{
+    text-transform: capitalize;
+}
+.lowercase{
+    text-transform: lowercase;
+}
+
+
+// -------- alinhamento --------
+
+.left{
+    text-align: left;
+}
+.right{
+    text-align: right;
+}
+.center {
+    text-align: center;
+}
+
+
+
+
+// -------- bkp - verificar conteudo dinamico ---------
+.d{
+    &-inline-block{
+        display:inline-block;
+    }
+}
+.m {
     &-b {
         &-8 {
             margin-bottom: 8px;
         }
-    }
-}
-
-.d{
-    &-inline-block{
-        display:inline-block;
     }
 }

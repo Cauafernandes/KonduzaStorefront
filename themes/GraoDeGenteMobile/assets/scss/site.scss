@@ -1,12 +1,12 @@
 ﻿@import "./_variables";
-@import "./_reset";
-//@import "./_normalize";
+@import "./_base";
 
 @import "./_fonts";
 @import "./_graoicon";
 @import "./_sprites";
-@import "./_benefits.scss";
+
 @import "./_helpers";
+@import "./_flexbox";
 
 @import "./Partials/partials";
 @import "./Pages/pages";
@@ -14,47 +14,11 @@
 @import "./_full-loader";
 
 
-.hidden{
-    display: none !important;
-}
-// Reset mobile
-body{
-    color: #666;
-}
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
 
-//--------------------------------
-// Iphone - retirando aviso criteo
-.criteo_header {
-    display: none !important;
-}
-//--------------------------------
-// retirando style de autocomplete do browser
-input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-    background-color: #ffffff !important;
-    box-shadow: 0 0 0 30px #ffffff inset;
-    -webkit-appearance: none;
-}
-//--------------------------------
-// Fix to disable ios auto zoom
-@media screen and (-webkit-min-device-pixel-ratio:0) and (max-device-width:1024px) {
-    select, textarea, input {
-        font-size: 16px !important;
-    }
-
-    input::-webkit-input-placeholder {
-        font-size: 13px !important;
-    }
-}
-//--------------------------------
-// plugin banner inteligente para instalação de app
-.smartbanner-button {
-    height: 100% !important;
-    padding: 30px 10px;
+.title {
+    font-family: $family-semibold;
+    font-size: 20px;
+    color: #00bfb3;
 }
 //--------------------------------
 // menu
@@ -77,54 +41,13 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 }
 //--------------------------------
 
-#modal_free_shipping {
-    display: none;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 99999;
-}
 
-%display-flex {
-    display: flex;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: -webkit-flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
 
 .container {
     padding: 20px;
 }
 
-.container-flex {
-    @extend %display-flex;
 
-    &--sb {
-        justify-content: space-between;
-        -webkit-justify-content: space-between;
-    }
-
-    &--c {
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-    }
-
-    &--vc {
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-    }
-}
 
 // Forms
 input:not([type="submit"]), textarea {
@@ -136,100 +59,6 @@ input:not([type="submit"]), textarea {
     width: 100%;
 }
 
-// Text
-.center {
-    text-align: center;
-}
-
-b, .bold {
-    font-family: $family-bold;
-}
-
-.line-through{
-    text-decoration: line-through;
-}
-
-.title {
-    font-family: $family-semibold;
-    font-size: 20px;
-    color: #00bfb3;
-}
-
-// Grid
-.block{
-    display: block;
-}
-.inline-block{
-    display: inline-block;
-}
-.inline{
-    display: inline;
-}
-.grid-3 {
-    @extend %display-flex;
-    margin-bottom: 20px;
-    align-items: stretch;
-    -ms-align-items: stretch;
-    -webkit-align-items: stretch;
-
-    li {
-        width: 32%;
-        max-width: 32%;
-        padding-bottom: 15px;
-
-        &:nth-child(3n -1) {
-            margin-left: 2%;
-            margin-right: 2%;
-        }
-    }
-}
-
-.grid-2 {
-    @extend %display-flex;
-    margin-bottom: 20px;
-    align-items: stretch;
-    -ms-align-items: stretch;
-    -webkit-align-items: stretch;
-
-    li {
-        max-width: 250px;
-        width: 48%;
-        padding-bottom: 15px;
-
-        &:nth-child(2n-1) {
-            margin-right: 4%;
-        }
-    }
-}
-
-// Grid
-.row {
-    @extend %display-flex;
-    align-items: stretch;
-    -webkit-align-items: stretch;
-    margin-bottom: 7px;
-    flex-wrap: nowrap;
-    -webkit-flex-wrap: nowrap;
-
-
-    $grid-columns: 12;
-
-    @for $i from 1 through $grid-columns {
-        .col-#{$i} {
-            width: percentage($i / $grid-columns);
-        }
-    }
-
-    [class^='col-'] { //col-1
-        align-items: stretch;
-        -webkit-align-items: stretch;
-        margin: 5px 5px 0px 0;
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-}
 
 // .Dropdown > .dropdown__item > .item__link | .item.content
 .dropdown {
@@ -474,10 +303,6 @@ b, .bold {
             content: "";
             border: 1px solid $gray9;
             border-radius: 50%;
-            // display: flex;
-            // display: -ms-flexbox;
-            // display: -webkit-box;
-            // display: -webkit-flex;
             float: right;
             width: 16px;
             height: 16px;
@@ -493,10 +318,6 @@ b, .bold {
             content: "";
             background-color: $green;
             border-radius: 8px;
-            // display: flex;
-            // display: -ms-flexbox;
-            // display: -webkit-box;
-            // display: -webkit-flex;
             float: right;
             margin-right: -14px;
             width: 10px;
@@ -505,3 +326,5 @@ b, .bold {
         }
     }
 }
+
+
