@@ -25,5 +25,5 @@ ______________________________________
 # [Run project](https://gohugo.io/getting-started/usage/)
 
 ```
-hugo server -w
+hugo serve -D
 ```
