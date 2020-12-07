@@ -1,7 +1,7 @@
 <section class="product-page">    
-    {{ partial "benefits.html" }}
+    {{ partial "components/benefits.html" }}
 
-    {{ partialCached "banner-poster.html" . }}
+    {{ partialCached "content/modal/banner-poster.html" . }}
     
     
     <div class="slider" itemscope="" itemtype="https://schema.org/Product">
@@ -232,7 +232,7 @@
                     <!-- } -->
                 </div>
                 <!-- {{ $timer := (slice .id "" .contadorfim)   }} -->
-                {{ partial "timer.html" (slice .id "" .contadorfim)  }}
+                {{ partial "components/timer.html" (slice .id "" .contadorfim)  }}
             </div>
 
         <!-- } else { -->
@@ -282,7 +282,7 @@
                                 {{ if eq $lenght (add 1 $index) }}
                                     <meta itemprop="numberOfItems" content="{{ $lenght }}">
                                 {{ end }}
-                                {{ partial "productbox2.html" $product }}
+                                {{ partial "components/productbox2.html" $product }}
                             </div>
                         {{ end }}
                     </div>
@@ -339,7 +339,7 @@
                             {{ if eq $lenght (add 1 $index) }}
                                 <meta itemprop="numberOfItems" content="{{ $lenght }}">
                             {{ end }}
-                            {{ partial "productbox2.html" $product }}
+                            {{ partial "components/productbox2.html" $product }}
                         </div>
                     {{ end }}
                 </div>
