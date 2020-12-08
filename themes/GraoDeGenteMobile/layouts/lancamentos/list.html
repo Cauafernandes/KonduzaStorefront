@@ -1,13 +1,13 @@
 {{ partial "header.html" . }}
 
-<main class="famous">
+<main class="releases">
     <div class="promotional-message">
         <h2>{{ .Title }}</h2> <br>
         <div>{{ .Description | safeHTML }}</div> <br><br><br>
-        <div>{{ .Content }}</div>
+        <div>{{ .Content  }}</div>
     </div>
     {{ range .Pages }}
-        {{partial "components/productbox.html" .Params}}
+        {{.Params}} <br>
     {{ end }}
 
     {{ $desc := slice "Coleções Exclusivas" .Description .Description}}

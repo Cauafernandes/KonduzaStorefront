@@ -54,6 +54,13 @@
 .icon-arrow-left-big:before{content:'\0062';}
 .icon-ray:before {content: '\0065';}
 .icon-whatsapp:before {content: '\0066';}
+.icon-more:before {content: '+';}
+
+
+
+.icon-more:before{
+    font-family: arial
+}
 
 .icon-user-logado {
     background-repeat: no-repeat;

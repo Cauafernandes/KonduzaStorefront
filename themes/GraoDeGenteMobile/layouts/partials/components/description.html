@@ -1,0 +1,11 @@
+<div class="dropdown-content">
+    <h3 class="h3 semibold mb-10">{{ index . 0 }}</h3>
+
+    {{ index . 1 | safeHTML}}
+
+    <div class="dropdown-content__detail">
+        {{ index . 2 | safeHTML}}
+    </div>
+
+    <button id="read-more" type="button" class="dropdown-content__btn icon-more"> Leia Mais</button>
+</div>
