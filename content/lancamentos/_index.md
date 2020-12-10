@@ -1,0 +1,5 @@
++++
+title = "Lançamentos Exclusivos"
+description = "<p>As novas coleções da Grão de Gente são exclusivas e desenvolvidas para transformar o sonho de todas as mamães em realidade. Toda semana um lançamento para você! Para ficar por dentro de todas as novidades, cadastre o seu e-mail e receba em primeira mão os nossos lançamentos.</p>"
+content = "<p>Atenta às principais tendências de decoração e sempre de olho nas sugestões das mamães, a Grão de Gente é pioneira na criação de coleções originais e está sempre desenvolvendo decorações exclusivas. Para encantar mamães com diferentes estilos, a Grão de Gente cria quartos de bebê modernos, clássicos, lúdicos, românticos e muito mais! Após você se apaixonar por uma coleção, já imaginou poder ver todos os detalhes da decoração e se sentir dentro deste quarto dos sonhos? Na Grão de Gente isso é possível graças ao exclusivo Tour 360º. Super completas, as coleções da Grão de Gente vêm com kit berço, kit cama babá, cortina, kit higiene, almofada amamentação, almofadas decorativas, trocador, porta maternidade, porta fraldas e muito mais!</p> <p>Confira os lançamentos exclusivos!!!</p>"
++++

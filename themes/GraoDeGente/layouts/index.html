@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-24">
             {{ range where .Site.RegularPages "Section" "product"}}
-                {{ partial "productbox.html" .Params }}
+                {{ partial "components/productbox.html" .Params }}
             {{ end }}
         </div>
     </div>

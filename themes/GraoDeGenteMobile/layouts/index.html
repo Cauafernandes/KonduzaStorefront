@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    {{ partial "benefits.html" }}
+    {{ partial "components/benefits.html" }}
 
     <div class="alerta-envio-topo">
         {{/*}}<vc:dynamic-banner position="8" height="0" width="0" local="1" slug=" " has-timer="false" is-lazy="false"></vc:dynamic-banner> {{*/}}
@@ -264,7 +264,7 @@
         <ul class="flex gutter">
             {{ range where .Site.RegularPages "Section" "product"}}
                 <li class="col-6 flex mb-30">    
-                    {{ partial "productbox.html" .Params }}
+                    {{ partial "components/productbox.html" .Params }}
                 </li>
             {{ end }}
         </ul>
